@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Compras</title>
+</head>
+<body>
+    <h2>Lista de Compras</h2>
+
+    <!--      
+         REQUISITO 1: "Agregar productos introduciendo: producto, cantidad, precio"
+         → Necesito: 3 inputs (text, number, number) + 1 botón
+         
+         REQUISITO 2: "Visualizar cada producto en la lista"
+         → Necesito: <ul> vacía donde irán los <li> dinámicamente
+         
+         REQUISITO 3: "Checkbox para marcar como comprado"
+         → Se creará dinámicamente en JS dentro de cada <li>
+         
+         REQUISITO 4: "Botón Eliminar en cada producto"
+         → Se creará dinámicamente en JS dentro de cada <li>
+         
+         REQUISITO 5: "Limpiar productos comprados"
+         → Necesito: 1 botón para limpiar
+         
+         REQUISITO 6: "Mostrar resumen con: total productos, comprados, presupuesto, gastado, restante"
+         → Necesito: <div> con 5 <span> donde mostrar los números
+    -->
+
+    <!-- REQUISITO 1: Inputs y botón para agregar -->
+    <input type="text" id="producto" placeholder="Producto">
+    <input type="number" id="cantidad" placeholder="Cantidad" value="1">
+    <input type="number" id="precioUnitario" placeholder="Precio (€)">
+    <button id="btnAgregar">Agregar</button>
+
+    <!-- REQUISITO 6: Resumen con estadísticas -->
+    <div id="resumen">
+        <p>Productos: <span id="totalProductos">0</span></p>
+        <p>Comprados: <span id="productosComprados">0</span></p>
+        <p>Presupuesto total: <span id="presupuestoTotal">0</span>€</p>
+        <p>Ya gastado: <span id="gastado">0</span>€</p>
+        <p>Restante: <span id="restante">0</span>€</p>
+    </div>
+
+    <!-- REQUISITO 5: Botón para limpiar comprados -->
+    <button id="btnLimpiarComprados">Limpiar Comprados</button>
+    <button id="btnOrdenar">Ordenar por precio</button>
+
+    <!-- REQUISITO 2: Lista donde se mostrarán los productos -->
+    <ul id="listaCompras"></ul>
+
+    <script src="Carrito tipo examen.js"></script>
+</body>
+</html>
