@@ -1,4 +1,4 @@
-﻿Este respositorio contiene material de los diferentes módulos de grados de informática que voy impartiendo
+﻿Este repositorio contiene material de los diferentes módulos de grados de informática que voy impartiendo
 
 Cada módulo tendrá tanto el material usado en clase como los ejercicios propuestos.
 
@@ -23,6 +23,7 @@ Cada módulo tendrá tanto el material usado en clase como los ejercicios propue
 
 > Todos los materiales se elaboran con finalidad educativa y sin ánimo de lucro, integrando documentación técnica, recursos abiertos y producción original docente. Se actualizan de manera continua conforme a la evolución del currículo y la práctica educativa en el aula.
 > Materiales de elaboración propia, apoyados en el uso de herramientas de inteligencia artificial y basados tanto en los currículos oficiales como en las fuentes y recursos referenciados en el readme de cada módulo.
+
 
 
 

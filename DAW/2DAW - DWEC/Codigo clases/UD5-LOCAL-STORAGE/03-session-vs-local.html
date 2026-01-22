@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sessionStorage vs localStorage</title>
+    <link rel="stylesheet" href="03-session-vs-local.css">
+</head>
+<body>
+    <h1>sessionStorage vs localStorage</h1>
+    <p><strong>Instrucciones:</strong>Guarda datos en ambos, luego abre esta página en una nueva pestaña para ver la diferencia</p>
+    <div class="container">
+        <!--localStorage-->
+        <div class="box">
+            <h2>localStorage</h2>
+            <button id="btnGuardarLocal">Guardar en localStorage</button>
+            <button id="btnLeerLocal">Leer localStorage</button>
+            <div class="resultado" id="resultadoLocal"></div>
+        </div>
+        <!--sessionStorage-->
+        <div class="box">
+            <h2>sessionStorage</h2>
+            <button id="btnGuardarSession">Guardar en sessionStorage</button>
+            <button id="btnLeerSession">Leer sessionStorage</button>
+            <div class="resultado" id="resultadoSession"></div>
+        </div>        
+    </div>
+    <script src="03-session-vs-local.js"></script>
+</body>
+</html>

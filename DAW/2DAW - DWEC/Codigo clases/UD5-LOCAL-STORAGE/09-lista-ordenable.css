@@ -1,0 +1,60 @@
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: rgba(255,255,255,0.9);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .lista {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .tarea {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            cursor: move;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .tarea:hover {
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+            transform: translateX(5px);
+            border-left-width: 6px;
+        }
+
+        .tarea.dragging {
+            opacity: 0.4;
+            transform: rotate(2deg) scale(0.95);
+        }
+
+        /* Línea de inserción visual */
+        .tarea.drag-over-top {
+            border-top: 3px solid #667eea;
+            padding-top: 18px;
+        }
+
+        .tarea.drag-over-bottom {
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 18px;
+        }

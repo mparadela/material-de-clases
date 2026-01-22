@@ -1,0 +1,59 @@
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background-color: #f0f0f0;
+        }
+
+        h1 { color: #333; }
+        p { color: #666; }
+
+        .container {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .zona {
+            flex: 1;
+            min-height: 400px;
+            border: 3px dashed #ccc;
+            border-radius: 15px;
+            padding: 20px;
+            background-color: white;
+            transition: all 0.3s;
+        }
+
+        .zona h3 {
+            margin-top: 0;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Feedback visual cuando pasas por encima */
+        .zona.drag-over {
+            background-color: #e3f2fd;
+            border-color: #2196f3;
+            border-style: solid;
+        }
+
+        .item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            cursor: move;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Mientras se arrastra */
+        .item.dragging {
+            opacity: 0.5;
+            transform: rotate(3deg);
+        }

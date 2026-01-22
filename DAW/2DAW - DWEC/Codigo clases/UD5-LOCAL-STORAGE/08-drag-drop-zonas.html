@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop entre zonas</title>
+    <link rel="stylesheet" href="08-drag-drop-zonas.css">
+</head>
+<body>
+    <h1>Drag & Drop entre zonas</h1>
+    <!--Zona 1: tiene elementos iniciales-->
+    <div class="zona" id="zona1">
+        <h3>Zona 1 (origen)</h3>
+        <div class="item" draggable="true" data-id="item-1">Item 1</div>
+        <div class="item" draggable="true" data-id="item-2">Item 2</div>
+        <div class="item" draggable="true" data-id="item-3">Item 3</div>
+    </div>
+
+    <!--Zona 2: empieza vacía-->
+
+    <div class="zona" id="zona2">
+        <h3>Zona 2 (destinoi)</h3>
+    </div>
+    <script src="08-drag-drop-zonas.js"></script>
+</body>
+</html>

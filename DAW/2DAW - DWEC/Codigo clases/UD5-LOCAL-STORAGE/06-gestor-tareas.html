@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de tareas con localStorage</title>
+    <link rel="stylesheet" href="06-gestor-tareas.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestor de tareas</h1>
+        <p class="info">Las tareas se guardan automáticamente en localStorage</p>
+        <!-- Formulario para agregar tarea-->
+         <div class="form-agregar">
+            <input
+            type="text"
+            id="inputTarea"
+            placeholder="Escribe una nueva tarea..."
+            autocomplete="off"
+            >
+            <button id="btnAgregar">Agregar</button>
+         </div>
+         <!--Lista de tareas-->
+         <ul id="listaTareas"></ul>
+         <!--Contador-->
+         <div class="contador" id="contador"></div>
+    </div>
+    <script src="06-gestor-tareas.js"></script>
+</body>
+</html>

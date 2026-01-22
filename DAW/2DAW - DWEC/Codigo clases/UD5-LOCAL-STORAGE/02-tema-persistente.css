@@ -1,0 +1,97 @@
+        /* Estilos base */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            margin: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Tema claro */
+        .tema-claro {
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        /* Tema oscuro */
+        .tema-oscuro {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        /* Botones */
+        .botones {
+            margin: 30px 0;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        /* Botones específicos para cada tema */
+        .tema-claro button {
+            background-color: #333;
+            color: white;
+        }
+
+        .tema-oscuro button {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        /* Caja de información */
+        .info {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .tema-claro .info {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+        }
+
+        .tema-oscuro .info {
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+        }
+
+        .info h3 {
+            margin-top: 0;
+        }
+
+        code {
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        .tema-claro code {
+            background-color: #e8e8e8;
+        }
+
+        .tema-oscuro code {
+            background-color: #3a3a3a;
+        }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema persistente con localStorage</title>
+    <link rel="stylesheet" href="02-tema-persistente.css">
+</head>
+<body class="tema-claro">
+    <div class="container">
+        <h1>🎨Selector de Tema Persistente</h1>
+        <p>Elige tu tema preferido y cierra el navegador. Cuando vuelvas, tu elección se mantendrá.</p>
+
+        <div class="botones">
+            <button id="btnClaro">☀️Tema claro</button>
+            <button id="btnOscuro">🌙Tema oscuro</button>
+        </div>
+
+        <div class="info">
+            <h3>¿Cómo funciona?</h3>
+            <p>Esta aplicación usa <code>localStorage</code> para guardar tu preferencia de tema.</p>
+            <p><strong>Prueba:</strong></p>
+            <ol>
+                <li>Cambia el tema pulsando un botón</li>
+                <li>Cierra esta pestaña o el navegador completo</li>
+                <li>Vuelve a abrir esta página</li>
+                <li>¡El tema que elegiste se mantiene! ✨</li>
+            </ol>
+            <p>Esto es posible porque guardamos tu elección en <code>localStorage</code> y la cargamos automáticamente al iniciar la página.</p>
+        </div>
+    </div>
+    <script src="02-tema-persistente.js"></script>
+</body>
+</html>
