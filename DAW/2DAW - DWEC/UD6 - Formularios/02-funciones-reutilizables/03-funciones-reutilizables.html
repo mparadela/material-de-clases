@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Reutilizable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .campo {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .invalido {
+            border-color: #e74c3c;
+            background-color: #fadbd8;
+        }
+        .valido {
+            border-color: #27ae60;
+            background-color: #eafaf1;
+        }
+        .mensaje-error {
+            color: #e74c3c;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: none;
+        }
+        .mensaje-error.visible {
+            display: block;
+        }
+        button {
+            padding: 12px 24px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h2>Sistema Reutilizable</h2>
+    
+    <form id="formulario">
+        <div class="campo">
+            <label for="email">Email:</label>
+            <input type="text" id="email" placeholder="usuario@ejemplo.com">
+            <div class="mensaje-error"></div>
+        </div>
+
+        <div class="campo">
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" placeholder="612345678">
+            <div class="mensaje-error"></div>
+        </div>
+
+        <button type="submit" id="btnSubmit">Enviar</button>
+    </form>
+
+    <script src="03-funciones.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos de Formularios - UD7</title>
+    <style>
+        /* ===== ESTILOS BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        /* ===== FORMULARIO ===== */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        /* Estados de validación (para después) */
+        input.valid {
+            border-color: #4caf50;
+        }
+        
+        input.invalid {
+            border-color: #f44336;
+        }
+        
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        /* ===== ÁREA DE INFORMACIÓN ===== */
+        #info {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+            min-height: 60px;
+        }
+        
+        #info strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        #info p {
+            color: #666;
+            line-height: 1.6;
+            margin: 5px 0;
+        }
+        
+        /* ===== HELPER TEXT ===== */
+        .helper-text {
+            font-size: 12px;
+            color: #999;
+            margin-top: 5px;
+        }
+        
+        .char-count {
+            font-size: 12px;
+            color: #999;
+            margin-top: 5px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulario de Registro</h1>
+        <p class="subtitle">Práctica de eventos de formularios</p>
+        
+        <form id="formulario">
+            <!-- NOMBRE -->
+            <div class="form-group">
+                <label for="nombre">Nombre completo:</label>
+                <input 
+                    type="text" 
+                    id="nombre" 
+                    name="nombre"
+                    placeholder="Ej: María García"
+                >
+                <div class="char-count" id="nombre-count"></div>
+            </div>
+            
+            <!-- EMAIL -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email"
+                    placeholder="tu@email.com"
+                >
+                <span class="helper-text">Usa tu email real</span>
+            </div>
+            
+            <!-- EDAD -->
+            <div class="form-group">
+                <label for="edad">Edad:</label>
+                <input 
+                    type="number" 
+                    id="edad" 
+                    name="edad"
+                    placeholder="18"
+                    min="0"
+                    max="120"
+                >
+            </div>
+            
+            <!-- CIUDAD -->
+            <div class="form-group">
+                <label for="ciudad">Ciudad:</label>
+                <select id="ciudad" name="ciudad">
+                    <option value="">Selecciona una ciudad...</option>
+                    <option value="madrid">Madrid</option>
+                    <option value="barcelona">Barcelona</option>
+                    <option value="valencia">Valencia</option>
+                    <option value="sevilla">Sevilla</option>
+                    <option value="zaragoza">Zaragoza</option>
+                </select>
+            </div>
+            
+            <!-- BOTÓN SUBMIT -->
+            <button type="submit">Enviar Formulario</button>
+        </form>
+        
+        <!-- ÁREA DE INFORMACIÓN DE EVENTOS -->
+        <div id="info">
+            <strong>💡 Información de eventos:</strong>
+            <p>Interactúa con el formulario para ver los eventos...</p>
+        </div>
+    </div>
+    
+    <!-- SCRIPT EXTERNO -->
+    <script src="script.js"></script>
+</body>
+</html>

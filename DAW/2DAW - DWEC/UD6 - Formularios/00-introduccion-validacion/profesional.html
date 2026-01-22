@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Validación Profesional</title>
+    <style>
+        .invalido {
+            border: 2px solid #e74c3c;
+            background-color: #fee;
+        }
+        
+        .valido {
+            border: 2px solid #27ae60;
+            background-color: #efe;
+        }
+        
+        .mensaje-error {
+            color: #e74c3c;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .mensaje-error.visible {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h2>Versión Profesional (Hoy)</h2>
+    <form id="formulario">
+        <div>
+            <label for="email">Email:</label>
+            <input type="text" id="email">
+            <div class="mensaje-error" id="email-error"></div>
+        </div>
+        <button type="submit" id="btnSubmit">Enviar</button>
+    </form>
+
+    <script>
+        const emailInput = document.getElementById('email');
+        const emailError = document.getElementById('email-error');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        emailInput.addEventListener('blur', () => {
+            const valor = emailInput.value.trim();
+            
+            if (valor === '') {
+                emailInput.classList.add('invalido');
+                emailInput.classList.remove('valido');
+                emailError.textContent = 'El email es obligatorio';
+                emailError.classList.add('visible');
+            } else if (!emailRegex.test(valor)) {
+                emailInput.classList.add('invalido');
+                emailInput.classList.remove('valido');
+                emailError.textContent = 'Introduce un email válido (ejemplo: usuario@dominio.com)';
+                emailError.classList.add('visible');
+            } else {
+                emailInput.classList.remove('invalido');
+                emailInput.classList.add('valido');
+                emailError.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

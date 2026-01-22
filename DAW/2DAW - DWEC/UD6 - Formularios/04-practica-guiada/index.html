@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro - Validación Profesional</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Usuario</h1>
+        <form id="formulario">
+            
+            <div class="campo">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" placeholder="Juan Pérez">
+                <div class="mensaje-error"></div>
+            </div>
+
+            <div class="campo">
+                <label for="email">Email:</label>
+                <input type="text" id="email" placeholder="usuario@ejemplo.com">
+                <div class="mensaje-error"></div>
+            </div>
+
+            <div class="campo">
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" placeholder="612345678">
+                <div class="mensaje-error"></div>
+            </div>
+
+            <div class="campo">
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni" placeholder="12345678A">
+                <div class="mensaje-error"></div>
+            </div>
+
+            <button type="submit" id="btnSubmit" disabled>Registrarse</button>
+        </form>
+    </div>
+
+    <script src="validacion.js"></script>
+</body>
+</html>
