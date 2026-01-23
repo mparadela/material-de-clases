@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Problema con errores</title>
+</head>
+<body>
+    <h2>Guardar datos del usuario</h2>
+    <button onclick="guardarDatos()">Guardar</button>
+    
+    <script>
+        function guardarDatos() {
+            const usuario = {
+                nombre: 'María',
+                edad: 25,
+                email: 'maria@ejemplo.com'
+            };
+            
+            // Referencia circular (esto va a EXPLOTAR)
+            usuario.yo = usuario;
+            
+            // Esto va a dar error
+            const usuarioJSON = JSON.stringify(usuario);
+            localStorage.setItem('usuario', usuarioJSON);
+            
+            console.log('Datos guardados correctamente');
+            alert('¡Usuario guardado!');
+        }
+    </script>
+</body>
+</html>

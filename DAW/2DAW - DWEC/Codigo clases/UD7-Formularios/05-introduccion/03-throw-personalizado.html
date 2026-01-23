@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Throw - Errores personalizados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        .exito {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <h2>Calcular descuento (con validación)</h2>
+    <p>Introduce el porcentaje de descuento:</p>
+    <input type="text" id="descuento" placeholder="10">
+    <button onclick="aplicarDescuento()">Calcular</button>
+    <div id="resultado"></div>
+    <script src="03-throw-personalizado.js"></script>
+    </body>
+</html>
+
