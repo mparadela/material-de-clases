@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encadenar Promesas</title>
+    <link rel="stylesheet" href="11-encadenar-promesas.css">
+</head>
+<body>
+    <h1>⛓️ Encadenar Promesas</h1>
+    
+    <div class="comparacion">
+        <div class="codigo">
+            <h2>❌ Callback Hell</h2>
+            <pre>
+obtenerUsuario(id, (usuario) => {
+    obtenerPosts(usuario.id, (posts) => {
+        obtenerComentarios(posts[0].id, (comentarios) => {
+            // Pirámide → → →
+        });
+    });
+});
+            </pre>
+        </div>
+
+        <div class="codigo">
+            <h2>✅ Promesas Encadenadas</h2>
+            <pre>
+obtenerUsuario(id)
+    .then(usuario => obtenerPosts(usuario.id))
+    .then(posts => obtenerComentarios(posts[0].id))
+    .then(comentarios => { /* resultado */ })
+    .catch(error => { /* error */ });
+            </pre>
+        </div>
+    </div>
+
+    <div class="info">
+        📺 Abre la consola para ver el ejemplo en acción
+    </div>
+
+    <script src="11-encadenar-promesas.js"></script>
+</body>
+</html>
+

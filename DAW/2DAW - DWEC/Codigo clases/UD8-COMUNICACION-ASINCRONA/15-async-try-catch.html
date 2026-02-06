@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async/await con try/catch</title>
+    <link rel="stylesheet" href="15-async-try-catch.css">
+</head>
+<body>
+    <h1>🛡️ Manejo de Errores: try/catch</h1>
+    
+    <div class="patron">
+        <h2>Patrón Estándar:</h2>
+        <pre>
+async function miFuncion() {
+    try {
+        // Intentar operación
+        const resultado = await operacionAsincrona();
+        console.log(resultado);
+        
+    } catch (error) {
+        // Capturar error
+        console.error("Error:", error);
+        
+    } finally {
+        // Limpieza (siempre se ejecuta)
+        console.log("Operación terminada");
+    }
+}
+        </pre>
+    </div>
+
+    <div class="bloques">
+        <div class="bloque try">
+            <h3>try</h3>
+            <p>Intenta ejecutar el código</p>
+        </div>
+        <div class="bloque catch">
+            <h3>catch</h3>
+            <p>Captura errores si algo falla</p>
+        </div>
+        <div class="bloque finally">
+            <h3>finally</h3>
+            <p>Se ejecuta siempre (opcional)</p>
+        </div>
+    </div>
+
+    <div class="info">
+        📺 Abre la consola para ver manejo de errores
+    </div>
+
+    <script src="15-async-try-catch.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica Fetch</title>
+    <link rel="stylesheet" href="20-practica-fetch.css">
+</head>
+<body>
+    <h1>✏️ Práctica: Fetch API</h1>
+    
+    <div class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Crear una página que:</p>
+        <ol>
+            <li>Pida posts de JSONPlaceholder (GET /posts)</li>
+            <li>Los muestre en una lista HTML</li>
+            <li>Cada post debe mostrar título y cuerpo</li>
+            <li>Mostrar solo los primeros 10 posts</li>
+            <li>Manejar errores correctamente</li>
+            <li>Mostrar "🔄 Cargando..." mientras espera</li>
+        </ol>
+    </div>
+
+    <div id="posts"></div>
+
+    <div class="info">
+        📺 Los posts aparecerán aquí arriba
+    </div>
+
+    <script src="20-practica-fetch.js"></script>
+</body>
+</html>

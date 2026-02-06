@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura de APIs</title>
+    <link rel="stylesheet" href="01-estructura-api.css">
+</head>
+<body>
+    <h1>📡 Estructura típica de respuestas de API</h1>
+
+    <div class="nota">
+        <strong>💡 Abre la consola (F12) para ver análisis detallado</strong>
+    </div>
+
+    <div class="ejemplo">
+        <h2>1️⃣ Objeto único (UN usuario, UN producto, UN post)</h2>
+        <p><strong>Cuándo se usa:</strong> Al pedir un recurso específico por ID</p>
+        <p><strong>Ejemplo:</strong> GET /users/1, GET /posts/5</p>
+        <pre id="ejemplo1"></pre>
+        <div class="nota">
+            Acceso directo a propiedades: <code>usuario.name</code>, <code>usuario.email</code>
+        </div>
+    </div>
+
+    <div class="ejemplo">
+        <h2>2️⃣ Array de objetos (LISTA de usuarios, productos, posts)</h2>
+        <p><strong>Cuándo se usa:</strong> Al pedir múltiples recursos</p>
+        <p><strong>Ejemplo:</strong> GET /posts, GET /users</p>
+        <pre id="ejemplo2"></pre>
+        <div class="nota">
+            Hay que recorrer con: <code>.forEach()</code>, <code>.map()</code>, <code>.filter()</code>
+        </div>
+    </div>
+
+    <div class="ejemplo">
+        <h2>3️⃣ Objeto con metadatos (información + datos)</h2>
+        <p><strong>Cuándo se usa:</strong> APIs más complejas con paginación</p>
+        <p><strong>Incluye:</strong> Estado, mensaje, paginación, datos</p>
+        <pre id="ejemplo3"></pre>
+        <div class="nota">
+            Los datos reales están en: <code>respuesta.data</code> o <code>respuesta.results</code>
+        </div>
+    </div>
+
+    <script src="01-estructura-api.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-case=1.0">
+    <title>Callback Hell</title>
+    <link rel="stylesheet" href="07-callback-hell.css">
+</head>
+<body>
+    <h1>🔥 Callback Hell (Pirámide del Infierno)</h1>
+    
+    <div class="problema">
+        <h2>El Problema:</h2>
+        <p>Cuando necesitamos hacer varias operaciones asíncronas <strong>en cadena</strong>, 
+        los callbacks se anidan y forman una pirámide difícil de leer y mantener.</p>
+    </div>
+
+    <div class="piramide">
+        <pre>
+operacion1(() => {
+    operacion2(() => {
+        operacion3(() => {
+            operacion4(() => {
+                // ← Cada vez más a la derecha
+            });
+        });
+    });
+});
+        </pre>
+    </div>
+
+    <div class="info">
+        📺 Abre la consola para ver el ejemplo
+    </div>
+
+    <script src="07-callback-hell.js"></script>
+</body>
+</html>

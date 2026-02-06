@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Básico</title>
+    <link rel="stylesheet" href="17-fetch-basico.css">
+</head>
+<body>
+    <h1>🌐 Fetch API - Primera Petición</h1>
+    
+    <div class="concepto">
+        <h2>¿Qué es Fetch?</h2>
+        <p>Herramienta de JavaScript para hacer peticiones HTTP a servidores y APIs</p>
+    </div>
+
+    <div class="sintaxis">
+        <h2>Sintaxis Básica:</h2>
+        <pre>
+// Con .then()
+fetch('url')
+    .then(response => response.json())
+    .then(data => console.log(data));
+
+// Con async/await (RECOMENDADO)
+const response = await fetch('url');
+const data = await response.json();
+        </pre>
+    </div>
+
+    <div class="api-info">
+        <h2>API de Prueba:</h2>
+        <p><strong>JSONPlaceholder:</strong> https://jsonplaceholder.typicode.com</p>
+        <ul>
+            <li>/posts - Lista de posts</li>
+            <li>/users - Lista de usuarios</li>
+            <li>/comments - Lista de comentarios</li>
+        </ul>
+    </div>
+
+    <div class="info">
+        📺 Abre la consola para ver peticiones reales
+    </div>
+
+    <script src="17-fetch-basico.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica Promesas</title>
+    <link rel="stylesheet" href="12-practica-promesas.css">
+</head>
+<body>
+    <h1>✏️ Práctica: Convertir a Promesas</h1>
+    
+    <div class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Convertir esta función con callback a una que devuelva promesa:</p>
+        
+        <div class="codigo-antes">
+            <h3>❌ Versión con callback:</h3>
+            <pre>
+function descargarArchivo(nombre, callback) {
+    setTimeout(() => {
+        callback(`Archivo ${nombre} descargado`);
+    }, 2000);
+}
+            </pre>
+        </div>
+
+        <div class="codigo-despues">
+            <h3>✅ Versión con promesa:</h3>
+            <pre>
+function descargarArchivo(nombre) {
+    // ¿?
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="info">
+        📺 Abre la consola para ver la solución
+    </div>
+
+    <script src="12-practica-promesas.js"></script>
+</body>
+</html>

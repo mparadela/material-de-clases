@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.then(), .catch(), .finally()</title>
+    <link rel="stylesheet" href="10-then-catch-finally.css">
+</head>
+<body>
+    <h1>🔗 .then(), .catch(), .finally()</h1>
+    
+    <div class="metodos">
+        <div class="metodo then">
+            <h2>.then()</h2>
+            <p>Se ejecuta cuando la promesa se cumple (FULFILLED)</p>
+            <code>promesa.then(resultado => { ... })</code>
+        </div>
+
+        <div class="metodo catch">
+            <h2>.catch()</h2>
+            <p>Se ejecuta cuando la promesa se rechaza (REJECTED)</p>
+            <code>promesa.catch(error => { ... })</code>
+        </div>
+
+        <div class="metodo finally">
+            <h2>.finally()</h2>
+            <p>Se ejecuta SIEMPRE, haya éxito o error</p>
+            <code>promesa.finally(() => { ... })</code>
+        </div>
+    </div>
+
+    <div class="info">
+        📺 Abre la consola para ver ejemplos de éxito y error
+    </div>
+
+    <script src="10-then-catch-finally.js"></script>
+</body>
+</html>

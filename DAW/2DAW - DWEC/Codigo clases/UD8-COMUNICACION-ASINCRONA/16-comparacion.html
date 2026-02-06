@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparación: Promesas vs async/await</title>
+    <link rel="stylesheet" href="16-comparacion.css">
+</head>
+<body>
+    <h1>⚖️ Promesas vs async/await</h1>
+    
+    <div class="comparacion">
+        <div class="metodo">
+            <h2>Con .then() / .catch()</h2>
+            <div class="ventajas">
+                <h3>Ventajas:</h3>
+                <ul>
+                    <li>Compatible con navegadores antiguos</li>
+                    <li>No requiere funciones async</li>
+                </ul>
+            </div>
+            <div class="desventajas">
+                <h3>Desventajas:</h3>
+                <ul>
+                    <li>Más verboso</li>
+                    <li>Encadenamiento largo</li>
+                    <li>Variables no accesibles entre .then()</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="metodo">
+            <h2>Con async/await</h2>
+            <div class="ventajas">
+                <h3>Ventajas:</h3>
+                <ul>
+                    <li>✅ Mucho más legible</li>
+                    <li>✅ Parece código síncrono</li>
+                    <li>✅ try/catch familiar</li>
+                    <li>✅ Variables accesibles</li>
+                </ul>
+            </div>
+            <div class="desventajas">
+                <h3>Desventajas:</h3>
+                <ul>
+                    <li>Requiere navegadores modernos</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="info">
+        📺 Compara ambos métodos en la consola
+    </div>
+
+    <script src="16-comparacion.js"></script>
+</body>
+</html>

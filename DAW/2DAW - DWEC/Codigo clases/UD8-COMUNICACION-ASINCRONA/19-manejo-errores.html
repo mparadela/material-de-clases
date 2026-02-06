@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de Errores en Fetch</title>
+    <link rel="stylesheet" href="19-manejo-errores.css">
+</head>
+<body>
+    <h1>🛡️ Manejo de Errores con Fetch</h1>
+    
+    <div class="codigos-http">
+        <h2>Códigos HTTP Importantes:</h2>
+        <div class="codigo-grupo exito">
+            <h3>2xx - Éxito</h3>
+            <ul>
+                <li><strong>200</strong> OK - Todo correcto</li>
+                <li><strong>201</strong> Created - Recurso creado</li>
+            </ul>
+        </div>
+        <div class="codigo-grupo error-cliente">
+            <h3>4xx - Error del Cliente</h3>
+            <ul>
+                <li><strong>400</strong> Bad Request - Petición mal formada</li>
+                <li><strong>401</strong> Unauthorized - No autenticado</li>
+                <li><strong>404</strong> Not Found - No encontrado</li>
+            </ul>
+        </div>
+        <div class="codigo-grupo error-servidor">
+            <h3>5xx - Error del Servidor</h3>
+            <ul>
+                <li><strong>500</strong> Server Error - Error interno</li>
+                <li><strong>503</strong> Service Unavailable - Servicio no disponible</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="patron">
+        <h2>Patrón Recomendado:</h2>
+        <pre>
+try {
+    const response = await fetch(url);
+    
+    if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+    }
+    
+    const data = await response.json();
+    // Procesar datos
+    
+} catch (error) {
+    console.error("Error:", error.message);
+}
+        </pre>
+    </div>
+
+    <div class="info">
+        📺 Abre la consola para ver manejo de errores
+    </div>
+
+    <script src="19-manejo-errores.js"></script>
+</body>
+</html>
