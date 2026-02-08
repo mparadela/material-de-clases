@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST Básico - UD8 Sesión 6</title>
+    <link rel="stylesheet" href="00-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📤 Fetch POST Básico</h1>
+        
+        <div class="info">
+            <h2>¿Qué es POST?</h2>
+            <p><strong>POST</strong> se usa para <strong>enviar datos</strong> al servidor y crear nuevos recursos.</p>
+        </div>
+
+        <div class="comparacion">
+            <div class="columna">
+                <h3>GET (lo que ya sabemos)</h3>
+                <ul>
+                    <li>Solo LEER datos</li>
+                    <li>No envía body</li>
+                    <li>Sintaxis simple</li>
+                    <li>Solo URL</li>
+                </ul>
+                <pre><code>fetch(url)</code></pre>
+            </div>
+
+            <div class="columna">
+                <h3>POST (nuevo)</h3>
+                <ul>
+                    <li>ENVIAR datos</li>
+                    <li>Requiere body</li>
+                    <li>Requiere headers</li>
+                    <li>Objeto de configuración</li>
+                </ul>
+                <pre><code>fetch(url, opciones)</code></pre>
+            </div>
+        </div>
+
+        <div class="ejercicio">
+            <h2>🎯 Ejercicio 1: Comparar GET vs POST</h2>
+            <p>Vamos a hacer una petición GET y una POST a la misma API para ver la diferencia.</p>
+            
+            <div class="instrucciones">
+                <p><strong>API:</strong> https://jsonplaceholder.typicode.com/posts</p>
+                <p><strong>Abre la consola (F12)</strong> para ver los resultados.</p>
+            </div>
+
+            <div class="codigo-ejemplo">
+                <h3>Estructura POST:</h3>
+                <pre><code>fetch(url, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(objeto)
+})</code></pre>
+            </div>
+        </div>
+
+        <div class="nota">
+            <strong>💡 Recuerda:</strong> El body debe ser un STRING, por eso usamos <code>JSON.stringify()</code>
+        </div>
+    </div>
+
+    <script src="21-post-basico.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headers - UD8 Sesión 6</title>
+    <link rel="stylesheet" href="00-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Headers en Fetch</h1>
+        
+        <div class="info">
+            <h2>¿Qué son los Headers?</h2>
+            <p>Los <strong>headers</strong> son metadatos que acompañan a las peticiones HTTP. Le dicen al servidor información adicional sobre la petición.</p>
+        </div>
+
+        <div class="headers-grid">
+            <div class="header-card">
+                <h3>Content-Type</h3>
+                <p><strong>¿Qué envío?</strong></p>
+                <code>application/json</code>
+                <p class="descripcion">Indica que estamos enviando datos en formato JSON</p>
+            </div>
+
+            <div class="header-card">
+                <h3>Accept</h3>
+                <p><strong>¿Qué espero recibir?</strong></p>
+                <code>application/json</code>
+                <p class="descripcion">Indica que queremos recibir JSON como respuesta</p>
+            </div>
+
+            <div class="header-card">
+                <h3>Authorization</h3>
+                <p><strong>¿Quién soy?</strong></p>
+                <code>Bearer token123</code>
+                <p class="descripcion">Token de autenticación (veremos más adelante)</p>
+            </div>
+        </div>
+
+        <div class="ejercicio">
+            <h2>🎯 Ejercicio 2: Crear usuario con headers</h2>
+            <p>Vamos a crear un usuario nuevo enviando headers completos.</p>
+            
+            <div class="instrucciones">
+                <p><strong>Endpoint:</strong> https://jsonplaceholder.typicode.com/users</p>
+                <p><strong>Headers necesarios:</strong></p>
+                <ul>
+                    <li>Content-Type: application/json</li>
+                    <li>Accept: application/json</li>
+                </ul>
+                <p><strong>Abre la consola (F12)</strong> para ver el status y headers de respuesta.</p>
+            </div>
+
+            <div class="codigo-ejemplo">
+                <h3>Ejemplo de headers:</h3>
+                <pre><code>headers: {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="tabla-content-types">
+            <h3>Tipos de Content-Type comunes:</h3>
+            <table>
+                <tr>
+                    <th>Content-Type</th>
+                    <th>Uso</th>
+                </tr>
+                <tr>
+                    <td><code>application/json</code></td>
+                    <td>Datos JSON (el más común)</td>
+                </tr>
+                <tr>
+                    <td><code>application/x-www-form-urlencoded</code></td>
+                    <td>Formularios HTML tradicionales</td>
+                </tr>
+                <tr>
+                    <td><code>multipart/form-data</code></td>
+                    <td>Subida de archivos</td>
+                </tr>
+                <tr>
+                    <td><code>text/plain</code></td>
+                    <td>Texto simple</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="22-headers.js"></script>
+</body>
+</html>

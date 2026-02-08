@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Práctica Fetch</title>
-    <link rel="stylesheet" href="20-practica-fetch.css">
+    <link rel="stylesheet" href="00-styles.css">
 </head>
 <body>
     <h1>✏️ Práctica: Fetch API</h1>

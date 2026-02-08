@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario POST - UD8 Sesión 6</title>
+    <link rel="stylesheet" href="00-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Formulario con POST</h1>
+        
+        <div class="info">
+            <h2>Caso práctico más común</h2>
+            <p>Lo más habitual es enviar datos de un formulario HTML a una API usando POST.</p>
+            <p><strong>Patrón:</strong> Usuario rellena → JavaScript recoge datos → POST a API → Mostrar resultado</p>
+        </div>
+
+        <div class="contenido-grid">
+            <div class="formulario-seccion">
+                <h2>Crear Nuevo Post</h2>
+                
+                <form id="formulario">
+                    <div class="campo">
+                        <label for="titulo">Título del post:</label>
+                        <input type="text" id="titulo" required placeholder="Escribe un título...">
+                    </div>
+                    
+                    <div class="campo">
+                        <label for="contenido">Contenido:</label>
+                        <textarea id="contenido" rows="5" required placeholder="Escribe el contenido del post..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-enviar">📤 Publicar Post</button>
+                </form>
+            </div>
+
+            <div class="resultado-seccion">
+                <h2>Resultado</h2>
+                <div id="resultado" class="resultado-vacio">
+                    <p>Rellena el formulario y envíalo para ver el resultado aquí.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pasos">
+            <h2>🎯 Pasos que vamos a programar:</h2>
+            <ol>
+                <li><strong>preventDefault()</strong> → Evitar que recargue la página</li>
+                <li><strong>Recoger valores</strong> → Del formulario con .value</li>
+                <li><strong>Crear objeto</strong> → Con los datos del formulario</li>
+                <li><strong>Mostrar loading</strong> → Feedback mientras envía</li>
+                <li><strong>fetch POST</strong> → Enviar datos a la API</li>
+                <li><strong>Verificar respuesta</strong> → Comprobar que salió bien</li>
+                <li><strong>Mostrar resultado</strong> → En la sección de resultado</li>
+                <li><strong>Limpiar formulario</strong> → Con reset()</li>
+            </ol>
+        </div>
+
+        <div class="nota">
+            <strong>⚠️ MUY IMPORTANTE:</strong> Sin <code>preventDefault()</code>, el formulario recarga la página y pierdes todo.
+        </div>
+    </div>
+
+    <script src="23-formulario-post.js"></script>
+</body>
+</html>
