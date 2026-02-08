@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PATCH Parcial - UD8 Sesión 7</title>
+    <link rel="stylesheet" href="00-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 PATCH: Actualización Parcial</h1>
+        
+        <div class="info">
+            <h2>Diferencia: PUT vs PATCH</h2>
+            <p><strong>PUT</strong> = Actualizar TODO el recurso (enviar objeto completo)</p>
+            <p><strong>PATCH</strong> = Actualizar SOLO lo que cambió (enviar solo campos modificados)</p>
+        </div>
+
+        <div class="comparacion-visual">
+            <div class="metodo-card put">
+                <h3>PUT</h3>
+                <div class="objeto-visual">
+                    <div class="campo">id: 1</div>
+                    <div class="campo modificado">title: "Nuevo título"</div>
+                    <div class="campo modificado">body: "Nuevo contenido"</div>
+                    <div class="campo">userId: 1</div>
+                </div>
+                <p class="explicacion">Envío TODO el objeto, aunque solo cambien 2 campos</p>
+            </div>
+
+            <div class="metodo-card patch">
+                <h3>PATCH</h3>
+                <div class="objeto-visual">
+                    <div class="campo modificado">title: "Nuevo título"</div>
+                </div>
+                <p class="explicacion">Solo envío el campo que cambió</p>
+            </div>
+        </div>
+
+        <div class="casos-uso">
+            <h2>📋 ¿Cuándo usar cada uno?</h2>
+            
+            <div class="caso">
+                <h3>✅ Usa PUT cuando:</h3>
+                <ul>
+                    <li>Tienes todo el objeto disponible</li>
+                    <li>Formulario de edición completo</li>
+                    <li>Quieres reemplazar el recurso entero</li>
+                </ul>
+            </div>
+
+            <div class="caso">
+                <h3>✅ Usa PATCH cuando:</h3>
+                <ul>
+                    <li>Solo cambias 1 o 2 campos específicos</li>
+                    <li>Toggle de estado (activo/inactivo)</li>
+                    <li>Incrementar contador (likes, visitas)</li>
+                    <li>Actualización rápida sin recargar todo</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="ejercicio">
+            <h2>🎯 Ejercicio 6: Actualizar solo el título</h2>
+            <p>Vamos a actualizar ÚNICAMENTE el título del post 1, sin tocar el resto de campos.</p>
+            
+            <div class="instrucciones">
+                <p><strong>Endpoint:</strong> https://jsonplaceholder.typicode.com/posts/1</p>
+                <p><strong>Vamos a programar:</strong></p>
+                <ol>
+                    <li>Función que actualiza solo el título (PATCH)</li>
+                    <li>Función para marcar como completado (PATCH)</li>
+                    <li>Función para incrementar likes (PATCH)</li>
+                </ol>
+                <p><strong>Abre la consola (F12)</strong> para ver cómo enviamos menos datos.</p>
+            </div>
+
+            <div class="codigo-ejemplo">
+                <h3>Estructura PATCH:</h3>
+                <pre><code>fetch(`/posts/${id}`, {
+    method: 'PATCH',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ 
+        title: "Solo este campo" 
+    })
+})</code></pre>
+            </div>
+        </div>
+
+        <div class="ejemplos-practicos">
+            <h2>💡 Ejemplos prácticos de PATCH</h2>
+            <div class="ejemplos-grid">
+                <div class="ejemplo">
+                    <div class="icono">👍</div>
+                    <h4>Dar Like</h4>
+                    <code>{ likes: likes + 1 }</code>
+                </div>
+                
+                <div class="ejemplo">
+                    <div class="icono">✅</div>
+                    <h4>Marcar completado</h4>
+                    <code>{ completed: true }</code>
+                </div>
+                
+                <div class="ejemplo">
+                    <div class="icono">👁️</div>
+                    <h4>Incrementar vistas</h4>
+                    <code>{ views: views + 1 }</code>
+                </div>
+                
+                <div class="ejemplo">
+                    <div class="icono">🔒</div>
+                    <h4>Cambiar privacidad</h4>
+                    <code>{ private: false }</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="nota">
+            <strong>💡 Ventaja:</strong> PATCH es más eficiente porque envía menos datos. Útil en conexiones lentas o móviles.
+        </div>
+    </div>
+
+    <script src="26-patch-parcial.js"></script>
+</body>
+</html>

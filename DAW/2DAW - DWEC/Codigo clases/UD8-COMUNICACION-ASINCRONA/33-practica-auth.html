@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica Autenticación - UD8 Sesión 8</title>
+    <link rel="stylesheet" href="00-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Práctica: Fetch Autenticado con Reintentos</h1>
+        
+        <div class="info">
+            <h2>Ejercicio Integrador</h2>
+            <p>Vamos a crear una función que combine TODO lo aprendido:</p>
+            <ul>
+                <li>✅ Autenticación con Bearer Token</li>
+                <li>✅ Reintentos automáticos si falla</li>
+                <li>✅ Manejo de errores completo</li>
+                <li>✅ Verificación de token válido</li>
+            </ul>
+        </div>
+
+        <div class="requisitos">
+            <h2>📋 Requisitos de la función</h2>
+            
+            <div class="requisito-card">
+                <div class="icono">🔑</div>
+                <h3>1. Obtener token de localStorage</h3>
+                <p>Si no hay token → Error inmediato</p>
+            </div>
+            
+            <div class="requisito-card">
+                <div class="icono">🔄</div>
+                <h3>2. Intentar hasta 3 veces</h3>
+                <p>Si falla → Esperar y reintentar</p>
+            </div>
+            
+            <div class="requisito-card">
+                <div class="icono">📤</div>
+                <h3>3. Header Authorization</h3>
+                <p>Enviar token en cada intento</p>
+            </div>
+            
+            <div class="requisito-card">
+                <div class="icono">⚠️</div>
+                <h3>4. Verificar status 401</h3>
+                <p>Si 401 → Token inválido, no reintentar</p>
+            </div>
+            
+            <div class="requisito-card">
+                <div class="icono">✅</div>
+                <h3>5. Devolver datos</h3>
+                <p>Si éxito → Devolver respuesta JSON</p>
+            </div>
+            
+            <div class="requisito-card">
+                <div class="icono">📝</div>
+                <h3>6. Logs informativos</h3>
+                <p>Console.log de cada paso</p>
+            </div>
+        </div>
+
+        <div class="firma-funcion">
+            <h2>🎯 Firma de la función</h2>
+            <div class="codigo-firma">
+                <pre><code>async function fetchAutenticado(url, intentosMaximos = 3) {
+    // Tu código aquí
+    // Debe devolver los datos o null si falla
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="flujo-diagrama">
+            <h2>📊 Flujo de la función</h2>
+            
+            <div class="flujo-completo">
+                <div class="flujo-paso">
+                    <span class="numero">1</span>
+                    <h4>Obtener token</h4>
+                    <code>localStorage.getItem('auth_token')</code>
+                    <div class="decision">
+                        <div class="si">✅ Hay token → Continuar</div>
+                        <div class="no">❌ No hay token → return null</div>
+                    </div>
+                </div>
+                
+                <div class="flujo-paso">
+                    <span class="numero">2</span>
+                    <h4>Bucle de reintentos</h4>
+                    <code>for (let i = 1; i <= intentosMaximos; i++)</code>
+                </div>
+                
+                <div class="flujo-paso">
+                    <span class="numero">3</span>
+                    <h4>Hacer fetch con token</h4>
+                    <code>headers: { 'Authorization': `Bearer ${token}` }</code>
+                </div>
+                
+                <div class="flujo-paso">
+                    <span class="numero">4</span>
+                    <h4>Verificar respuesta</h4>
+                    <div class="decision">
+                        <div class="si">✅ response.ok → Devolver datos</div>
+                        <div class="no">❌ Status 401 → Token inválido, return null</div>
+                        <div class="no">❌ Otro error → Reintentar</div>
+                    </div>
+                </div>
+                
+                <div class="flujo-paso">
+                    <span class="numero">5</span>
+                    <h4>Si falla y no es 401</h4>
+                    <code>await new Promise(r => setTimeout(r, i * 1000))</code>
+                    <p class="nota-paso">Esperar más tiempo en cada intento</p>
+                </div>
+                
+                <div class="flujo-paso final">
+                    <span class="numero">6</span>
+                    <h4>Si agotan reintentos</h4>
+                    <code>return null</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="ejercicio">
+            <h2>🎯 Ejercicio 14: Implementar la función</h2>
+            
+            <div class="instrucciones">
+                <p><strong>API:</strong> https://jsonplaceholder.typicode.com/posts/1</p>
+                <p><strong>Pasos:</strong></p>
+                <ol>
+                    <li>Simular guardado de token: <code>localStorage.setItem('auth_token', 'abc123')</code></li>
+                    <li>Implementar función <code>fetchAutenticado(url, intentosMaximos)</code></li>
+                    <li>Comprobar que obtiene el token correctamente</li>
+                    <li>Hacer fetch con header Authorization</li>
+                    <li>Implementar lógica de reintentos con backoff</li>
+                    <li>Manejar casos especiales: 401, errores de red</li>
+                    <li>Probar la función llamándola</li>
+                </ol>
+                <p><strong>Abre la consola (F12)</strong> para ver todo el proceso paso a paso.</p>
+            </div>
+
+            <div class="casos-prueba">
+                <h3>🧪 Casos de prueba</h3>
+                <div class="caso-prueba">
+                    <strong>Caso 1:</strong> Token válido
+                    <p>→ Debe funcionar en el primer intento</p>
+                </div>
+                <div class="caso-prueba">
+                    <strong>Caso 2:</strong> Sin token
+                    <p>→ Debe devolver error inmediato</p>
+                </div>
+                <div class="caso-prueba">
+                    <strong>Caso 3:</strong> Token inválido (simular)
+                    <p>→ Debe detectar 401 y no reintentar</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="codigo-ayuda">
+            <h2>💡 Pistas de código</h2>
+            
+            <div class="pista">
+                <h4>Verificar si es error 401:</h4>
+                <pre><code>if (response.status === 401) {
+    console.log("Token inválido");
+    localStorage.removeItem('auth_token');
+    return null;
+}</code></pre>
+            </div>
+            
+            <div class="pista">
+                <h4>Esperar antes de reintentar:</h4>
+                <pre><code>// Espera 1s, 2s, 3s según el intento
+const espera = intento * 1000;
+await new Promise(resolve => setTimeout(resolve, espera));</code></pre>
+            </div>
+            
+            <div class="pista">
+                <h4>Verificar último intento:</h4>
+                <pre><code>if (intento === intentosMaximos) {
+    console.log("Todos los intentos fallaron");
+    return null;
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="nota">
+            <strong>🎓 Objetivo:</strong> Esta función es lo que usarías en una aplicación real. Combina autenticación, reintentos y manejo robusto de errores.
+        </div>
+    </div>
+
+    <script src="33-practica-auth.js"></script>
+</body>
+</html>

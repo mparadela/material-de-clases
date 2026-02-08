@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DELETE Eliminar - UD8 Sesión 7</title>
+    <link rel="stylesheet" href="00-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🗑️ DELETE: Eliminar Recurso</h1>
+        
+        <div class="info">
+            <h2>¿Qué es DELETE?</h2>
+            <p><strong>DELETE</strong> elimina un recurso del servidor de forma permanente.</p>
+            <p>⚠️ <strong>Acción irreversible:</strong> Siempre pedir confirmación al usuario.</p>
+        </div>
+
+        <div class="caracteristicas">
+            <h2>Características de DELETE</h2>
+            
+            <div class="caract-grid">
+                <div class="caract-card">
+                    <div class="icono">🎯</div>
+                    <h3>Requiere ID</h3>
+                    <p>URL con ID específico</p>
+                    <code>/posts/1</code>
+                </div>
+                
+                <div class="caract-card">
+                    <div class="icono">📭</div>
+                    <h3>Sin body</h3>
+                    <p>No envía datos</p>
+                    <code>No body needed</code>
+                </div>
+                
+                <div class="caract-card">
+                    <div class="icono">✅</div>
+                    <h3>Status 204 o 200</h3>
+                    <p>No Content o OK</p>
+                    <code>204 / 200</code>
+                </div>
+                
+                <div class="caract-card">
+                    <div class="icono">⚠️</div>
+                    <h3>Irreversible</h3>
+                    <p>Pedir confirmación</p>
+                    <code>confirm()</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="patron-delete">
+            <h2>📋 Patrón DELETE Profesional</h2>
+            
+            <div class="pasos-delete">
+                <div class="paso">
+                    <span class="numero">1</span>
+                    <h4>Obtener recurso</h4>
+                    <p>Mostrar qué se va a eliminar</p>
+                </div>
+                
+                <div class="flecha">→</div>
+                
+                <div class="paso">
+                    <span class="numero">2</span>
+                    <h4>Pedir confirmación</h4>
+                    <p>confirm() con información</p>
+                </div>
+                
+                <div class="flecha">→</div>
+                
+                <div class="paso">
+                    <span class="numero">3</span>
+                    <h4>DELETE solo si confirma</h4>
+                    <p>Enviar petición DELETE</p>
+                </div>
+                
+                <div class="flecha">→</div>
+                
+                <div class="paso">
+                    <span class="numero">4</span>
+                    <h4>Actualizar UI</h4>
+                    <p>Quitar de la lista</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ejercicio">
+            <h2>🎯 Ejercicio 7: Eliminar post con confirmación</h2>
+            <p>Vamos a eliminar el post 1, pero SIEMPRE pidiendo confirmación mostrando el título.</p>
+            
+            <div class="instrucciones">
+                <p><strong>Endpoint:</strong> https://jsonplaceholder.typicode.com/posts/1</p>
+                <p><strong>Vamos a programar:</strong></p>
+                <ol>
+                    <li>Función que obtiene el post para mostrar su título</li>
+                    <li>Pedir confirmación con confirm()</li>
+                    <li>Si acepta → DELETE</li>
+                    <li>Si cancela → No hacer nada</li>
+                    <li>Verificar response.status (204 o 200)</li>
+                </ol>
+                <p><strong>Abre la consola (F12)</strong> para ver el proceso completo.</p>
+            </div>
+
+            <div class="codigo-ejemplo">
+                <h3>Estructura DELETE:</h3>
+                <pre><code>fetch(`/posts/${id}`, {
+    method: 'DELETE'
+})
+
+// No lleva headers ni body
+// Solo URL + method</code></pre>
+            </div>
+        </div>
+
+        <div class="respuestas-delete">
+            <h2>📊 Respuestas comunes de DELETE</h2>
+            
+            <div class="respuesta-card exito">
+                <h3>204 No Content</h3>
+                <p>✅ Eliminado correctamente</p>
+                <p class="detalle">El servidor no devuelve nada (no content)</p>
+            </div>
+            
+            <div class="respuesta-card exito">
+                <h3>200 OK</h3>
+                <p>✅ Eliminado correctamente</p>
+                <p class="detalle">El servidor devuelve confirmación con datos</p>
+            </div>
+            
+            <div class="respuesta-card error">
+                <h3>404 Not Found</h3>
+                <p>❌ Recurso no existe</p>
+                <p class="detalle">Ya estaba eliminado o ID incorrecto</p>
+            </div>
+            
+            <div class="respuesta-card error">
+                <h3>403 Forbidden</h3>
+                <p>❌ Sin permisos</p>
+                <p class="detalle">No tienes permiso para eliminar</p>
+            </div>
+        </div>
+
+        <div class="advertencia">
+            <h3>⚠️ IMPORTANTE: Confirmación siempre</h3>
+            <p>Nunca elimines sin pedir confirmación. Es mala UX y puede causar pérdida de datos accidental.</p>
+            <div class="mal-ejemplo">
+                <strong>❌ MAL:</strong>
+                <code>onClick="eliminar(id)"</code>
+            </div>
+            <div class="buen-ejemplo">
+                <strong>✅ BIEN:</strong>
+                <code>onClick="confirmarYEliminar(id)"</code>
+            </div>
+        </div>
+    </div>
+
+    <script src="27-delete-eliminar.js"></script>
+</body>
+</html>

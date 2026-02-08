@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respuesta POST - UD8 Sesión 6</title>
+    <link rel="stylesheet" href="00-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Analizar Respuesta del POST</h1>
+        
+        <div class="info">
+            <h2>Información de la Respuesta</h2>
+            <p>Cuando hacemos un POST, el servidor nos devuelve información útil que debemos analizar.</p>
+        </div>
+
+        <div class="respuesta-grid">
+            <div class="info-card">
+                <h3>Status Code</h3>
+                <div class="codigo-grande">201</div>
+                <p><strong>Created</strong></p>
+                <p class="descripcion">Indica que el recurso se creó correctamente</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Status Text</h3>
+                <div class="codigo-grande">OK</div>
+                <p><strong>Descripción textual</strong></p>
+                <p class="descripcion">Texto que acompaña al código numérico</p>
+            </div>
+
+            <div class="info-card">
+                <h3>response.ok</h3>
+                <div class="codigo-grande">true</div>
+                <p><strong>Booleano</strong></p>
+                <p class="descripcion">true si status 200-299, false en otro caso</p>
+            </div>
+        </div>
+
+        <div class="codigos-http">
+            <h2>📋 Códigos HTTP en POST</h2>
+            
+            <div class="codigo-grupo exito">
+                <h3>✅ Éxito (2xx)</h3>
+                <ul>
+                    <li><strong>200 OK</strong> - Operación exitosa</li>
+                    <li><strong>201 Created</strong> - Recurso creado (el más común en POST)</li>
+                    <li><strong>204 No Content</strong> - Éxito sin contenido en respuesta</li>
+                </ul>
+            </div>
+
+            <div class="codigo-grupo cliente">
+                <h3>⚠️ Error del Cliente (4xx)</h3>
+                <ul>
+                    <li><strong>400 Bad Request</strong> - Datos mal formados</li>
+                    <li><strong>401 Unauthorized</strong> - No autenticado</li>
+                    <li><strong>403 Forbidden</strong> - Sin permisos</li>
+                    <li><strong>404 Not Found</strong> - Endpoint no existe</li>
+                    <li><strong>422 Unprocessable Entity</strong> - Validación falló</li>
+                </ul>
+            </div>
+
+            <div class="codigo-grupo servidor">
+                <h3>❌ Error del Servidor (5xx)</h3>
+                <ul>
+                    <li><strong>500 Internal Server Error</strong> - Error interno del servidor</li>
+                    <li><strong>502 Bad Gateway</strong> - Gateway inválido</li>
+                    <li><strong>503 Service Unavailable</strong> - Servicio no disponible</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="ejercicio">
+            <h2>🎯 Ejercicio 4: Analizar respuesta completa</h2>
+            <p>Vamos a crear un post y analizar toda la información que nos devuelve el servidor.</p>
+            
+            <div class="instrucciones">
+                <p><strong>Vamos a mostrar:</strong></p>
+                <ul>
+                    <li>Status code y status text</li>
+                    <li>Headers de respuesta (Content-Type, Date)</li>
+                    <li>Body con los datos del post creado</li>
+                    <li>Verificación de response.ok</li>
+                </ul>
+                <p><strong>Abre la consola (F12)</strong> para ver todo el análisis.</p>
+            </div>
+        </div>
+
+        <div class="nota">
+            <strong>💡 Buena práctica:</strong> Siempre verifica <code>response.ok</code> antes de procesar los datos.
+        </div>
+    </div>
+
+    <script src="24-respuesta-post.js"></script>
+</body>
+</html>

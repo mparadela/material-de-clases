@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUT Actualizar - UD8 Sesión 7</title>
+    <link rel="stylesheet" href="00-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>✏️ PUT: Actualizar Recurso Completo</h1>
+        
+        <div class="info">
+            <h2>¿Qué es PUT?</h2>
+            <p><strong>PUT</strong> se usa para <strong>actualizar un recurso completo</strong> que ya existe en el servidor.</p>
+            <p>Tienes que enviar TODOS los campos del recurso, aunque no cambien todos.</p>
+        </div>
+
+        <div class="comparacion">
+            <div class="metodo">
+                <h3>POST</h3>
+                <div class="icono">➕</div>
+                <p><strong>Crear nuevo</strong></p>
+                <ul>
+                    <li>Crea un recurso</li>
+                    <li>No necesita ID</li>
+                    <li>URL: /posts</li>
+                </ul>
+            </div>
+
+            <div class="metodo">
+                <h3>PUT</h3>
+                <div class="icono">✏️</div>
+                <p><strong>Actualizar existente</strong></p>
+                <ul>
+                    <li>Actualiza recurso</li>
+                    <li>Necesita ID</li>
+                    <li>URL: /posts/1</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="patron">
+            <h2>🎯 Patrón PUT en 3 pasos</h2>
+            <div class="pasos-grid">
+                <div class="paso">
+                    <div class="numero">1</div>
+                    <h3>GET</h3>
+                    <p>Obtener recurso actual</p>
+                    <code>fetch('/posts/1')</code>
+                </div>
+                
+                <div class="paso">
+                    <div class="numero">2</div>
+                    <h3>Modificar</h3>
+                    <p>Cambiar los campos necesarios</p>
+                    <code>post.title = "Nuevo"</code>
+                </div>
+                
+                <div class="paso">
+                    <div class="numero">3</div>
+                    <h3>PUT</h3>
+                    <p>Enviar recurso completo</p>
+                    <code>method: 'PUT'</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="ejercicio">
+            <h2>🎯 Ejercicio 5: Actualizar un post</h2>
+            <p>Vamos a actualizar el post con ID 1. Primero lo obtenemos, luego modificamos el título y contenido, y finalmente lo enviamos con PUT.</p>
+            
+            <div class="instrucciones">
+                <p><strong>API:</strong> https://jsonplaceholder.typicode.com/posts/1</p>
+                <p><strong>Pasos a programar:</strong></p>
+                <ol>
+                    <li>GET para obtener post original</li>
+                    <li>Copiar todo con spread operator (...)</li>
+                    <li>Modificar solo title y body</li>
+                    <li>PUT para actualizar</li>
+                    <li>Verificar response.status === 200</li>
+                </ol>
+                <p><strong>Abre la consola (F12)</strong> para ver el antes y después.</p>
+            </div>
+
+            <div class="codigo-ejemplo">
+                <h3>Estructura PUT:</h3>
+                <pre><code>fetch(`/posts/${id}`, {
+    method: 'PUT',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(objetoCompleto)
+})</code></pre>
+            </div>
+        </div>
+
+        <div class="nota">
+            <strong>💡 Recuerda:</strong> La URL lleva el ID del recurso: <code>/posts/1</code>, <code>/users/5</code>, etc.
+        </div>
+    </div>
+
+    <script src="25-put-actualizar.js"></script>
+</body>
+</html>

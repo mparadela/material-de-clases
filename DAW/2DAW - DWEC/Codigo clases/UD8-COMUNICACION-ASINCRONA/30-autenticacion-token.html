@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autenticación con Token - UD8 Sesión 8</title>
+    <link rel="stylesheet" href="00-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Autenticación con Bearer Token</h1>
+        
+        <div class="info">
+            <h2>¿Qué es la Autenticación?</h2>
+            <p><strong>Autenticación</strong> = Demostrar quién eres ante el servidor.</p>
+            <p>Las APIs privadas requieren que te identifiques en cada petición.</p>
+        </div>
+
+        <div class="bearer-token">
+            <h2>🎫 Bearer Token</h2>
+            
+            <div class="token-visual">
+                <div class="token-header">
+                    <h3>Authorization Header</h3>
+                </div>
+                <div class="token-content">
+                    <span class="bearer">Bearer</span>
+                    <span class="token">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...</span>
+                </div>
+                <div class="token-footer">
+                    <p>⬆️ Este token identifica al usuario</p>
+                </div>
+            </div>
+
+            <div class="token-info-grid">
+                <div class="token-info-card">
+                    <div class="icono">🎟️</div>
+                    <h4>¿Qué es?</h4>
+                    <p>Una cadena de texto que prueba tu identidad</p>
+                </div>
+                
+                <div class="token-info-card">
+                    <div class="icono">🔑</div>
+                    <h4>¿De dónde sale?</h4>
+                    <p>El servidor te lo da cuando haces login</p>
+                </div>
+                
+                <div class="token-info-card">
+                    <div class="icono">📤</div>
+                    <h4>¿Cómo se usa?</h4>
+                    <p>Lo envías en el header Authorization</p>
+                </div>
+                
+                <div class="token-info-card">
+                    <div class="icono">⏰</div>
+                    <h4>¿Cuánto dura?</h4>
+                    <p>Tiene fecha de expiración (ej: 1 hora, 1 día)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flujo-auth">
+            <h2>🔄 Flujo Completo de Autenticación</h2>
+            
+            <div class="flujo-steps">
+                <div class="step">
+                    <div class="step-numero">1</div>
+                    <div class="step-content">
+                        <h4>Login</h4>
+                        <p>POST /login</p>
+                        <code>{ username, password }</code>
+                    </div>
+                </div>
+                
+                <div class="arrow">↓</div>
+                
+                <div class="step">
+                    <div class="step-numero">2</div>
+                    <div class="step-content">
+                        <h4>Servidor devuelve token</h4>
+                        <p>Response</p>
+                        <code>{ token: "abc123..." }</code>
+                    </div>
+                </div>
+                
+                <div class="arrow">↓</div>
+                
+                <div class="step">
+                    <div class="step-numero">3</div>
+                    <div class="step-content">
+                        <h4>Guardar token</h4>
+                        <p>localStorage</p>
+                        <code>localStorage.setItem('token', ...)</code>
+                    </div>
+                </div>
+                
+                <div class="arrow">↓</div>
+                
+                <div class="step">
+                    <div class="step-numero">4</div>
+                    <div class="step-content">
+                        <h4>Usar en peticiones</h4>
+                        <p>Header Authorization</p>
+                        <code>Bearer ${token}</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ejercicio">
+            <h2>🎯 Ejercicio 10: Flujo de autenticación</h2>
+            <p>Vamos a simular el flujo completo: login → guardar token → usar token en peticiones.</p>
+            
+            <div class="instrucciones">
+                <p><strong>Vamos a programar:</strong></p>
+                <ol>
+                    <li><strong>login():</strong> Simular POST a /login (devuelve token falso)</li>
+                    <li><strong>guardarToken():</strong> Guardar en localStorage</li>
+                    <li><strong>hacerPeticionAutenticada():</strong> GET con header Authorization</li>
+                    <li><strong>flujoCompleto():</strong> Ejecutar los 3 pasos en orden</li>
+                </ol>
+                <p><strong>Abre la consola (F12)</strong> y Application → Local Storage para ver el token guardado.</p>
+            </div>
+
+            <div class="codigo-ejemplo">
+                <h3>Formato del header Authorization:</h3>
+                <pre><code>headers: {
+    'Authorization': `Bearer ${token}`
+    //                ↑      ↑
+    //             palabra  espacio + token
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="codigos-auth">
+            <h2>📊 Códigos HTTP de Autenticación</h2>
+            
+            <div class="codigo-card success">
+                <h3>200 OK</h3>
+                <p>✅ Autenticación correcta, token válido</p>
+            </div>
+            
+            <div class="codigo-card error">
+                <h3>401 Unauthorized</h3>
+                <p>❌ Token inválido, expirado o no enviado</p>
+                <p class="accion">→ Hacer login de nuevo</p>
+            </div>
+            
+            <div class="codigo-card error">
+                <h3>403 Forbidden</h3>
+                <p>❌ Token válido pero sin permisos</p>
+                <p class="accion">→ Mostrar error al usuario</p>
+            </div>
+        </div>
+
+        <div class="nota">
+            <strong>⚠️ IMPORTANTE:</strong> El prefijo <code>Bearer</code> con espacio después es obligatorio: <code>"Bearer token123"</code>
+        </div>
+    </div>
+
+    <script src="30-autenticacion-token.js"></script>
+</body>
+</html>

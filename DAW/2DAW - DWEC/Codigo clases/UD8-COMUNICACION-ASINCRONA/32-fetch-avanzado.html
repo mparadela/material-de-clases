@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Avanzado - UD8 Sesión 8</title>
+    <link rel="stylesheet" href="00-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>⚡ Fetch Avanzado: Timeout y Reintentos</h1>
+        
+        <div class="info">
+            <h2>Problemas en el mundo real</h2>
+            <p>Las APIs no siempre responden rápido o de forma fiable:</p>
+            <ul>
+                <li>🐌 API lenta → Necesitas <strong>timeout</strong></li>
+                <li>💥 Error temporal → Necesitas <strong>reintentos</strong></li>
+                <li>📶 Conexión inestable → Necesitas <strong>estrategia de respaldo</strong></li>
+            </ul>
+        </div>
+
+        <div class="timeout-section">
+            <h2>⏰ Timeout: Límite de tiempo</h2>
+            
+            <div class="problema-solucion">
+                <div class="problema">
+                    <h3>❌ Problema</h3>
+                    <p>Fetch no tiene timeout nativo.</p>
+                    <p>Si la API tarda mucho, tu app se queda esperando indefinidamente.</p>
+                </div>
+                
+                <div class="solucion">
+                    <h3>✅ Solución</h3>
+                    <p>Usar <strong>AbortController</strong> para cancelar la petición después de X segundos.</p>
+                </div>
+            </div>
+
+            <div class="abort-controller-visual">
+                <h3>🎮 AbortController</h3>
+                <div class="steps-grid">
+                    <div class="step">
+                        <span class="num">1</span>
+                        <p>Crear controller</p>
+                        <code>new AbortController()</code>
+                    </div>
+                    <div class="step">
+                        <span class="num">2</span>
+                        <p>Obtener signal</p>
+                        <code>controller.signal</code>
+                    </div>
+                    <div class="step">
+                        <span class="num">3</span>
+                        <p>Pasar a fetch</p>
+                        <code>fetch(url, { signal })</code>
+                    </div>
+                    <div class="step">
+                        <span class="num">4</span>
+                        <p>Abortar si tarda</p>
+                        <code>controller.abort()</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="reintentos-section">
+            <h2>🔄 Reintentos: Intentar varias veces</h2>
+            
+            <div class="reintento-visual">
+                <h3>Estrategia de reintentos</h3>
+                <div class="reintento-flujo">
+                    <div class="intento">
+                        <div class="icono">🎯</div>
+                        <h4>Intento 1</h4>
+                        <p class="fallo">❌ Falla</p>
+                    </div>
+                    
+                    <div class="espera">
+                        <div class="icono">⏳</div>
+                        <p>Espera 1s</p>
+                    </div>
+                    
+                    <div class="intento">
+                        <div class="icono">🎯</div>
+                        <h4>Intento 2</h4>
+                        <p class="fallo">❌ Falla</p>
+                    </div>
+                    
+                    <div class="espera">
+                        <div class="icono">⏳</div>
+                        <p>Espera 2s</p>
+                    </div>
+                    
+                    <div class="intento">
+                        <div class="icono">🎯</div>
+                        <h4>Intento 3</h4>
+                        <p class="exito">✅ Éxito</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="backoff-info">
+                <h3>📈 Exponential Backoff</h3>
+                <p>Esperar más tiempo entre cada intento:</p>
+                <div class="backoff-ejemplos">
+                    <div class="backoff-ejemplo">
+                        <strong>Intento 1:</strong> 1 segundo
+                    </div>
+                    <div class="backoff-ejemplo">
+                        <strong>Intento 2:</strong> 2 segundos
+                    </div>
+                    <div class="backoff-ejemplo">
+                        <strong>Intento 3:</strong> 4 segundos
+                    </div>
+                    <div class="backoff-ejemplo">
+                        <strong>Intento 4:</strong> 8 segundos
+                    </div>
+                </div>
+                <p class="nota-backoff">💡 Esto evita saturar el servidor con peticiones rápidas.</p>
+            </div>
+        </div>
+
+        <div class="ejercicio">
+            <h2>🎯 Ejercicio 12: Fetch con timeout</h2>
+            <p>Vamos a implementar una función que cancela la petición si tarda más de 5 segundos.</p>
+            
+            <div class="instrucciones">
+                <p><strong>API:</strong> https://jsonplaceholder.typicode.com/posts/1</p>
+                <p><strong>Vamos a programar:</strong></p>
+                <ol>
+                    <li>Función <code>fetchConTimeout(url, timeout)</code></li>
+                    <li>Crear AbortController y signal</li>
+                    <li>setTimeout que llama a abort() después de X ms</li>
+                    <li>Pasar signal al fetch</li>
+                    <li>Capturar error AbortError si se cancela</li>
+                    <li>clearTimeout si llega a tiempo</li>
+                </ol>
+                <p><strong>Abre la consola (F12)</strong> para ver si se cancela o no.</p>
+            </div>
+        </div>
+
+        <div class="ejercicio">
+            <h2>🎯 Ejercicio 13: Fetch con reintentos</h2>
+            <p>Vamos a implementar una función que reintenta automáticamente si falla.</p>
+            
+            <div class="instrucciones">
+                <p><strong>API:</strong> https://jsonplaceholder.typicode.com/posts/1</p>
+                <p><strong>Vamos a programar:</strong></p>
+                <ol>
+                    <li>Función <code>fetchConReintentos(url, intentosMaximos)</code></li>
+                    <li>Bucle for que intenta hasta N veces</li>
+                    <li>Si falla, esperar un poco (backoff)</li>
+                    <li>Si es el último intento, lanzar error</li>
+                    <li>Si tiene éxito, devolver datos</li>
+                    <li>Logs de cada intento en consola</li>
+                </ol>
+                <p><strong>Abre la consola (F12)</strong> para ver los intentos.</p>
+            </div>
+        </div>
+
+        <div class="patrones">
+            <h2>🎯 Patrones profesionales</h2>
+            
+            <div class="patron-card">
+                <h4>⏰ Timeout</h4>
+                <p>Para APIs lentas o poco confiables</p>
+                <code>fetchConTimeout(url, 5000)</code>
+            </div>
+            
+            <div class="patron-card">
+                <h4>🔄 Reintentos</h4>
+                <p>Para errores temporales (500, red)</p>
+                <code>fetchConReintentos(url, 3)</code>
+            </div>
+            
+            <div class="patron-card">
+                <h4>💾 Caché</h4>
+                <p>Guardar respuesta en localStorage</p>
+                <code>localStorage.setItem(url, data)</code>
+            </div>
+            
+            <div class="patron-card">
+                <h4>🔄 Polling</h4>
+                <p>Actualizar cada X segundos</p>
+                <code>setInterval(fetch, 10000)</code>
+            </div>
+        </div>
+
+        <div class="nota">
+            <strong>💡 En producción:</strong> Usa librerías como <code>axios</code> o <code>ky</code> que ya tienen timeout y reintentos incluidos.
+        </div>
+    </div>
+
+    <script src="32-fetch-avanzado.js"></script>
+</body>
+</html>

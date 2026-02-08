@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORS Explicación - UD8 Sesión 8</title>
+    <link rel="stylesheet" href="00-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 CORS: Cross-Origin Resource Sharing</h1>
+        
+        <div class="info">
+            <h2>¿Qué es CORS?</h2>
+            <p><strong>CORS</strong> = Política de seguridad de los navegadores.</p>
+            <p>Controla qué dominios pueden acceder a qué APIs.</p>
+        </div>
+
+        <div class="origen-visual">
+            <h2>🎯 ¿Qué es un "Origen"?</h2>
+            
+            <div class="origen-ejemplo">
+                <h3>Anatomía de una URL:</h3>
+                <div class="url-parts">
+                    <div class="url-part protocolo">
+                        <span class="parte">https://</span>
+                        <span class="label">Protocolo</span>
+                    </div>
+                    <div class="url-part dominio">
+                        <span class="parte">miapp.com</span>
+                        <span class="label">Dominio</span>
+                    </div>
+                    <div class="url-part puerto">
+                        <span class="parte">:3000</span>
+                        <span class="label">Puerto</span>
+                    </div>
+                    <div class="url-part path">
+                        <span class="parte">/api/posts</span>
+                        <span class="label">Path</span>
+                    </div>
+                </div>
+                
+                <div class="formula">
+                    <p><strong>ORIGEN =</strong> Protocolo + Dominio + Puerto</p>
+                    <code>https://miapp.com:3000</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="cors-ejemplos">
+            <h2>✅ ❌ Ejemplos de CORS</h2>
+            
+            <div class="ejemplo-grid">
+                <div class="ejemplo-caso ok">
+                    <div class="icono">✅</div>
+                    <h4>MISMO ORIGEN - OK</h4>
+                    <div class="urls">
+                        <p>Tu web: <code>https://miapp.com/page1</code></p>
+                        <p>API: <code>https://miapp.com/api/posts</code></p>
+                    </div>
+                    <p class="resultado">✅ Sin problemas de CORS</p>
+                </div>
+                
+                <div class="ejemplo-caso error">
+                    <div class="icono">❌</div>
+                    <h4>DIFERENTE DOMINIO</h4>
+                    <div class="urls">
+                        <p>Tu web: <code>https://miapp.com</code></p>
+                        <p>API: <code>https://api.ejemplo.com</code></p>
+                    </div>
+                    <p class="resultado">❌ Error CORS (si no está permitido)</p>
+                </div>
+                
+                <div class="ejemplo-caso error">
+                    <div class="icono">❌</div>
+                    <h4>DIFERENTE PUERTO</h4>
+                    <div class="urls">
+                        <p>Tu web: <code>http://localhost:3000</code></p>
+                        <p>API: <code>http://localhost:8080</code></p>
+                    </div>
+                    <p class="resultado">❌ Error CORS (diferente puerto)</p>
+                </div>
+                
+                <div class="ejemplo-caso error">
+                    <div class="icono">❌</div>
+                    <h4>DIFERENTE PROTOCOLO</h4>
+                    <div class="urls">
+                        <p>Tu web: <code>http://miapp.com</code></p>
+                        <p>API: <code>https://miapp.com</code></p>
+                    </div>
+                    <p class="resultado">❌ Error CORS (http vs https)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="como-funciona">
+            <h2>🔄 ¿Cómo funciona CORS?</h2>
+            
+            <div class="flujo-cors">
+                <div class="paso-cors">
+                    <div class="numero">1</div>
+                    <div class="contenido">
+                        <h4>Tu JavaScript hace fetch</h4>
+                        <code>fetch('https://api.ejemplo.com/posts')</code>
+                    </div>
+                </div>
+                
+                <div class="flecha-cors">↓</div>
+                
+                <div class="paso-cors">
+                    <div class="numero">2</div>
+                    <div class="contenido">
+                        <h4>El navegador verifica el origen</h4>
+                        <p>"¿De dónde viene esta petición?"</p>
+                    </div>
+                </div>
+                
+                <div class="flecha-cors">↓</div>
+                
+                <div class="paso-cors">
+                    <div class="numero">3</div>
+                    <div class="contenido">
+                        <h4>Servidor responde con headers CORS</h4>
+                        <code>Access-Control-Allow-Origin: *</code>
+                    </div>
+                </div>
+                
+                <div class="flecha-cors">↓</div>
+                
+                <div class="paso-cors decision">
+                    <div class="numero">4</div>
+                    <div class="contenido">
+                        <h4>Navegador decide</h4>
+                        <div class="decision-opciones">
+                            <div class="opcion si">
+                                <p>✅ Origen permitido</p>
+                                <p>→ Te da los datos</p>
+                            </div>
+                            <div class="opcion no">
+                                <p>❌ Origen no permitido</p>
+                                <p>→ Error CORS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="headers-cors">
+            <h2>📋 Headers CORS importantes</h2>
+            
+            <div class="header-cors-item">
+                <h4>Access-Control-Allow-Origin</h4>
+                <code>Access-Control-Allow-Origin: *</code>
+                <p>Permite <strong>cualquier</strong> origen</p>
+            </div>
+            
+            <div class="header-cors-item">
+                <h4>Access-Control-Allow-Origin</h4>
+                <code>Access-Control-Allow-Origin: https://miapp.com</code>
+                <p>Permite <strong>solo ese</strong> dominio específico</p>
+            </div>
+            
+            <div class="header-cors-item">
+                <h4>Access-Control-Allow-Methods</h4>
+                <code>Access-Control-Allow-Methods: GET, POST, PUT</code>
+                <p>Métodos HTTP permitidos</p>
+            </div>
+            
+            <div class="header-cors-item">
+                <h4>Access-Control-Allow-Headers</h4>
+                <code>Access-Control-Allow-Headers: Content-Type, Authorization</code>
+                <p>Headers permitidos en las peticiones</p>
+            </div>
+        </div>
+
+        <div class="ejercicio">
+            <h2>🎯 Ejercicio 11: Verificar CORS</h2>
+            <p>Vamos a hacer una petición a JSONPlaceholder y analizar los headers CORS que envía.</p>
+            
+            <div class="instrucciones">
+                <p><strong>API:</strong> https://jsonplaceholder.typicode.com/posts/1</p>
+                <p><strong>Vamos a:</strong></p>
+                <ol>
+                    <li>Hacer petición GET a la API</li>
+                    <li>Analizar header Access-Control-Allow-Origin</li>
+                    <li>Ver otros headers CORS disponibles</li>
+                    <li>Explicar por qué funciona sin errores</li>
+                </ol>
+                <p><strong>Abre la consola (F12)</strong> y la pestaña <strong>Network</strong> para ver los headers CORS.</p>
+            </div>
+        </div>
+
+        <div class="soluciones">
+            <h2>🔧 Soluciones a errores CORS</h2>
+            
+            <div class="solucion correcta">
+                <h4>✅ SOLUCIÓN CORRECTA</h4>
+                <p><strong>El backend añade headers CORS</strong></p>
+                <p>El servidor debe configurar los headers correctamente</p>
+            </div>
+            
+            <div class="solucion temporal">
+                <h4>⚠️ SOLUCIÓN TEMPORAL (desarrollo)</h4>
+                <p><strong>Proxy en desarrollo</strong></p>
+                <p>Herramientas como Vite, Webpack tienen proxy que evita CORS en local</p>
+            </div>
+            
+            <div class="solucion mala">
+                <h4>❌ SOLUCIÓN INCORRECTA</h4>
+                <p><strong>Plugins de navegador</strong></p>
+                <p>Desactivan CORS pero SOLO en tu navegador. No funciona para otros usuarios.</p>
+            </div>
+        </div>
+
+        <div class="nota">
+            <strong>💡 Importante:</strong> CORS es una protección del NAVEGADOR. Las peticiones desde backend (Node.js, Python) no tienen este problema.
+        </div>
+    </div>
+
+    <script src="31-cors-explicacion.js"></script>
+</body>
+</html>
