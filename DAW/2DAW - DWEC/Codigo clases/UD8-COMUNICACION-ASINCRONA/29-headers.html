@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headers Básicos - UD8 Sesión 8</title>
+    <link rel="stylesheet" href="00-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Headers HTTP Básicos</h1>
+        
+        <div class="info">
+            <h2>¿Qué son los Headers?</h2>
+            <p>Los <strong>headers</strong> son metadatos que viajan con las peticiones y respuestas HTTP.</p>
+            <p>Permiten enviar información adicional al servidor y recibir información de vuelta.</p>
+        </div>
+
+        <div class="comparacion">
+            <div class="columna">
+                <h3>📤 Headers de Petición</h3>
+                <ul>
+                    <li><strong>Content-Type:</strong> Tipo de datos que envío</li>
+                    <li><strong>Accept:</strong> Tipo de datos que espero</li>
+                    <li><strong>Authorization:</strong> Token de autenticación</li>
+                    <li><strong>User-Agent:</strong> Navegador/App que hace la petición</li>
+                </ul>
+            </div>
+            
+            <div class="columna">
+                <h3>📥 Headers de Respuesta</h3>
+                <ul>
+                    <li><strong>Content-Type:</strong> Tipo de datos enviados</li>
+                    <li><strong>Date:</strong> Fecha y hora del servidor</li>
+                    <li><strong>Server:</strong> Software del servidor</li>
+                    <li><strong>Cache-Control:</strong> Política de caché</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="ejercicio">
+            <h2>🎯 Ejercicio: Enviar headers personalizados</h2>
+            <p>Vamos a hacer una petición GET incluyendo varios headers y luego ver los headers de respuesta.</p>
+            
+            <div class="instrucciones">
+                <p><strong>Abre la consola (F12)</strong></p>
+                <p><strong>API:</strong> https://jsonplaceholder.typicode.com/posts/1</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="29-headers.js"></script>
+</body>
+</html>

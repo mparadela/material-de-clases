@@ -16,73 +16,49 @@
             <p>⚠️ <strong>Acción irreversible:</strong> Siempre pedir confirmación al usuario.</p>
         </div>
 
-        <div class="caracteristicas">
+        <div class="info">
             <h2>Características de DELETE</h2>
-            
-            <div class="caract-grid">
-                <div class="caract-card">
+            <div class="comparacion">
+                <div class="columna">
                     <div class="icono">🎯</div>
                     <h3>Requiere ID</h3>
                     <p>URL con ID específico</p>
-                    <code>/posts/1</code>
+                    <p><code>/posts/1</code></p>
                 </div>
                 
-                <div class="caract-card">
+                <div class="columna">
                     <div class="icono">📭</div>
                     <h3>Sin body</h3>
                     <p>No envía datos</p>
-                    <code>No body needed</code>
+                    <p><code>No body needed</code></p>
                 </div>
                 
-                <div class="caract-card">
+                <div class="columna">
                     <div class="icono">✅</div>
                     <h3>Status 204 o 200</h3>
                     <p>No Content o OK</p>
-                    <code>204 / 200</code>
+                    <p><code>204 / 200</code></p>
                 </div>
                 
-                <div class="caract-card">
+                <div class="columna">
                     <div class="icono">⚠️</div>
                     <h3>Irreversible</h3>
                     <p>Pedir confirmación</p>
-                    <code>confirm()</code>
+                    <p><code>confirm()</code></p>
                 </div>
             </div>
         </div>
 
-        <div class="patron-delete">
+        <div class="info">
             <h2>📋 Patrón DELETE Profesional</h2>
             
-            <div class="pasos-delete">
-                <div class="paso">
-                    <span class="numero">1</span>
-                    <h4>Obtener recurso</h4>
-                    <p>Mostrar qué se va a eliminar</p>
-                </div>
-                
-                <div class="flecha">→</div>
-                
-                <div class="paso">
-                    <span class="numero">2</span>
-                    <h4>Pedir confirmación</h4>
-                    <p>confirm() con información</p>
-                </div>
-                
-                <div class="flecha">→</div>
-                
-                <div class="paso">
-                    <span class="numero">3</span>
-                    <h4>DELETE solo si confirma</h4>
-                    <p>Enviar petición DELETE</p>
-                </div>
-                
-                <div class="flecha">→</div>
-                
-                <div class="paso">
-                    <span class="numero">4</span>
-                    <h4>Actualizar UI</h4>
-                    <p>Quitar de la lista</p>
-                </div>
+            <div class="pasos">
+                <ol>
+                    <li><strong>Obtener recurso:</strong> Mostrar qué se va a eliminar</li>
+                    <li><strong>Pedir confirmación:</strong> confirm() con información del recurso</li>
+                    <li><strong>DELETE solo si confirma:</strong> Enviar petición DELETE</li>
+                    <li><strong>Actualizar UI:</strong> Quitar de la lista en pantalla</li>
+                </ol>
             </div>
         </div>
 
@@ -114,44 +90,52 @@
             </div>
         </div>
 
-        <div class="respuestas-delete">
+        <div class="info">
             <h2>📊 Respuestas comunes de DELETE</h2>
             
-            <div class="respuesta-card exito">
-                <h3>204 No Content</h3>
-                <p>✅ Eliminado correctamente</p>
-                <p class="detalle">El servidor no devuelve nada (no content)</p>
-            </div>
-            
-            <div class="respuesta-card exito">
-                <h3>200 OK</h3>
-                <p>✅ Eliminado correctamente</p>
-                <p class="detalle">El servidor devuelve confirmación con datos</p>
-            </div>
-            
-            <div class="respuesta-card error">
-                <h3>404 Not Found</h3>
-                <p>❌ Recurso no existe</p>
-                <p class="detalle">Ya estaba eliminado o ID incorrecto</p>
-            </div>
-            
-            <div class="respuesta-card error">
-                <h3>403 Forbidden</h3>
-                <p>❌ Sin permisos</p>
-                <p class="detalle">No tienes permiso para eliminar</p>
-            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Significado</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>204</code></td>
+                        <td>No Content</td>
+                        <td>✅ Eliminado (sin respuesta)</td>
+                    </tr>
+                    <tr>
+                        <td><code>200</code></td>
+                        <td>OK</td>
+                        <td>✅ Eliminado (con confirmación)</td>
+                    </tr>
+                    <tr>
+                        <td><code>404</code></td>
+                        <td>Not Found</td>
+                        <td>❌ Ya estaba eliminado o ID incorrecto</td>
+                    </tr>
+                    <tr>
+                        <td><code>403</code></td>
+                        <td>Forbidden</td>
+                        <td>❌ Sin permisos para eliminar</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <div class="advertencia">
             <h3>⚠️ IMPORTANTE: Confirmación siempre</h3>
             <p>Nunca elimines sin pedir confirmación. Es mala UX y puede causar pérdida de datos accidental.</p>
-            <div class="mal-ejemplo">
+            <div style="margin-top: 15px; padding: 15px; background: #f8d7da; border-radius: 8px; border-left: 4px solid #dc3545;">
                 <strong>❌ MAL:</strong>
-                <code>onClick="eliminar(id)"</code>
+                <code style="background: #263238; color: #aed581; padding: 5px 10px; border-radius: 4px; margin-left: 10px;">onClick="eliminar(id)"</code>
             </div>
-            <div class="buen-ejemplo">
+            <div style="margin-top: 10px; padding: 15px; background: #d4edda; border-radius: 8px; border-left: 4px solid #28a745;">
                 <strong>✅ BIEN:</strong>
-                <code>onClick="confirmarYEliminar(id)"</code>
+                <code style="background: #263238; color: #aed581; padding: 5px 10px; border-radius: 4px; margin-left: 10px;">onClick="confirmarYEliminar(id)"</code>
             </div>
         </div>
     </div>

@@ -3,149 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel CRUD Completo - UD8 Sesión 7</title>
+    <title>Panel CRUD Completo</title>
     <link rel="stylesheet" href="00-styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>📋 Panel CRUD Completo</h1>
-        
-        <div class="info">
-            <h2>CRUD = Create, Read, Update, Delete</h2>
-            <p>Las 4 operaciones básicas de cualquier aplicación web.</p>
-        </div>
-
-        <div class="crud-grid">
-            <div class="crud-card create">
-                <div class="icono">➕</div>
-                <h3>CREATE</h3>
-                <p><strong>POST</strong></p>
-                <p class="descripcion">Crear nuevo recurso</p>
-            </div>
-            
-            <div class="crud-card read">
-                <div class="icono">📖</div>
-                <h3>READ</h3>
-                <p><strong>GET</strong></p>
-                <p class="descripcion">Leer/obtener recursos</p>
-            </div>
-            
-            <div class="crud-card update">
-                <div class="icono">✏️</div>
-                <h3>UPDATE</h3>
-                <p><strong>PUT / PATCH</strong></p>
-                <p class="descripcion">Actualizar recurso</p>
-            </div>
-            
-            <div class="crud-card delete">
-                <div class="icono">🗑️</div>
-                <h3>DELETE</h3>
-                <p><strong>DELETE</strong></p>
-                <p class="descripcion">Eliminar recurso</p>
-            </div>
-        </div>
-
-        <div class="panel">
-            <h2>🎮 Panel de Control</h2>
-            <p>Prueba cada operación CRUD con botones:</p>
-            
-            <div class="botones">
-                <button id="btn-listar" class="btn btn-read">
-                    📖 Listar Posts (GET)
-                </button>
-                
-                <button id="btn-crear" class="btn btn-create">
-                    ➕ Crear Post (POST)
-                </button>
-                
-                <button id="btn-actualizar" class="btn btn-update">
-                    ✏️ Actualizar Post (PUT)
-                </button>
-                
-                <button id="btn-eliminar" class="btn btn-delete">
-                    🗑️ Eliminar Post (DELETE)
-                </button>
-            </div>
-        </div>
-
-        <div class="resultado-container">
-            <h2>📊 Resultado</h2>
-            <div id="resultado" class="resultado">
-                <p class="placeholder">Haz clic en un botón para ver el resultado aquí</p>
-            </div>
-        </div>
-
-        <div class="ejercicio">
-            <h2>🎯 Ejercicio 8: Panel CRUD interactivo</h2>
-            <p>Vamos a programar los 4 botones para hacer las operaciones CRUD sobre posts.</p>
-            
-            <div class="instrucciones">
-                <p><strong>API:</strong> https://jsonplaceholder.typicode.com/posts</p>
-                <p><strong>Funcionalidades a programar:</strong></p>
-                <ul>
-                    <li><strong>Listar:</strong> GET primeros 5 posts y mostrar sus títulos</li>
-                    <li><strong>Crear:</strong> POST un post nuevo con título y contenido fijos</li>
-                    <li><strong>Actualizar:</strong> PUT para actualizar el post 1</li>
-                    <li><strong>Eliminar:</strong> DELETE el post 1</li>
-                </ul>
-                <p>Cada botón debe mostrar el resultado en la sección inferior con formato bonito.</p>
-                <p><strong>Abre la consola (F12)</strong> para ver los logs de cada operación.</p>
-            </div>
-        </div>
-
-        <div class="resumen">
-            <h2>📝 Resumen de métodos HTTP</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Método</th>
-                        <th>Acción</th>
-                        <th>URL</th>
-                        <th>Body</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="metodo-get">GET</td>
-                        <td>Leer</td>
-                        <td>/posts</td>
-                        <td>❌ No</td>
-                        <td>200</td>
-                    </tr>
-                    <tr>
-                        <td class="metodo-post">POST</td>
-                        <td>Crear</td>
-                        <td>/posts</td>
-                        <td>✅ Sí</td>
-                        <td>201</td>
-                    </tr>
-                    <tr>
-                        <td class="metodo-put">PUT</td>
-                        <td>Actualizar todo</td>
-                        <td>/posts/1</td>
-                        <td>✅ Sí</td>
-                        <td>200</td>
-                    </tr>
-                    <tr>
-                        <td class="metodo-patch">PATCH</td>
-                        <td>Actualizar parcial</td>
-                        <td>/posts/1</td>
-                        <td>✅ Sí</td>
-                        <td>200</td>
-                    </tr>
-                    <tr>
-                        <td class="metodo-delete">DELETE</td>
-                        <td>Eliminar</td>
-                        <td>/posts/1</td>
-                        <td>❌ No</td>
-                        <td>204</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <h1>📋 Panel CRUD - Posts</h1>
+    
+    <div class="acciones">
+        <button id="btn-listar">📖 Listar Posts (GET)</button>
+        <button id="btn-crear">➕ Crear Post (POST)</button>
+        <button id="btn-actualizar">✏️ Actualizar Post (PUT)</button>
+        <button id="btn-eliminar">🗑️ Eliminar Post (DELETE)</button>
     </div>
-
+    
+    <div id="resultado"></div>
+    
     <script src="28-crud-completo.js"></script>
 </body>
 </html>
+

@@ -1041,3 +1041,168 @@ textarea {
         padding: 20px;
     }
 }
+
+/* ============================================
+   ESTILOS ESPECÍFICOS - PATCH VISUAL
+   ============================================ */
+
+.comparacion-visual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.metodo-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+}
+
+.metodo-card h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.metodo-card.put h3 {
+    color: #ff6b6b;
+}
+
+.metodo-card.patch h3 {
+    color: #51cf66;
+}
+
+.objeto-visual {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    border: 2px solid #dee2e6;
+    margin-bottom: 15px;
+}
+
+.campo {
+    padding: 10px;
+    margin: 5px 0;
+    background: var(--white);
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    color: #666;
+}
+
+.campo.modificado {
+    background: #d3f9d8;
+    border: 2px solid #51cf66;
+    color: #2b8a3e;
+    font-weight: 600;
+}
+
+.explicacion {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    font-size: 0.95em;
+    margin-top: 10px;
+}
+
+.casos-uso {
+    background: var(--white);
+    padding: 25px;
+    border-radius: var(--border-radius-lg);
+    margin-bottom: 25px;
+    box-shadow: var(--shadow-md);
+}
+
+.casos-uso h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.caso {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: var(--border-radius);
+}
+
+.caso h3 {
+    color: #495057;
+    margin-bottom: 15px;
+}
+
+.caso ul {
+    list-style: none;
+    margin-left: 10px;
+}
+
+.caso li {
+    padding: 8px 0;
+    color: #555;
+}
+
+.caso li:before {
+    content: "→ ";
+    color: var(--primary);
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.ejemplos-practicos {
+    background: var(--white);
+    padding: 25px;
+    border-radius: var(--border-radius-lg);
+    margin-bottom: 25px;
+    box-shadow: var(--shadow-md);
+}
+
+.ejemplos-practicos h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.ejemplos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.ejemplo {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.ejemplo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.ejemplo .icono {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.ejemplo h4 {
+    color: #495057;
+    margin-bottom: 10px;
+}
+
+.ejemplo code {
+    background: var(--bg-code);
+    color: #aed581;
+    padding: 8px 12px;
+    border-radius: 5px;
+    display: inline-block;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85em;
+}
+
+/* Responsive para comparación visual */
+@media (max-width: 768px) {
+    .comparacion-visual {
+        grid-template-columns: 1fr;
+    }
+}
