@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía PokeAPI - UD8 Sesión 9</title>
+    <link rel="stylesheet" href="00-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📖 Guía: Documentación de PokeAPI</h1>
+        
+        <div class="info">
+            <h2>¿Qué es PokeAPI?</h2>
+            <p><strong>PokeAPI</strong> es una API REST pública y gratuita con información completa sobre Pokémon.</p>
+            <p>🌐 <strong>Web:</strong> <a href="https://pokeapi.co" target="_blank">https://pokeapi.co</a></p>
+            <p>📚 <strong>Documentación:</strong> <a href="https://pokeapi.co/docs/v2" target="_blank">https://pokeapi.co/docs/v2</a></p>
+        </div>
+
+        <div class="info">
+            <h2>🎯 Paso 1: Entender la URL base</h2>
+            <p>Todas las peticiones empiezan con:</p>
+            <div class="codigo-ejemplo">
+                <pre><code>https://pokeapi.co/api/v2/</code></pre>
+            </div>
+            <p>A esta URL base le añades el <strong>endpoint</strong> que quieras consultar.</p>
+        </div>
+
+        <div class="info">
+            <h2>📋 Paso 2: Endpoints principales</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Endpoint</th>
+                        <th>¿Qué devuelve?</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/pokemon</code></td>
+                        <td>Lista de todos los pokémon (paginada)</td>
+                        <td><a href="https://pokeapi.co/api/v2/pokemon" target="_blank">Ver</a></td>
+                    </tr>
+                    <tr>
+                        <td><code>/pokemon/{id}</code></td>
+                        <td>Datos de un pokémon específico por ID</td>
+                        <td><a href="https://pokeapi.co/api/v2/pokemon/25" target="_blank">Ver (Pikachu)</a></td>
+                    </tr>
+                    <tr>
+                        <td><code>/pokemon/{nombre}</code></td>
+                        <td>Datos de un pokémon específico por nombre</td>
+                        <td><a href="https://pokeapi.co/api/v2/pokemon/pikachu" target="_blank">Ver</a></td>
+                    </tr>
+                    <tr>
+                        <td><code>/type</code></td>
+                        <td>Lista de tipos (fire, water, etc)</td>
+                        <td><a href="https://pokeapi.co/api/v2/type" target="_blank">Ver</a></td>
+                    </tr>
+                    <tr>
+                        <td><code>/ability</code></td>
+                        <td>Lista de habilidades</td>
+                        <td><a href="https://pokeapi.co/api/v2/ability" target="_blank">Ver</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info">
+            <h2>🔍 Paso 3: Probar un endpoint en el navegador</h2>
+            <p><strong>Ejemplo:</strong> Vamos a obtener datos de Pikachu</p>
+            
+            <div class="pasos">
+                <ol>
+                    <li>Abre una pestaña nueva en el navegador</li>
+                    <li>Escribe en la barra de direcciones: <code>https://pokeapi.co/api/v2/pokemon/pikachu</code></li>
+                    <li>Pulsa Enter</li>
+                    <li>Verás un JSON enorme con todos los datos de Pikachu</li>
+                </ol>
+            </div>
+
+            <p style="margin-top: 15px;">💡 <strong>Truco:</strong> Instala la extensión <strong>JSON Viewer</strong> para ver el JSON más bonito y con colores.</p>
+        </div>
+
+        <div class="info">
+            <h2>📊 Paso 4: Entender la estructura del JSON</h2>
+            <p>Cuando pides un pokémon, recibes un objeto JSON con esta estructura:</p>
+            
+            <div class="codigo-ejemplo">
+                <pre><code>{
+  "id": 25,
+  "name": "pikachu",
+  "height": 4,
+  "weight": 60,
+  "sprites": {
+    "front_default": "https://...",
+    "back_default": "https://...",
+    ...
+  },
+  "types": [
+    {
+      "slot": 1,
+      "type": {
+        "name": "electric",
+        "url": "https://..."
+      }
+    }
+  ],
+  "stats": [
+    {
+      "base_stat": 35,
+      "stat": {
+        "name": "hp"
+      }
+    },
+    ...
+  ],
+  "abilities": [...],
+  "moves": [...]
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="info">
+            <h2>🎯 Paso 5: Extraer los datos que necesitas</h2>
+            <p>No necesitas usar TODO el JSON. Extrae solo lo que necesites:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Campo</th>
+                        <th>Cómo acceder</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nombre</td>
+                        <td><code>pokemon.name</code></td>
+                        <td>"pikachu"</td>
+                    </tr>
+                    <tr>
+                        <td>ID</td>
+                        <td><code>pokemon.id</code></td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>Imagen frontal</td>
+                        <td><code>pokemon.sprites.front_default</code></td>
+                        <td>"https://..."</td>
+                    </tr>
+                    <tr>
+                        <td>Tipo(s)</td>
+                        <td><code>pokemon.types[0].type.name</code></td>
+                        <td>"electric"</td>
+                    </tr>
+                    <tr>
+                        <td>HP (vida)</td>
+                        <td><code>pokemon.stats[0].base_stat</code></td>
+                        <td>35</td>
+                    </tr>
+                    <tr>
+                        <td>Ataque</td>
+                        <td><code>pokemon.stats[1].base_stat</code></td>
+                        <td>55</td>
+                    </tr>
+                    <tr>
+                        <td>Defensa</td>
+                        <td><code>pokemon.stats[2].base_stat</code></td>
+                        <td>40</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="ejercicio">
+            <h2>🎯 Ejercicio práctico: Código en JavaScript</h2>
+            <p>Así es como obtendrías y mostrarías los datos en JavaScript:</p>
+            
+            <div class="codigo-ejemplo">
+                <h3>Ejemplo completo:</h3>
+                <pre><code>// Función para buscar un pokémon
+async function buscarPokemon(nombre) {
+    // URL del endpoint
+    const url = `https://pokeapi.co/api/v2/pokemon/${nombre}`;
+    
+    try {
+        // Hacer petición
+        const response = await fetch(url);
+        
+        // Verificar que existe
+        if (!response.ok) {
+            console.log("Pokemon no encontrado");
+            return;
+        }
+        
+        // Convertir a JSON
+        const pokemon = await response.json();
+        
+        // Extraer datos que necesito
+        const nombre = pokemon.name;
+        const id = pokemon.id;
+        const imagen = pokemon.sprites.front_default;
+        const tipo = pokemon.types[0].type.name;
+        const hp = pokemon.stats[0].base_stat;
+        const ataque = pokemon.stats[1].base_stat;
+        
+        // Mostrar en consola
+        console.log(`${nombre.toUpperCase()} (#${id})`);
+        console.log(`Tipo: ${tipo}`);
+        console.log(`HP: ${hp} | Ataque: ${ataque}`);
+        console.log(`Imagen: ${imagen}`);
+        
+    } catch (error) {
+        console.log("Error:", error.message);
+    }
+}
+
+// Probar con Pikachu
+buscarPokemon("pikachu");</code></pre>
+            </div>
+
+            <div class="instrucciones">
+                <p><strong>Prueba tú:</strong></p>
+                <ol>
+                    <li>Copia este código en tu consola del navegador (F12)</li>
+                    <li>Ejecuta: <code>buscarPokemon("pikachu")</code></li>
+                    <li>Prueba con otros: <code>buscarPokemon("charizard")</code></li>
+                    <li>Prueba con IDs: <code>buscarPokemon("1")</code> → Bulbasaur</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="info">
+            <h2>💡 Consejos útiles</h2>
+            
+            <div class="comparacion">
+                <div class="columna">
+                    <h3>✅ Buenas prácticas</h3>
+                    <ul>
+                        <li>Siempre usa <code>toLowerCase()</code> para nombres</li>
+                        <li>Verifica <code>response.ok</code> antes de parsear</li>
+                        <li>Usa try/catch para errores de red</li>
+                        <li>Los IDs van del 1 al 1025</li>
+                        <li>La API es lenta a veces, ten paciencia</li>
+                    </ul>
+                </div>
+                
+                <div class="columna">
+                    <h3>❌ Errores comunes</h3>
+                    <ul>
+                        <li>Escribir mal el nombre (mayúsculas)</li>
+                        <li>No verificar si el pokémon existe</li>
+                        <li>Olvidar <code>await</code> en fetch</li>
+                        <li>No manejar el error 404</li>
+                        <li>Acceder a arrays sin verificar longitud</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="info">
+            <h2>🔗 Recursos útiles</h2>
+            <ul>
+                <li>📚 <strong>Documentación oficial:</strong> <a href="https://pokeapi.co/docs/v2" target="_blank">https://pokeapi.co/docs/v2</a></li>
+                <li>🎮 <strong>Probar endpoints:</strong> <a href="https://pokeapi.co/api/v2/pokemon/ditto" target="_blank">Ver ejemplo (Ditto)</a></li>
+                <li>📖 <strong>Lista de pokémon:</strong> <a href="https://pokeapi.co/api/v2/pokemon?limit=151" target="_blank">Primera generación</a></li>
+                <li>🎨 <strong>Sprites (imágenes):</strong> Están en <code>pokemon.sprites</code></li>
+            </ul>
+        </div>
+
+        <div class="nota">
+            <strong>🎓 Objetivo:</strong> Esta guía te enseña a leer documentación de APIs. El proceso es el mismo para CUALQUIER API: entender la URL base, buscar endpoints, probar en navegador, analizar JSON, extraer datos.
+        </div>
+    </div>
+</body>
+</html>

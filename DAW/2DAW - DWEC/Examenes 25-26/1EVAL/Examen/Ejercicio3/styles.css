@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+p {
+    text-align: center;
+    color: #666;
+}
+
+#listaTareas {
+    list-style: none;
+    padding: 0;
+}
+
+#listaTareas li {
+    background-color: #f0f0f0;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: move;
+    border-left: 4px solid #4CAF50;
+}
+
+/* Estilo cuando se está arrastrando */
+#listaTareas li.arrastrando {
+    opacity: 0.5;
+    background-color: #e0e0e0;
+}
+
+/* Estilo cuando se pasa por encima */
+#listaTareas li.sobre {
+    border-top: 3px solid #2196F3;
+}

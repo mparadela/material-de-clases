@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Material de Consulta - Examen 2ª Evaluación DWEC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            font-size: 10pt;
+            line-height: 1.3;
+            margin: 1cm;
+            background: white;
+            color: black;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 2px solid black;
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .header h1 {
+            font-size: 14pt;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+        
+        .header p {
+            font-size: 9pt;
+            margin-bottom: 2px;
+        }
+        
+        .importante {
+            background-color: #f0f0f0;
+            border: 1px solid black;
+            padding: 8px;
+            margin: 10px 0;
+            font-size: 9pt;
+            font-weight: bold;
+        }
+        
+        .estrategia {
+            background-color: #fffacd;
+            border: 2px solid #ffa500;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 9pt;
+        }
+        
+        .estrategia h3 {
+            font-size: 10pt;
+            margin-bottom: 5px;
+            color: #ff8c00;
+        }
+        
+        .checklist {
+            background-color: #e6ffe6;
+            border: 2px solid #4CAF50;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 9pt;
+        }
+        
+        .checklist h3 {
+            font-size: 10pt;
+            margin-bottom: 5px;
+            color: #2e7d32;
+        }
+        
+        .seccion {
+            margin-bottom: 15px;
+            page-break-inside: avoid;
+        }
+        
+        .seccion h2 {
+            font-size: 11pt;
+            font-weight: bold;
+            background-color: #e0e0e0;
+            padding: 4px 8px;
+            margin-bottom: 6px;
+            border-left: 4px solid black;
+        }
+        
+        .metodo {
+            margin-bottom: 8px;
+            margin-left: 10px;
+        }
+        
+        .metodo-nombre {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: 9.5pt;
+        }
+        
+        .metodo-desc {
+            margin-left: 15px;
+            margin-top: 2px;
+        }
+        
+        .metodo-desc li {
+            list-style-type: disc;
+            margin-left: 15px;
+            margin-bottom: 1px;
+        }
+        
+        .subseccion {
+            font-weight: bold;
+            margin-top: 8px;
+            margin-bottom: 3px;
+            text-decoration: underline;
+        }
+        
+        .codigo {
+            font-family: 'Courier New', monospace;
+            font-size: 9pt;
+        }
+        
+        .lista-compacta {
+            margin-left: 20px;
+            margin-bottom: 5px;
+            font-size: 9pt;
+        }
+        
+        .lista-compacta li {
+            margin-bottom: 2px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 15px;
+            padding-top: 8px;
+            border-top: 2px solid black;
+            font-weight: bold;
+        }
+        
+        @media print {
+            body {
+                margin: 0.5cm;
+                font-size: 9pt;
+            }
+            
+            .seccion {
+                page-break-inside: avoid;
+            }
+            
+            @page {
+                margin: 1cm;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>MATERIAL DE CONSULTA - EXAMEN 2ª EVALUACIÓN DWEC</h1>
+    <p>Desarrollo Web en Entorno Cliente | 26 de febrero de 2026</p>
+</div>
+
+<div class="importante">
+    IMPORTANTE: Este material contiene ÚNICAMENTE referencia de sintaxis específica que NO es necesario memorizar (RegEx complejas, status codes, headers específicos, etc.). La sintaxis básica de POO, formularios, async/await y fetch DEBE conocerse de memoria.
+</div>
+
+<!-- ========================================
+     ESTRATEGIA
+     ======================================== -->
+
+<div class="estrategia">
+    <h3>⏱️ GESTIÓN DEL TIEMPO</h3>
+    <p style="margin-bottom: 5px;"><strong>Tiempo oficial del examen:</strong> 3 sesiones (150 minutos)</p>
+    <!--<p style="margin-bottom: 5px;"><strong>Tiempo total disponible:</strong> 5 sesiones (250 minutos) - por cortesía de otro profesor + recreo</p> -->
+    <p style="margin-top: 5px;"><strong>⚠️ Objetivo: terminar en el tiempo oficial.</strong></p>
+</div>
+
+<div class="checklist">
+    <h3>✅ CHECKLIST ANTES DE ENTREGAR</h3>
+    <ul class="lista-compacta">
+        <li>☐ Todos los requisitos del enunciado implementados</li>
+        <li>☐ NO hay errores en la consola (F12)</li>
+        <li>☐ He probado todas las funcionalidades</li>
+        <li>☐ Código comentado en las partes principales</li>
+        <li>☐ Si usa fetch: las peticiones funcionan y se muestran datos</li>
+        <li>☐ Si usa validación: probé introducir datos incorrectos</li>
+    </ul>
+</div>
+
+<!-- ========================================
+     SECCIÓN 1: EXPRESIONES REGULARES
+     ======================================== -->
+
+<div class="seccion">
+    <h2>1. EXPRESIONES REGULARES (PATRONES ESPECÍFICOS)</h2>
+    
+    <div class="subseccion">Patrones completos para copiar:</div>
+    <div class="metodo">
+        <strong>Email básico:</strong> <span class="codigo">/^[^\s@]+@[^\s@]+\.[^\s@]+$/</span><br>
+        <strong>Teléfono (9 dígitos):</strong> <span class="codigo">/^\d{9}$/</span><br>
+        <strong>DNI (8 dígitos + letra):</strong> <span class="codigo">/^\d{8}[A-Z]$/</span><br>
+        <strong>Código postal:</strong> <span class="codigo">/^\d{5}$/</span><br>
+        <strong>Contraseña (min 8, 1 may, 1 min, 1 num):</strong> <span class="codigo">/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/</span><br>
+        <strong>Solo letras:</strong> <span class="codigo">/^[a-zA-Z]+$/</span><br>
+        <strong>Solo números:</strong> <span class="codigo">/^\d+$/</span><br>
+        <strong>Fecha (DD/MM/YYYY):</strong> <span class="codigo">/^\d{2}\/\d{2}\/\d{4}$/</span><br>
+        <strong>Letras y espacios:</strong> <span class="codigo">/^[a-zA-Z\s]+$/</span>
+    </div>
+    
+    <div class="subseccion">Símbolos RegEx de referencia:</div>
+    <div class="metodo">
+        <span class="codigo">^</span> → Inicio | <span class="codigo">$</span> → Final | <span class="codigo">\d</span> → Dígito (0-9) | <span class="codigo">\s</span> → Espacio | <span class="codigo">\w</span> → Letra/dígito/_<br>
+        <span class="codigo">[A-Z]</span> → Mayúscula | <span class="codigo">[a-z]</span> → Minúscula | <span class="codigo">[0-9]</span> → Dígito<br>
+        <span class="codigo">{n}</span> → Exactamente n | <span class="codigo">{n,}</span> → Mínimo n | <span class="codigo">{n,m}</span> → Entre n y m<br>
+        <span class="codigo">+</span> → 1 o más | <span class="codigo">*</span> → 0 o más | <span class="codigo">?</span> → 0 o 1<br>
+        <span class="codigo">(?=.*[A-Z])</span> → Lookahead: debe contener al menos una mayúscula<br>
+        <span class="codigo">[^abc]</span> → Cualquier carácter EXCEPTO a, b, c
+    </div>
+</div>
+
+<!-- ========================================
+     SECCIÓN 2: HTTP STATUS CODES
+     ======================================== -->
+
+<div class="seccion">
+    <h2>2. HTTP STATUS CODES (CÓDIGOS DE ESTADO)</h2>
+    
+    <div class="metodo">
+        <strong>200 OK</strong> → Petición exitosa<br>
+        <strong>201 Created</strong> → Recurso creado exitosamente<br>
+        <strong>204 No Content</strong> → Exitoso pero sin contenido en respuesta<br>
+        <strong>400 Bad Request</strong> → Datos inválidos o mal formateados<br>
+        <strong>401 Unauthorized</strong> → No autorizado (falta token/login)<br>
+        <strong>403 Forbidden</strong> → Prohibido (no tienes permisos)<br>
+        <strong>404 Not Found</strong> → Recurso no encontrado<br>
+        <strong>500 Internal Server Error</strong> → Error del servidor<br>
+        <strong>503 Service Unavailable</strong> → Servicio no disponible
+    </div>
+</div>
+
+<!-- ========================================
+     SECCIÓN 3: FETCH - CONFIGURACIÓN
+     ======================================== -->
+
+<div class="seccion">
+    <h2>3. FETCH API - CONFIGURACIÓN DETALLADA</h2>
+    
+    <div class="subseccion">Estructura completa del objeto options:</div>
+    <div class="metodo">
+        <span class="codigo" style="font-size: 8.5pt;">
+        fetch(url, {<br>
+        &nbsp;&nbsp;method: "POST",           // GET, POST, PUT, DELETE<br>
+        &nbsp;&nbsp;headers: {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;"Content-Type": "application/json",<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;"Authorization": "Bearer TOKEN"<br>
+        &nbsp;&nbsp;},<br>
+        &nbsp;&nbsp;body: JSON.stringify(datos)  // Solo POST/PUT<br>
+        })
+        </span>
+    </div>
+    
+    <div class="subseccion">Headers comunes:</div>
+    <div class="metodo">
+        <span class="metodo-nombre">"Content-Type": "application/json"</span><br>
+        • Indica que enviamos JSON (POST/PUT)<br><br>
+        
+        <span class="metodo-nombre">"Content-Type": "application/x-www-form-urlencoded"</span><br>
+        • Indica que enviamos formulario tradicional<br><br>
+        
+        <span class="metodo-nombre">"Authorization": "Bearer TOKEN"</span><br>
+        • Token de autenticación JWT<br><br>
+        
+        <span class="metodo-nombre">"Accept": "application/json"</span><br>
+        • Indica que aceptamos recibir JSON
+    </div>
+    
+    <div class="subseccion">Propiedades del objeto Response:</div>
+    <div class="metodo">
+        <span class="metodo-nombre">response.ok</span> → true si status 200-299, false si no<br>
+        <span class="metodo-nombre">response.status</span> → Código numérico (200, 404, etc.)<br>
+        <span class="metodo-nombre">response.statusText</span> → Texto del status ("OK", "Not Found")<br>
+        <span class="metodo-nombre">response.headers</span> → Headers de la respuesta<br>
+        <span class="metodo-nombre">response.json()</span> → Convierte body a JSON (devuelve promesa)<br>
+        <span class="metodo-nombre">response.text()</span> → Convierte body a texto (devuelve promesa)
+    </div>
+    
+    <div class="subseccion">Ejemplos de peticiones por método:</div>
+    <div class="metodo">
+        <strong>POST (crear):</strong><br>
+        <span class="codigo" style="font-size: 8.5pt;">
+        fetch(url, {<br>
+        &nbsp;&nbsp;method: "POST",<br>
+        &nbsp;&nbsp;headers: { "Content-Type": "application/json" },<br>
+        &nbsp;&nbsp;body: JSON.stringify(datos)<br>
+        })
+        </span><br><br>
+        
+        <strong>PUT (actualizar completo):</strong><br>
+        <span class="codigo" style="font-size: 8.5pt;">
+        fetch(`${url}/${id}`, {<br>
+        &nbsp;&nbsp;method: "PUT",<br>
+        &nbsp;&nbsp;headers: { "Content-Type": "application/json" },<br>
+        &nbsp;&nbsp;body: JSON.stringify(datosActualizados)<br>
+        })
+        </span><br><br>
+        
+        <strong>DELETE (eliminar):</strong><br>
+        <span class="codigo" style="font-size: 8.5pt;">
+        fetch(`${url}/${id}`, { method: "DELETE" })
+        </span><br><br>
+        
+        <strong>Con Authorization (Bearer Token):</strong><br>
+        <span class="codigo" style="font-size: 8.5pt;">
+        fetch(url, {<br>
+        &nbsp;&nbsp;headers: { "Authorization": `Bearer ${token}` }<br>
+        })
+        </span>
+    </div>
+</div>
+
+<!-- ========================================
+     SECCIÓN 4: MÉTODOS DE PROMESAS
+     ======================================== -->
+
+<div class="seccion">
+    <h2>4. MÉTODOS ESTÁTICOS DE PROMISE (AVANZADOS)</h2>
+    
+    <div class="metodo">
+        <div class="metodo-nombre">Promise.all([promesa1, promesa2, ...])</div>
+        <ul class="metodo-desc">
+            <li>Espera a que TODAS las promesas se resuelvan</li>
+            <li>Si una falla, todas fallan</li>
+            <li>Devuelve array con todos los resultados</li>
+        </ul>
+    </div>
+    
+    <div class="metodo">
+        <div class="metodo-nombre">Promise.race([promesa1, promesa2, ...])</div>
+        <ul class="metodo-desc">
+            <li>Devuelve la primera promesa que se resuelve (la más rápida)</li>
+            <li>Útil para timeouts</li>
+        </ul>
+    </div>
+    
+    <div class="metodo">
+        <div class="metodo-nombre">Promise.allSettled([promesa1, promesa2, ...])</div>
+        <ul class="metodo-desc">
+            <li>Espera a que todas terminen (éxito o fallo)</li>
+            <li>Devuelve array con status de cada una</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ========================================
+     SECCIÓN 5: PROPIEDADES DE ERROR
+     ======================================== -->
+
+<div class="seccion">
+    <h2>5. OBJETO ERROR - PROPIEDADES</h2>
+    
+    <div class="metodo">
+        <span class="metodo-nombre">error.message</span> → Mensaje descriptivo del error<br>
+        <span class="metodo-nombre">error.name</span> → Tipo de error ("TypeError", "ReferenceError", "SyntaxError", etc.)<br>
+        <span class="metodo-nombre">error.stack</span> → Traza completa del error (línea, archivo, etc.)
+    </div>
+    
+    <div class="subseccion">Tipos de errores nativos de JavaScript:</div>
+    <div class="metodo">
+        <strong>Error</strong> → Error genérico<br>
+        <strong>TypeError</strong> → Error de tipo (ej: null.metodo())<br>
+        <strong>ReferenceError</strong> → Variable no definida<br>
+        <strong>SyntaxError</strong> → Error de sintaxis en el código<br>
+        <strong>RangeError</strong> → Valor fuera de rango permitido
+    </div>
+</div>
+
+<!-- ========================================
+     SECCIÓN 6: MÉTODOS ARRAY AVANZADOS
+     ======================================== -->
+
+<div class="seccion">
+    <h2>6. MÉTODOS DE ARRAY (REFERENCIA RÁPIDA)</h2>
+    
+    <div class="metodo">
+        <span class="metodo-nombre">array.find(callback)</span> → Devuelve EL PRIMER elemento que cumple condición<br>
+        <span class="metodo-nombre">array.findIndex(callback)</span> → Devuelve ÍNDICE del primer elemento que cumple<br>
+        <span class="metodo-nombre">array.some(callback)</span> → true si AL MENOS UNO cumple la condición<br>
+        <span class="metodo-nombre">array.every(callback)</span> → true si TODOS cumplen la condición<br>
+        <span class="metodo-nombre">array.includes(valor)</span> → true si el array contiene ese valor<br>
+        <span class="metodo-nombre">array.indexOf(valor)</span> → Índice de la primera aparición (-1 si no existe)
+    </div>
+</div>
+
+<!-- ========================================
+     SECCIÓN 7: APIs PÚBLICAS
+     ======================================== -->
+
+<div class="seccion">
+    <h2>7. APIs PÚBLICAS PARA PRACTICAR (REFERENCIA)</h2>
+    
+    <div class="metodo">
+        <strong>JSONPlaceholder:</strong> https://jsonplaceholder.typicode.com/users<br>
+        <strong>ReqRes:</strong> https://reqres.in/api/users<br>
+        <strong>Rick and Morty:</strong> https://rickandmortyapi.com/api/character<br>
+        <strong>PokéAPI:</strong> https://pokeapi.co/api/v2/pokemon<br>
+        <strong>The Cat API:</strong> https://api.thecatapi.com/v1/images/search
+    </div>
+</div>
+
+<div class="footer">
+    María Paradela García | I.E.S. Río Arba 2025/2026<br>
+</div>
+
+</body>
+</html>

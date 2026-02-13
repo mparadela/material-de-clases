@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Estadísticas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        #resultados {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        
+        .error {
+            color: red;
+            background-color: #ffe6e6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Estadísticas</h1>
+    
+    <p>Introduce números separados por comas (ejemplo: 5, 10, 15, 20, 25)</p>
+    
+    <textarea id="inputNumeros" rows="4" placeholder="5, 10, 15, 20, 25"></textarea>
+    
+    <button id="btnCalcular">Calcular Estadísticas</button>
+    
+    <div id="resultados"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

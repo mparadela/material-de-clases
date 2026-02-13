@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de gastos</title>
+</head>
+<body>
+    <!-- Elementos que necesito en html:
+     - 3 input
+     - 1 botón de agregar gastos
+     - 1 ul para la lista de gastos
+     - 1 div para el resumen de gastos 
+     - llamada al js -->
+
+    <h2> Gestor de gastos mensuales</h2>
+    <div>
+        <input type="text" id="concepto" placeholder="Escribe el concepto del gasto">
+        <input type="text" id="cantidad" placeholder="Escribe la cantidad gastada">
+        <input type="text" id="categoria" placeholder="Escribe la categoría a la que pertenece el gasto">
+        <button id="btnAgregar">Agregar gasto</button>
+    </div>
+    <div id="resumen">
+        <p>Total gastado: <span id="totalGastado">0.00</span>€</p>
+        <p>Número de gastos: <span id="numeroGastos">0.00</span>€</p>
+    </div>
+    <ul id="listaGastos"></ul>
+    <script src="gestor-gastos.js"></script>
+</body>
+</html>

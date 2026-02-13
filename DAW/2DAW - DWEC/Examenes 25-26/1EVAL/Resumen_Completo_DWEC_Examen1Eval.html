@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resumen Completo DWEC - Examen 1ª Evaluación</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.5;
+            margin: 2cm;
+            background: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            margin: -30px -30px 30px -30px;
+        }
+        
+        .header h1 {
+            font-size: 28pt;
+            margin-bottom: 8px;
+        }
+        
+        .header p {
+            font-size: 14pt;
+            opacity: 0.95;
+        }
+        
+        .aviso {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 10pt;
+        }
+        
+        .seccion {
+            margin-bottom: 30px;
+            page-break-inside: avoid;
+        }
+        
+        .seccion h2 {
+            font-size: 18pt;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        
+        .seccion h3 {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            padding-left: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .codigo {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 10pt;
+            overflow-x: auto;
+            line-height: 1.6;
+        }
+        
+        .sintaxis {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            background-color: #f1f3f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 10pt;
+        }
+        
+        .descripcion {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .importante {
+            background-color: #d1ecf1;
+            border-left: 5px solid #0c5460;
+            padding: 12px;
+            margin: 15px 0;
+        }
+        
+        .nota {
+            background-color: #e7f3ff;
+            border-left: 5px solid #2196F3;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 10pt;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+        
+        table, th, td {
+            border: 1px solid #dee2e6;
+        }
+        
+        th {
+            background-color: #e9ecef;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        td {
+            padding: 8px;
+        }
+        
+        .ejemplo {
+            background-color: #f8f9fa;
+            border-left: 3px solid #28a745;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 10pt;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 10px;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                margin: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 15px;
+            }
+            
+            .seccion {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="header">
+    <h1>📚 RESUMEN COMPLETO JAVASCRIPT</h1>
+    <p>Examen 1ª Evaluación DWEC | UD1 - UD6B</p>
+    <p>Material de estudio y repaso</p>
+</div>
+
+<div class="aviso">
+    <strong>⚠️ IMPORTANTE:</strong> Este es un material de estudio para preparar el examen. Cubre TODA la sintaxis y métodos vistos en clase desde la UD1 hasta la UD6B. Estudia cada sección con atención y practica los ejemplos en tu ordenador.
+</div>
+
+<!-- SECCIÓN 1: VARIABLES Y TIPOS DE DATOS -->
+<div class="seccion">
+    <h2>1. VARIABLES Y TIPOS DE DATOS</h2>
+    
+    <h3>Declaración de variables</h3>
+    <div class="codigo">// Variable que puede cambiar de valor (reasignable)
+let nombre = "María";
+let edad = 25;
+edad = 26; // ✅ Permitido
+
+// Constante (no se puede reasignar)
+const PI = 3.14159;
+const DNI = "12345678A";
+// PI = 3.14; // ❌ Error: no se puede reasignar una constante</div>
+
+    <div class="importante">
+        <strong>Regla de oro:</strong> Usa <span class="sintaxis">const</span> por defecto. Solo usa <span class="sintaxis">let</span> si sabes que la variable va a cambiar de valor. Nunca uses <span class="sintaxis">var</span>.
+    </div>
+
+    <h3>Tipos de datos primitivos</h3>
+    <div class="codigo">// String (cadena de texto)
+let texto = "Hola mundo";
+let texto2 = 'También con comillas simples';
+
+// Number (números enteros y decimales)
+let entero = 42;
+let decimal = 3.14;
+let negativo = -10;
+
+// Boolean (verdadero o falso)
+let esMayorDeEdad = true;
+let tieneCarnet = false;
+
+// Undefined (variable declarada pero sin valor)
+let sinValor;
+console.log(sinValor); // undefined
+
+// Null (ausencia intencional de valor)
+let vacio = null;</div>
+
+    <h3>Operador typeof</h3>
+    <div class="codigo">typeof "hola"        // "string"
+typeof 42           // "number"
+typeof true         // "boolean"
+typeof undefined    // "undefined"
+typeof null         // "object" (⚠️ peculiaridad de JavaScript)
+typeof []           // "object"
+typeof {}           // "object"</div>
+
+    <h3>Template Literals (plantillas de texto)</h3>
+    <div class="codigo">let nombre = "Ana";
+let edad = 25;
+
+// Con comillas invertidas (`)
+let mensaje = `Hola, me llamo ${nombre} y tengo ${edad} años`;
+
+// Multilínea
+let texto = `
+    Esta es la línea 1
+    Esta es la línea 2
+    Esta es la línea 3
+`;</div>
+</div>
+
+<!-- SECCIÓN 2: OPERADORES -->
+<div class="seccion">
+    <h2>2. OPERADORES</h2>
+    
+    <h3>Operadores aritméticos</h3>
+    <div class="codigo">let a = 10;
+let b = 3;
+
+a + b    // 13  (suma)
+a - b    // 7   (resta)
+a * b    // 30  (multiplicación)
+a / b    // 3.333... (división)
+a % b    // 1   (módulo - resto de la división)
+a ** b   // 1000 (potencia - 10³)</div>
+
+    <h3>Operadores de comparación</h3>
+    <div class="codigo">// Comparación de valor (convierte tipos)
+5 == "5"     // true
+5 != "5"     // false
+
+// Comparación de valor Y tipo (estricta) ⭐ RECOMENDADO
+5 === "5"    // false
+5 !== "5"    // true
+
+// Comparaciones numéricas
+10 > 5       // true
+10 < 5       // false
+10 >= 10     // true
+10 <= 9      // false</div>
+
+    <div class="importante">
+        <strong>Usa siempre === y !== en lugar de == y !=</strong> para evitar conversiones automáticas de tipo que pueden causar errores.
+    </div>
+
+    <h3>Operadores lógicos</h3>
+    <div class="codigo">// AND (&&) - Ambas condiciones deben ser verdaderas
+true && true    // true
+true && false   // false
+
+// OR (||) - Al menos una condición debe ser verdadera
+true || false   // true
+false || false  // false
+
+// NOT (!) - Invierte el valor booleano
+!true          // false
+!false         // true
+
+// Ejemplo práctico
+let edad = 20;
+let tieneCarnet = true;
+
+if (edad >= 18 && tieneCarnet) {
+    console.log("Puede conducir");
+}</div>
+
+    <h3>Operador ternario</h3>
+    <div class="codigo">// Sintaxis: condicion ? valorSiTrue : valorSiFalse
+let edad = 18;
+let mensaje = edad >= 18 ? "Mayor de edad" : "Menor de edad";
+
+// Equivalente a:
+let mensaje;
+if (edad >= 18) {
+    mensaje = "Mayor de edad";
+} else {
+    mensaje = "Menor de edad";
+}</div>
+</div>
+
+<!-- SECCIÓN 3: ESTRUCTURAS DE CONTROL -->
+<div class="seccion">
+    <h2>3. ESTRUCTURAS DE CONTROL</h2>
+    
+    <h3>Condicional if / else if / else</h3>
+    <div class="codigo">let nota = 7;
+
+if (nota >= 9) {
+    console.log("Sobresaliente");
+} else if (nota >= 7) {
+    console.log("Notable");
+} else if (nota >= 5) {
+    console.log("Aprobado");
+} else {
+    console.log("Suspenso");
+}</div>
+
+    <h3>Switch</h3>
+    <div class="codigo">let dia = "lunes";
+
+switch (dia) {
+    case "lunes":
+        console.log("Inicio de semana");
+        break;
+    case "viernes":
+        console.log("Fin de semana laboral");
+        break;
+    case "sabado":
+    case "domingo":
+        console.log("Fin de semana");
+        break;
+    default:
+        console.log("Día entre semana");
+}</div>
+
+    <h3>Bucle for</h3>
+    <div class="codigo">// Bucle clásico
+for (let i = 0; i < 5; i++) {
+    console.log(i); // 0, 1, 2, 3, 4
+}
+
+// Recorrer un array
+let frutas = ["manzana", "pera", "plátano"];
+for (let i = 0; i < frutas.length; i++) {
+    console.log(frutas[i]);
+}</div>
+
+    <h3>Bucle while</h3>
+    <div class="codigo">let contador = 0;
+
+while (contador < 5) {
+    console.log(contador);
+    contador++;
+}
+
+// Do-while (se ejecuta al menos una vez)
+let numero = 0;
+do {
+    console.log(numero);
+    numero++;
+} while (numero < 5);</div>
+</div>
+
+<!-- SECCIÓN 4: FUNCIONES -->
+<div class="seccion">
+    <h2>4. FUNCIONES</h2>
+    
+    <h3>Función tradicional</h3>
+    <div class="codigo">// Declaración de función
+function saludar(nombre) {
+    return `Hola, ${nombre}!`;
+}
+
+// Llamada a la función
+let mensaje = saludar("Ana"); // "Hola, Ana!"
+
+// Función con múltiples parámetros
+function sumar(a, b) {
+    return a + b;
+}
+
+let resultado = sumar(5, 3); // 8</div>
+
+    <h3>Arrow Functions (funciones flecha)</h3>
+    <div class="codigo">// Sintaxis básica
+const saludar = (nombre) => {
+    return `Hola, ${nombre}!`;
+};
+
+// Sintaxis corta (return implícito)
+const saludar = (nombre) => `Hola, ${nombre}!`;
+
+// Si solo hay un parámetro, se pueden omitir los paréntesis
+const duplicar = numero => numero * 2;
+
+// Sin parámetros
+const obtenerFechaActual = () => new Date();
+
+// Múltiples parámetros
+const sumar = (a, b) => a + b;</div>
+
+    <h3>Parámetros por defecto</h3>
+    <div class="codigo">function saludar(nombre = "invitado") {
+    return `Hola, ${nombre}!`;
+}
+
+saludar("Ana");  // "Hola, Ana!"
+saludar();       // "Hola, invitado!"</div>
+</div>
+
+<!-- SECCIÓN 5: ARRAYS -->
+<div class="seccion">
+    <h2>5. ARRAYS (ARREGLOS)</h2>
+    
+    <h3>Crear arrays</h3>
+    <div class="codigo">// Array vacío
+let vacio = [];
+
+// Array con elementos
+let numeros = [1, 2, 3, 4, 5];
+let frutas = ["manzana", "pera", "plátano"];
+let mixto = [1, "hola", true, null];</div>
+
+    <h3>Acceder a elementos</h3>
+    <div class="codigo">let frutas = ["manzana", "pera", "plátano"];
+
+frutas[0]              // "manzana" (primer elemento)
+frutas[1]              // "pera"
+frutas[frutas.length - 1]  // "plátano" (último elemento)
+frutas.length          // 3 (cantidad de elementos)</div>
+
+    <h3>Métodos que MODIFICAN el array original</h3>
+    <div class="codigo">let arr = [1, 2, 3];
+
+// push() - Añade elementos al final
+arr.push(4);           // [1, 2, 3, 4]
+arr.push(5, 6);        // [1, 2, 3, 4, 5, 6]
+
+// pop() - Elimina y devuelve el último elemento
+let ultimo = arr.pop(); // ultimo = 6, arr = [1, 2, 3, 4, 5]
+
+// unshift() - Añade elementos al inicio
+arr.unshift(0);        // [0, 1, 2, 3, 4, 5]
+
+// shift() - Elimina y devuelve el primer elemento
+let primero = arr.shift(); // primero = 0, arr = [1, 2, 3, 4, 5]
+
+// splice() - Elimina/inserta elementos en cualquier posición
+let arr2 = [1, 2, 3, 4, 5];
+arr2.splice(2, 1);     // Elimina 1 elemento desde índice 2: [1, 2, 4, 5]
+arr2.splice(1, 0, 99); // Inserta 99 en índice 1: [1, 99, 2, 4, 5]
+
+// sort() - Ordena el array
+let letras = ["c", "a", "b"];
+letras.sort();         // ["a", "b", "c"]
+
+// reverse() - Invierte el orden
+letras.reverse();      // ["c", "b", "a"]</div>
+
+    <h3>Métodos que NO modifican (devuelven nuevo array)</h3>
+    <div class="codigo">let arr = [1, 2, 3, 4, 5];
+
+// concat() - Concatena arrays
+let arr2 = [6, 7];
+let combinado = arr.concat(arr2); // [1, 2, 3, 4, 5, 6, 7]
+
+// slice() - Extrae una porción
+let porcion = arr.slice(1, 3);    // [2, 3]
+
+// join() - Convierte a string
+let texto = arr.join(", ");       // "1, 2, 3, 4, 5"
+
+// includes() - Comprueba si existe un elemento
+arr.includes(3);       // true
+arr.includes(10);      // false
+
+// indexOf() - Devuelve el índice (o -1 si no existe)
+arr.indexOf(3);        // 2
+arr.indexOf(10);       // -1</div>
+
+    <h3>forEach() - Recorrer el array</h3>
+    <div class="codigo">let numeros = [1, 2, 3, 4, 5];
+
+// Recorrer e imprimir cada elemento
+numeros.forEach(numero => {
+    console.log(numero);
+});
+
+// Con índice
+numeros.forEach((numero, indice) => {
+    console.log(`Posición ${indice}: ${numero}`);
+});</div>
+
+    <div class="importante">
+        <strong>⚠️ forEach() NO devuelve nada.</strong> Solo sirve para ejecutar código con cada elemento. Si necesitas crear un nuevo array, usa <span class="sintaxis">map()</span>.
+    </div>
+
+    <h3>map() - Transformar elementos</h3>
+    <div class="codigo">let numeros = [1, 2, 3, 4, 5];
+
+// Duplicar cada número
+let duplicados = numeros.map(num => num * 2);
+// [2, 4, 6, 8, 10]
+
+// Crear array de objetos
+let personas = ["Ana", "Luis", "María"];
+let objetos = personas.map(nombre => ({
+    nombre: nombre,
+    letras: nombre.length
+}));
+// [{nombre: "Ana", letras: 3}, {nombre: "Luis", letras: 4}, ...]</div>
+
+    <h3>filter() - Filtrar elementos</h3>
+    <div class="codigo">let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// Filtrar números pares
+let pares = numeros.filter(num => num % 2 === 0);
+// [2, 4, 6, 8, 10]
+
+// Filtrar números mayores que 5
+let mayores = numeros.filter(num => num > 5);
+// [6, 7, 8, 9, 10]
+
+// Filtrar strings con más de 3 letras
+let palabras = ["hola", "yo", "casa", "sol", "ordenador"];
+let largas = palabras.filter(palabra => palabra.length > 3);
+// ["hola", "casa", "ordenador"]</div>
+
+    <h3>find() - Encontrar un elemento</h3>
+    <div class="codigo">let numeros = [1, 2, 3, 4, 5];
+
+// Encuentra el primer número mayor que 3
+let resultado = numeros.find(num => num > 3);
+// 4
+
+// Si no encuentra nada, devuelve undefined
+let noExiste = numeros.find(num => num > 10);
+// undefined
+
+// Ejemplo con objetos
+let usuarios = [
+    {id: 1, nombre: "Ana"},
+    {id: 2, nombre: "Luis"},
+    {id: 3, nombre: "María"}
+];
+
+let usuario = usuarios.find(u => u.id === 2);
+// {id: 2, nombre: "Luis"}</div>
+
+    <h3>reduce() - Acumular valores</h3>
+    <div class="codigo">let numeros = [1, 2, 3, 4, 5];
+
+// Sumar todos los números
+let suma = numeros.reduce((acumulador, numero) => {
+    return acumulador + numero;
+}, 0); // 15
+
+// Forma corta
+let suma = numeros.reduce((acc, num) => acc + num, 0);
+
+// Encontrar el máximo
+let maximo = numeros.reduce((max, num) => num > max ? num : max);
+
+// Contar ocurrencias
+let frutas = ["manzana", "pera", "manzana", "plátano", "manzana"];
+let contador = frutas.reduce((acc, fruta) => {
+    acc[fruta] = (acc[fruta] || 0) + 1;
+    return acc;
+}, {});
+// {manzana: 3, pera: 1, plátano: 1}</div>
+
+    <h3>some() y every()</h3>
+    <div class="codigo">let numeros = [1, 2, 3, 4, 5];
+
+// some() - ¿Alguno cumple la condición?
+numeros.some(num => num > 4);  // true (el 5 cumple)
+numeros.some(num => num > 10); // false
+
+// every() - ¿Todos cumplen la condición?
+numeros.every(num => num > 0);  // true (todos son positivos)
+numeros.every(num => num > 3);  // false (1 y 2 no cumplen)</div>
+</div>
+
+<!-- SECCIÓN 6: OBJETOS -->
+<div class="seccion">
+    <h2>6. OBJETOS</h2>
+    
+    <h3>Crear objetos</h3>
+    <div class="codigo">// Objeto literal
+let persona = {
+    nombre: "Ana",
+    edad: 25,
+    ciudad: "Madrid",
+    trabajando: true
+};
+
+// Objeto vacío
+let vacio = {};</div>
+
+    <h3>Acceder a propiedades</h3>
+    <div class="codigo">let persona = {
+    nombre: "Ana",
+    edad: 25
+};
+
+// Notación de punto (más común)
+console.log(persona.nombre);  // "Ana"
+
+// Notación de corchetes (útil para propiedades dinámicas)
+console.log(persona["edad"]); // 25
+
+let propiedad = "nombre";
+console.log(persona[propiedad]); // "Ana"</div>
+
+    <h3>Modificar y añadir propiedades</h3>
+    <div class="codigo">let persona = {
+    nombre: "Ana",
+    edad: 25
+};
+
+// Modificar propiedad existente
+persona.edad = 26;
+
+// Añadir nueva propiedad
+persona.ciudad = "Madrid";
+persona.trabajando = true;
+
+// Eliminar propiedad
+delete persona.trabajando;</div>
+
+    <h3>Métodos en objetos</h3>
+    <div class="codigo">let persona = {
+    nombre: "Ana",
+    edad: 25,
+    
+    // Método
+    saludar: function() {
+        return `Hola, soy ${this.nombre}`;
+    },
+    
+    // Método con sintaxis corta
+    cumplirAnios() {
+        this.edad++;
+    }
+};
+
+console.log(persona.saludar());  // "Hola, soy Ana"
+persona.cumplirAnios();
+console.log(persona.edad);       // 26</div>
+
+    <h3>Arrays de objetos (MUY COMÚN)</h3>
+    <div class="codigo">let productos = [
+    {id: 1, nombre: "Ratón", precio: 15.99},
+    {id: 2, nombre: "Teclado", precio: 45.50},
+    {id: 3, nombre: "Monitor", precio: 199.99}
+];
+
+// Acceder a un producto
+console.log(productos[0].nombre);  // "Ratón"
+
+// Recorrer con forEach
+productos.forEach(producto => {
+    console.log(`${producto.nombre}: ${producto.precio}€`);
+});
+
+// Filtrar productos caros
+let caros = productos.filter(p => p.precio > 50);
+
+// Encontrar un producto por id
+let producto = productos.find(p => p.id === 2);</div>
+
+    <h3>Spread operator con objetos</h3>
+    <div class="codigo">// Copiar objeto
+let persona = {nombre: "Ana", edad: 25};
+let copia = {...persona};
+
+// Combinar objetos
+let datos1 = {nombre: "Ana", edad: 25};
+let datos2 = {ciudad: "Madrid", trabajo: "Desarrolladora"};
+let completo = {...datos1, ...datos2};
+// {nombre: "Ana", edad: 25, ciudad: "Madrid", trabajo: "Desarrolladora"}
+
+// Añadir/modificar propiedades
+let actualizado = {...persona, edad: 26, ciudad: "Barcelona"};</div>
+
+    <h3>Desestructuración de objetos</h3>
+    <div class="codigo">let persona = {nombre: "Ana", edad: 25, ciudad: "Madrid"};
+
+// Extraer propiedades
+let {nombre, edad} = persona;
+console.log(nombre);  // "Ana"
+console.log(edad);    // 25
+
+// Con nombres diferentes
+let {nombre: n, edad: e} = persona;
+console.log(n);  // "Ana"</div>
+</div>
+
+<!-- SECCIÓN 7: STRINGS -->
+<div class="seccion">
+    <h2>7. MÉTODOS DE STRING</h2>
+    
+    <div class="codigo">let texto = "Hola Mundo";
+
+// Propiedades
+texto.length                    // 10 (longitud)
+
+// Cambiar mayúsculas/minúsculas
+texto.toUpperCase()             // "HOLA MUNDO"
+texto.toLowerCase()             // "hola mundo"
+
+// Eliminar espacios
+"  hola  ".trim()               // "hola"
+
+// Buscar
+texto.includes("Mundo")         // true
+texto.includes("Adiós")         // false
+texto.indexOf("Mundo")          // 5 (posición)
+texto.indexOf("Adiós")          // -1 (no encontrado)
+texto.lastIndexOf("o")          // 9 (última posición de "o")
+
+// Extraer porciones
+texto.slice(0, 4)               // "Hola"
+texto.slice(-5)                 // "Mundo" (desde el final)
+texto.substring(5, 10)          // "Mundo"
+
+// Dividir
+texto.split(" ")                // ["Hola", "Mundo"]
+"a,b,c".split(",")              // ["a", "b", "c"]
+
+// Reemplazar
+texto.replace("Mundo", "JS")    // "Hola JS"
+
+// Repetir
+"hola".repeat(3)                // "holaholahola"
+
+// Rellenar
+"5".padStart(3, "0")            // "005"
+"5".padEnd(3, "0")              // "500"
+
+// Comprobar inicio/fin
+texto.startsWith("Hola")        // true
+texto.endsWith("Mundo")         // true</div>
+</div>
+
+<!-- SECCIÓN 8: MATH -->
+<div class="seccion">
+    <h2>8. OBJETO MATH</h2>
+    
+    <div class="codigo">// Redondeo
+Math.round(4.7)                 // 5 (redondea al más cercano)
+Math.floor(4.7)                 // 4 (redondea hacia abajo)
+Math.ceil(4.3)                  // 5 (redondea hacia arriba)
+Math.trunc(4.7)                 // 4 (elimina decimales)
+
+// Valor absoluto
+Math.abs(-5)                    // 5
+
+// Máximo y mínimo
+Math.max(1, 5, 3, 9, 2)         // 9
+Math.min(1, 5, 3, 9, 2)         // 1
+
+// Con arrays usando spread operator
+let numeros = [1, 5, 3, 9, 2];
+Math.max(...numeros)            // 9
+Math.min(...numeros)            // 1
+
+// Potencia y raíz
+Math.pow(2, 3)                  // 8 (2³)
+Math.sqrt(16)                   // 4 (raíz cuadrada)
+
+// Número aleatorio
+Math.random()                   // número entre 0 y 1 (ej: 0.7345)
+
+// Número aleatorio entre min y max
+function aleatorioEntre(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+aleatorioEntre(1, 10)           // número entre 1 y 10
+
+// Signo
+Math.sign(5)                    // 1 (positivo)
+Math.sign(-5)                   // -1 (negativo)
+Math.sign(0)                    // 0
+
+// Constantes
+Math.PI                         // 3.141592653589793
+Math.E                          // 2.718281828459045</div>
+</div>
+
+<!-- SECCIÓN 9: DATE -->
+<div class="seccion">
+    <h2>9. OBJETO DATE</h2>
+    
+    <h3>Crear fechas</h3>
+    <div class="codigo">// Fecha actual
+let ahora = new Date();
+
+// Fecha específica
+let fecha = new Date(2025, 0, 15);  // 15 de enero de 2025 (¡mes empieza en 0!)
+let fecha2 = new Date("2025-11-27");
+let fecha3 = new Date(2025, 10, 27, 14, 30, 0); // 27 nov 2025, 14:30:00</div>
+
+    <h3>Obtener componentes</h3>
+    <div class="codigo">let fecha = new Date();
+
+fecha.getFullYear()             // 2025 (año completo)
+fecha.getMonth()                // 0-11 (enero es 0, diciembre es 11)
+fecha.getDate()                 // 1-31 (día del mes)
+fecha.getDay()                  // 0-6 (domingo es 0, sábado es 6)
+fecha.getHours()                // 0-23
+fecha.getMinutes()              // 0-59
+fecha.getSeconds()              // 0-59
+
+// Ejemplo: día de la semana
+let dias = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+let nombreDia = dias[fecha.getDay()];
+
+// Ejemplo: nombre del mes
+let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+             "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+let nombreMes = meses[fecha.getMonth()];</div>
+
+    <h3>Establecer componentes</h3>
+    <div class="codigo">let fecha = new Date();
+
+fecha.setFullYear(2026);
+fecha.setMonth(5);              // Junio (0-11)
+fecha.setDate(15);
+fecha.setHours(14);
+fecha.setMinutes(30);</div>
+
+    <h3>Formatear fechas</h3>
+    <div class="codigo">let fecha = new Date();
+
+// Método simple
+let fechaString = `${fecha.getDate()}/${fecha.getMonth() + 1}/${fecha.getFullYear()}`;
+// "27/11/2025"
+
+// toLocaleDateString
+fecha.toLocaleDateString("es-ES");  // "27/11/2025"</div>
+</div>
+
+<!-- SECCIÓN 10: BOM -->
+<div class="seccion">
+    <h2>10. BOM (BROWSER OBJECT MODEL)</h2>
+    
+    <h3>Window</h3>
+    <div class="codigo">// Dimensiones del viewport
+window.innerWidth               // Ancho del área visible
+window.innerHeight              // Alto del área visible
+
+// Diálogos
+window.alert("Mensaje");        // Ventana de alerta
+window.confirm("¿Estás seguro?"); // true o false
+window.prompt("Tu nombre:");    // string con la respuesta
+
+// Desplazamiento
+window.scrollX                  // Píxeles desplazados horizontalmente
+window.scrollY                  // Píxeles desplazados verticalmente</div>
+
+    <h3>Location</h3>
+    <div class="codigo">// Información de la URL
+window.location.href            // URL completa
+window.location.hostname        // Dominio (ej: "www.ejemplo.com")
+window.location.pathname        // Ruta (ej: "/pagina.html")
+window.location.search          // Query string (ej: "?id=123")
+
+// Navegar
+window.location.href = "https://google.com";  // Redirigir
+window.location.reload();       // Recargar página</div>
+
+    <h3>History</h3>
+    <div class="codigo">// Navegar por el historial
+history.back();                 // Página anterior
+history.forward();              // Página siguiente
+history.go(-2);                 // Retroceder 2 páginas
+history.go(1);                  // Avanzar 1 página</div>
+
+    <h3>Navigator</h3>
+    <div class="codigo">// Información del navegador
+navigator.userAgent             // Información del navegador
+navigator.language              // Idioma del navegador
+navigator.onLine                // ¿Hay conexión a Internet?</div>
+</div>
+
+<!-- SECCIÓN 11: DOM -->
+<div class="seccion">
+    <h2>11. DOM (DOCUMENT OBJECT MODEL)</h2>
+    
+    <h3>Seleccionar elementos</h3>
+    <div class="codigo">// Seleccionar UN elemento por ID
+let elemento = document.getElementById("miId");
+
+// Seleccionar UN elemento con selector CSS
+let elemento = document.querySelector(".miClase");
+let elemento = document.querySelector("#miId");
+let elemento = document.querySelector("div.activo");
+
+// Seleccionar VARIOS elementos (devuelven colección)
+let elementos = document.getElementsByClassName("miClase");
+let elementos = document.getElementsByTagName("p");
+let elementos = document.querySelectorAll(".miClase");
+let elementos = document.querySelectorAll("div p");</div>
+
+    <div class="importante">
+        <strong>querySelector vs querySelectorAll:</strong><br>
+        • <span class="sintaxis">querySelector()</span> devuelve EL PRIMERO que coincida (o null)<br>
+        • <span class="sintaxis">querySelectorAll()</span> devuelve TODOS en una NodeList
+    </div>
+
+    <h3>Manipular contenido</h3>
+    <div class="codigo">let elemento = document.querySelector("#miDiv");
+
+// Cambiar texto (sin HTML)
+elemento.textContent = "Nuevo texto";
+
+// Cambiar HTML interno
+elemento.innerHTML = "&lt;p&gt;Párrafo nuevo&lt;/p&gt;";
+
+// Valor de inputs
+let input = document.querySelector("#miInput");
+input.value = "Texto del input";
+let textoIngresado = input.value;</div>
+
+    <h3>Manipular estilos CSS</h3>
+    <div class="codigo">let elemento = document.querySelector("#miDiv");
+
+// Cambiar estilos inline
+elemento.style.color = "red";
+elemento.style.backgroundColor = "yellow";
+elemento.style.fontSize = "20px";
+
+// Añadir/quitar clases CSS
+elemento.classList.add("activo");
+elemento.classList.remove("oculto");
+elemento.classList.toggle("visible");  // añade si no está, quita si está
+elemento.classList.contains("activo"); // true/false</div>
+
+    <h3>Crear y añadir elementos</h3>
+    <div class="codigo">// Crear nuevo elemento
+let nuevoDiv = document.createElement("div");
+nuevoDiv.textContent = "Soy un nuevo div";
+nuevoDiv.classList.add("mi-clase");
+
+// Añadir al DOM
+let contenedor = document.querySelector("#contenedor");
+contenedor.appendChild(nuevoDiv);  // Añade al final
+
+// Insertar antes de otro elemento
+let referencia = document.querySelector("#elemento-existente");
+contenedor.insertBefore(nuevoDiv, referencia);</div>
+
+    <h3>Eliminar elementos</h3>
+    <div class="codigo">let elemento = document.querySelector("#miDiv");
+
+// Método 1: remove() (más moderno)
+elemento.remove();
+
+// Método 2: removeChild()
+let padre = elemento.parentElement;
+padre.removeChild(elemento);</div>
+
+    <h3>Atributos</h3>
+    <div class="codigo">let elemento = document.querySelector("#miElemento");
+
+// Obtener atributo
+let valor = elemento.getAttribute("href");
+
+// Establecer atributo
+elemento.setAttribute("href", "https://ejemplo.com");
+
+// Eliminar atributo
+elemento.removeAttribute("disabled");
+
+// Comprobar si tiene atributo
+elemento.hasAttribute("disabled");  // true/false
+
+// Atributos data-*
+// HTML: &lt;div id="miDiv" data-usuario="Ana" data-edad="25"&gt;&lt;/div&gt;
+let usuario = elemento.dataset.usuario;  // "Ana"
+let edad = elemento.dataset.edad;        // "25"</div>
+
+    <h3>Navegar por el DOM</h3>
+    <div class="codigo">let elemento = document.querySelector("#miElemento");
+
+// Padre
+elemento.parentElement
+
+// Hijos
+elemento.children          // HTMLCollection de hijos directos
+elemento.firstElementChild // Primer hijo
+elemento.lastElementChild  // Último hijo
+
+// Hermanos
+elemento.nextElementSibling     // Siguiente hermano
+elemento.previousElementSibling // Hermano anterior
+
+// Ancestros
+elemento.closest(".contenedor") // Busca el ancestro más cercano con esa clase</div>
+</div>
+
+<!-- SECCIÓN 12: EVENTOS -->
+<div class="seccion">
+    <h2>12. EVENTOS</h2>
+    
+    <h3>addEventListener()</h3>
+    <div class="codigo">let boton = document.querySelector("#miBoton");
+
+// Añadir event listener
+boton.addEventListener("click", function() {
+    console.log("¡Botón clickeado!");
+});
+
+// Con arrow function
+boton.addEventListener("click", () => {
+    console.log("¡Botón clickeado!");
+});
+
+// Con función nombrada
+function manejarClick() {
+    console.log("¡Botón clickeado!");
+}
+boton.addEventListener("click", manejarClick);</div>
+
+    <h3>Objeto event</h3>
+    <div class="codigo">boton.addEventListener("click", (event) => {
+    console.log(event.target);     // Elemento que disparó el evento
+    console.log(event.type);       // Tipo de evento ("click")
+    
+    event.preventDefault();        // Prevenir acción por defecto
+    event.stopPropagation();       // Detener propagación
+});
+
+// Ejemplo con formulario
+let formulario = document.querySelector("#miForm");
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault();  // ¡Evita que la página se recargue!
+    console.log("Formulario enviado");
+});</div>
+
+    <h3>Tipos de eventos comunes</h3>
+    
+    <h4>Eventos de ratón</h4>
+    <div class="codigo">elemento.addEventListener("click", () => {});       // Clic
+elemento.addEventListener("dblclick", () => {});    // Doble clic
+elemento.addEventListener("mouseenter", () => {});  // Ratón entra
+elemento.addEventListener("mouseleave", () => {});  // Ratón sale
+elemento.addEventListener("mousemove", () => {});   // Ratón se mueve</div>
+
+    <h4>Eventos de teclado</h4>
+    <div class="codigo">input.addEventListener("keydown", (e) => {
+    console.log("Tecla presionada:", e.key);
+});
+
+input.addEventListener("keyup", (e) => {
+    console.log("Tecla soltada:", e.key);
+});
+
+// Ejemplo: detectar Enter
+input.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        console.log("¡Enter presionado!");
+    }
+});</div>
+
+    <h4>Eventos de formulario</h4>
+    <div class="codigo">// Submit
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log("Formulario enviado");
+});
+
+// Input - se dispara mientras escribe
+input.addEventListener("input", (e) => {
+    console.log("Valor actual:", e.target.value);
+});
+
+// Change - se dispara al perder el foco
+input.addEventListener("change", (e) => {
+    console.log("Valor final:", e.target.value);
+});
+
+// Focus y blur
+input.addEventListener("focus", () => {
+    console.log("Input enfocado");
+});
+
+input.addEventListener("blur", () => {
+    console.log("Input desenfocado");
+});</div>
+
+    <h4>Evento DOMContentLoaded</h4>
+    <div class="codigo">// Se dispara cuando el DOM está completamente cargado
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM listo");
+    // Aquí puedes inicializar tu aplicación
+});
+
+// También puedes usar:
+window.addEventListener("load", () => {
+    console.log("Página completamente cargada (incluso imágenes)");
+});</div>
+</div>
+
+<!-- SECCIÓN 13: WEB STORAGE -->
+<div class="seccion">
+    <h2>13. WEB STORAGE (localStorage y sessionStorage)</h2>
+    
+    <div class="importante">
+        <strong>Diferencias:</strong><br>
+        • <span class="sintaxis">localStorage</span>: Los datos persisten SIEMPRE (incluso al cerrar el navegador)<br>
+        • <span class="sintaxis">sessionStorage</span>: Los datos se borran al cerrar la PESTAÑA
+    </div>
+
+    <h3>Métodos básicos</h3>
+    <div class="codigo">// GUARDAR
+localStorage.setItem("nombre", "Ana");
+sessionStorage.setItem("temporal", "datos");
+
+// RECUPERAR
+let nombre = localStorage.getItem("nombre");  // "Ana"
+let temp = sessionStorage.getItem("temporal");
+
+// Si no existe, devuelve null
+let noExiste = localStorage.getItem("noExiste");  // null
+
+// ELIMINAR un dato
+localStorage.removeItem("nombre");
+
+// ELIMINAR TODO
+localStorage.clear();
+sessionStorage.clear();</div>
+
+    <h3>Guardar objetos y arrays con JSON</h3>
+    <div class="codigo">// ❌ INCORRECTO - guarda "[object Object]"
+let usuario = {nombre: "Ana", edad: 25};
+localStorage.setItem("usuario", usuario);
+
+// ✅ CORRECTO - convertir a JSON primero
+let usuario = {nombre: "Ana", edad: 25};
+localStorage.setItem("usuario", JSON.stringify(usuario));
+
+// Recuperar y convertir de vuelta
+let usuarioRecuperado = JSON.parse(localStorage.getItem("usuario"));
+console.log(usuarioRecuperado.nombre);  // "Ana"
+
+// Ejemplo completo con array
+let tareas = ["Estudiar", "Hacer ejercicio", "Cocinar"];
+
+// Guardar
+localStorage.setItem("tareas", JSON.stringify(tareas));
+
+// Recuperar
+let tareasRecuperadas = localStorage.getItem("tareas");
+if (tareasRecuperadas) {
+    tareas = JSON.parse(tareasRecuperadas);
+} else {
+    tareas = []; // Array vacío si no hay datos
+}</div>
+
+    <h3>Ejemplo práctico: Sistema de tareas</h3>
+    <div class="codigo">let tareas = [];
+
+// Cargar tareas al iniciar
+function cargarTareas() {
+    let datosGuardados = localStorage.getItem("tareas");
+    if (datosGuardados) {
+        tareas = JSON.parse(datosGuardados);
+    }
+}
+
+// Guardar tareas
+function guardarTareas() {
+    localStorage.setItem("tareas", JSON.stringify(tareas));
+}
+
+// Añadir tarea
+function agregarTarea(texto) {
+    tareas.push(texto);
+    guardarTareas();
+}
+
+// Eliminar tarea
+function eliminarTarea(indice) {
+    tareas.splice(indice, 1);
+    guardarTareas();
+}
+
+// Inicializar al cargar la página
+cargarTareas();</div>
+</div>
+
+<!-- SECCIÓN 14: JSON -->
+<div class="seccion">
+    <h2>14. JSON (JavaScript Object Notation)</h2>
+    
+    <h3>¿Qué es JSON?</h3>
+    <div class="nota">
+        JSON es un formato de texto para intercambiar datos. Es muy similar a los objetos JavaScript, pero con reglas más estrictas.
+    </div>
+
+    <h3>JSON.stringify() - Convertir a JSON</h3>
+    <div class="codigo">// Objeto JavaScript a string JSON
+let usuario = {
+    nombre: "Ana",
+    edad: 25,
+    activo: true
+};
+
+let jsonString = JSON.stringify(usuario);
+// '{"nombre":"Ana","edad":25,"activo":true}'
+
+// Con espaciado para legibilidad (útil para debug)
+let jsonLegible = JSON.stringify(usuario, null, 2);
+/*
+{
+  "nombre": "Ana",
+  "edad": 25,
+  "activo": true
+}
+*/
+
+// Con arrays
+let numeros = [1, 2, 3, 4, 5];
+let jsonArray = JSON.stringify(numeros);
+// '[1,2,3,4,5]'</div>
+
+    <h3>JSON.parse() - Convertir de JSON</h3>
+    <div class="codigo">// String JSON a objeto JavaScript
+let jsonString = '{"nombre":"Ana","edad":25}';
+let usuario = JSON.parse(jsonString);
+
+console.log(usuario.nombre);  // "Ana"
+console.log(usuario.edad);    // 25
+
+// Con arrays
+let jsonArray = '[1,2,3,4,5]';
+let numeros = JSON.parse(jsonArray);
+console.log(numeros[0]);  // 1</div>
+
+    <h3>Reglas de JSON</h3>
+    <div class="codigo">// ✅ JSON VÁLIDO
+{
+  "nombre": "Ana",
+  "edad": 25,
+  "activo": true,
+  "hobbies": ["leer", "correr"],
+  "direccion": {
+    "ciudad": "Madrid",
+    "cp": "28001"
+  }
+}
+
+// ❌ JSON INVÁLIDO
+{
+  nombre: "Ana",           // ❌ Las claves deben tener comillas
+  'edad': 25,              // ❌ Deben ser comillas dobles
+  activo: true,
+  funcion: function() {}   // ❌ No puede tener funciones
+}</div>
+</div>
+
+<!-- SECCIÓN 15: CONVERSIÓN DE TIPOS -->
+<div class="seccion">
+    <h2>15. CONVERSIÓN DE TIPOS</h2>
+    
+    <h3>String a Number</h3>
+    <div class="codigo">// parseInt() - Convierte a entero
+parseInt("42")          // 42
+parseInt("42.7")        // 42 (elimina decimales)
+parseInt("42px")        // 42 (ignora lo que no sea número)
+parseInt("hola")        // NaN (Not a Number)
+
+// parseFloat() - Convierte a decimal
+parseFloat("3.14")      // 3.14
+parseFloat("3.14abc")   // 3.14
+
+// Number() - Más estricto
+Number("42")            // 42
+Number("42.7")          // 42.7
+Number("42px")          // NaN
+Number("")              // 0
+
+// El operador + también convierte
++"42"                   // 42
++"3.14"                 // 3.14</div>
+
+    <h3>Number a String</h3>
+    <div class="codigo">let num = 42;
+
+// String()
+String(num)             // "42"
+
+// toString()
+num.toString()          // "42"
+
+// Concatenar con string
+num + ""                // "42"
+
+// toFixed() - Número específico de decimales
+let decimal = 3.14159;
+decimal.toFixed(2)      // "3.14"
+decimal.toFixed(0)      // "3"</div>
+
+    <h3>A Boolean</h3>
+    <div class="codigo">// Boolean()
+Boolean(1)              // true
+Boolean(0)              // false
+Boolean("")             // false (string vacío)
+Boolean("hola")         // true
+Boolean(null)           // false
+Boolean(undefined)      // false
+
+// Doble negación !!
+!!"hola"                // true
+!!0                     // false</div>
+
+    <h3>Comprobar tipos</h3>
+    <div class="codigo">// isNaN() - ¿Es NaN?
+isNaN("hola")           // true
+isNaN(42)               // false
+isNaN("42")             // false (convierte a número primero)
+
+// Number.isNaN() - Más estricto
+Number.isNaN(NaN)       // true
+Number.isNaN("hola")    // false (no convierte primero)
+
+// isFinite() - ¿Es un número finito?
+isFinite(42)            // true
+isFinite(Infinity)      // false
+isFinite("hola")        // false
+
+// Array.isArray() - ¿Es un array?
+Array.isArray([1,2,3])  // true
+Array.isArray("hola")   // false</div>
+</div>
+
+<!-- SECCIÓN 16: SPREAD OPERATOR -->
+<div class="seccion">
+    <h2>16. SPREAD OPERATOR (...)</h2>
+    
+    <h3>Con arrays</h3>
+    <div class="codigo">let arr1 = [1, 2, 3];
+let arr2 = [4, 5, 6];
+
+// Concatenar arrays
+let combinado = [...arr1, ...arr2];
+// [1, 2, 3, 4, 5, 6]
+
+// Copiar array
+let copia = [...arr1];
+// [1, 2, 3]
+
+// Añadir elementos
+let nuevo = [0, ...arr1, 4];
+// [0, 1, 2, 3, 4]
+
+// Pasar array como argumentos
+let numeros = [5, 3, 9, 1];
+Math.max(...numeros);  // 9 (equivale a Math.max(5, 3, 9, 1))</div>
+
+    <h3>Con objetos</h3>
+    <div class="codigo">let obj1 = {nombre: "Ana", edad: 25};
+let obj2 = {ciudad: "Madrid", trabajo: "Dev"};
+
+// Combinar objetos
+let combinado = {...obj1, ...obj2};
+// {nombre: "Ana", edad: 25, ciudad: "Madrid", trabajo: "Dev"}
+
+// Copiar objeto
+let copia = {...obj1};
+
+// Sobreescribir propiedades
+let actualizado = {...obj1, edad: 26};
+// {nombre: "Ana", edad: 26}</div>
+</div>
+
+<!-- SECCIÓN 17: DESESTRUCTURACIÓN -->
+<div class="seccion">
+    <h2>17. DESESTRUCTURACIÓN (DESTRUCTURING)</h2>
+    
+    <h3>Arrays</h3>
+    <div class="codigo">let numeros = [1, 2, 3, 4, 5];
+
+// Extraer elementos
+let [primero, segundo] = numeros;
+console.log(primero);   // 1
+console.log(segundo);   // 2
+
+// Saltar elementos
+let [a, , c] = numeros;
+console.log(a);         // 1
+console.log(c);         // 3
+
+// Resto de elementos
+let [uno, dos, ...resto] = numeros;
+console.log(resto);     // [3, 4, 5]</div>
+
+    <h3>Objetos</h3>
+    <div class="codigo">let persona = {
+    nombre: "Ana",
+    edad: 25,
+    ciudad: "Madrid"
+};
+
+// Extraer propiedades
+let {nombre, edad} = persona;
+console.log(nombre);    // "Ana"
+console.log(edad);      // 25
+
+// Con nombres diferentes
+let {nombre: n, edad: e} = persona;
+console.log(n);         // "Ana"
+
+// Con valores por defecto
+let {nombre, pais = "España"} = persona;
+console.log(pais);      // "España" (no existe en el objeto)</div>
+</div>
+
+<!-- SECCIÓN 18: TEMPORIZADORES -->
+<div class="seccion">
+    <h2>18. TEMPORIZADORES</h2>
+    
+    <h3>setTimeout()</h3>
+    <div class="codigo">// Ejecutar función después de X milisegundos
+setTimeout(() => {
+    console.log("Han pasado 3 segundos");
+}, 3000);
+
+// Con función nombrada
+function saludar() {
+    console.log("¡Hola!");
+}
+setTimeout(saludar, 2000);
+
+// Cancelar timeout
+let timeoutId = setTimeout(() => {
+    console.log("Esto no se ejecutará");
+}, 5000);
+
+clearTimeout(timeoutId);  // Cancelar antes de que se ejecute</div>
+
+    <h3>setInterval()</h3>
+    <div class="codigo">// Ejecutar función cada X milisegundos
+let contador = 0;
+let intervalId = setInterval(() => {
+    contador++;
+    console.log(`Han pasado ${contador} segundos`);
+    
+    if (contador === 5) {
+        clearInterval(intervalId);  // Detener después de 5 segundos
+    }
+}, 1000);
+
+// Cancelar intervalo
+clearInterval(intervalId);</div>
+</div>
+
+<!-- SECCIÓN 19: TRY-CATCH -->
+<div class="seccion">
+    <h2>19. GESTIÓN DE ERRORES (try-catch)</h2>
+    
+    <div class="codigo">// Capturar errores
+try {
+    let datos = JSON.parse('{"nombre": "Ana"}');
+    console.log(datos.nombre);
+} catch (error) {
+    console.log("Error al parsear JSON:", error.message);
+}
+
+// Con finally (siempre se ejecuta)
+try {
+    // Código que puede fallar
+    let resultado = operacionPeligrosa();
+} catch (error) {
+    console.log("Error:", error);
+} finally {
+    console.log("Esto se ejecuta siempre");
+}
+
+// Lanzar errores propios
+function dividir(a, b) {
+    if (b === 0) {
+        throw new Error("No se puede dividir por cero");
+    }
+    return a / b;
+}
+
+try {
+    let resultado = dividir(10, 0);
+} catch (error) {
+    console.log(error.message);  // "No se puede dividir por cero"
+}</div>
+</div>
+
+<!-- SECCIÓN 20: DRAG & DROP -->
+<div class="seccion">
+    <h2>20. DRAG & DROP API</h2>
+    
+    <div class="nota">
+        <strong>📌 Nota:</strong> Drag & Drop es contenido ampliado (no del currículo oficial). Solo aparece en el ejercicio BONUS del examen.
+    </div>
+
+    <h3>Atributo HTML</h3>
+    <div class="codigo"><!-- Hacer elemento arrastrable -->
+<div draggable="true" id="elemento1">
+    Arrástra me
+</div></div>
+
+    <h3>Eventos (en orden)</h3>
+    <div class="codigo">let elemento = document.querySelector("#elemento1");
+
+// 1. dragstart - Cuando empieza a arrastrarse
+elemento.addEventListener("dragstart", (e) => {
+    e.dataTransfer.setData("text/html", e.target.id);
+    e.dataTransfer.effectAllowed = "move";
+});
+
+// 2. dragend - Cuando termina de arrastrarse
+elemento.addEventListener("dragend", (e) => {
+    console.log("Arrastre terminado");
+});</div>
+
+    <h3>Zona de drop</h3>
+    <div class="codigo">let zonaDestino = document.querySelector("#zona-drop");
+
+// dragover - CRÍTICO: debe tener preventDefault()
+zonaDestino.addEventListener("dragover", (e) => {
+    e.preventDefault();  // ⚠️ SIN ESTO, EL DROP NO FUNCIONA
+    e.dataTransfer.dropEffect = "move";
+});
+
+// dragenter - Cuando entra en la zona
+zonaDestino.addEventListener("dragenter", (e) => {
+    e.target.classList.add("drag-over");
+});
+
+// dragleave - Cuando sale de la zona
+zonaDestino.addEventListener("dragleave", (e) => {
+    e.target.classList.remove("drag-over");
+});
+
+// drop - Cuando se suelta
+zonaDestino.addEventListener("drop", (e) => {
+    e.preventDefault();
+    
+    // Recuperar datos
+    let id = e.dataTransfer.getData("text/html");
+    let elemento = document.getElementById(id);
+    
+    // Mover elemento
+    e.target.appendChild(elemento);
+    
+    e.target.classList.remove("drag-over");
+});</div>
+
+    <div class="importante">
+        <strong>⚠️ CRÍTICO:</strong> En el evento <span class="sintaxis">dragover</span> SIEMPRE debes usar <span class="sintaxis">e.preventDefault()</span>. Sin esto, el evento <span class="sintaxis">drop</span> NO se disparará.
+    </div>
+
+    <h3>Ejemplo completo simple</h3>
+    <div class="codigo">// HTML
+&lt;div id="elemento" draggable="true"&gt;Arrástrame&lt;/div&gt;
+&lt;div id="zona1" class="zona-drop"&gt;Zona 1&lt;/div&gt;
+&lt;div id="zona2" class="zona-drop"&gt;Zona 2&lt;/div&gt;
+
+// JavaScript
+let elemento = document.querySelector("#elemento");
+let tareaArrastrada = null;
+
+elemento.addEventListener("dragstart", (e) => {
+    tareaArrastrada = e.target;
+    e.dataTransfer.effectAllowed = "move";
+});
+
+// Para cada zona de drop
+document.querySelectorAll(".zona-drop").forEach(zona => {
+    zona.addEventListener("dragover", (e) => {
+        e.preventDefault();  // ⚠️ IMPORTANTE
+    });
+    
+    zona.addEventListener("drop", (e) => {
+        e.preventDefault();
+        e.target.appendChild(tareaArrastrada);
+    });
+});</div>
+</div>
+
+<!-- FOOTER -->
+<div style="margin-top: 50px; padding-top: 20px; border-top: 3px solid #2c3e50; text-align: center;">
+    <p style="font-size: 12pt; color: #666;">
+        <strong>María Paradela | I.E.S. Río arba 2025/2026 </strong><br>
+        Practica todos estos conceptos antes del examen.
+    </p>
+</div>
+
+</div>
+
+</body>
+</html>

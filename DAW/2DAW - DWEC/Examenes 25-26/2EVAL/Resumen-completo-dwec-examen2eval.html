@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resumen Completo DWEC - Examen 2ª Evaluación</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.5;
+            margin: 2cm;
+            background: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            margin: -30px -30px 30px -30px;
+        }
+        
+        .header h1 {
+            font-size: 28pt;
+            margin-bottom: 8px;
+        }
+        
+        .header p {
+            font-size: 14pt;
+            opacity: 0.95;
+        }
+        
+        .aviso {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 10pt;
+        }
+        
+        .seccion {
+            margin-bottom: 30px;
+            page-break-inside: avoid;
+        }
+        
+        .seccion h2 {
+            font-size: 18pt;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        
+        .seccion h3 {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            padding-left: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .codigo {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 10pt;
+            overflow-x: auto;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+        
+        .sintaxis {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            background-color: #f1f3f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 10pt;
+        }
+        
+        .descripcion {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .importante {
+            background-color: #d1ecf1;
+            border-left: 5px solid #0c5460;
+            padding: 12px;
+            margin: 15px 0;
+        }
+        
+        .nota {
+            background-color: #e7f3ff;
+            border-left: 5px solid #2196F3;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 10pt;
+        }
+        
+        .error-box {
+            background-color: #f8d7da;
+            border-left: 5px solid #dc3545;
+            padding: 12px;
+            margin: 15px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+        
+        table, th, td {
+            border: 1px solid #dee2e6;
+        }
+        
+        th {
+            background-color: #e9ecef;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        td {
+            padding: 8px;
+        }
+        
+        .ejemplo {
+            background-color: #f8f9fa;
+            border-left: 3px solid #28a745;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 10pt;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 10px;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                margin: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 15px;
+            }
+            
+            .seccion {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="header">
+    <h1>📚 RESUMEN COMPLETO JAVASCRIPT</h1>
+    <p>Examen 2ª Evaluación DWEC | UD5, UD7, UD8</p>
+    <p>Material de estudio y repaso</p>
+</div>
+
+<div class="aviso">
+    <strong>⚠️ IMPORTANTE:</strong> Este es un material de estudio para preparar el examen de la 2ª evaluación. Cubre toda la teoría y sintaxis de POO (UD5), Formularios y Validación (UD7), y Comunicación Asíncrona (UD8). Estudia cada sección con atención y practica los ejemplos en tu ordenador.
+</div>
+
+<!-- ===================================================================== -->
+<!-- SECCIÓN 1: POO - PROGRAMACIÓN ORIENTADA A OBJETOS (UD5)             -->
+<!-- ===================================================================== -->
+
+<div class="seccion">
+    <h2>1. PROGRAMACIÓN ORIENTADA A OBJETOS (POO) - CLASES ES6</h2>
+    
+    <h3>Declaración de una clase</h3>
+    <div class="codigo">// Sintaxis básica de una clase
+class Persona {
+    // Constructor: se ejecuta al crear el objeto
+    constructor(nombre, edad) {
+        this.nombre = nombre;  // Propiedades de instancia
+        this.edad = edad;
+    }
+    
+    // Método de instancia
+    saludar() {
+        console.log(`Hola, soy ${this.nombre} y tengo ${this.edad} años`);
+    }
+    
+    // Otro método
+    cumplirAnios() {
+        this.edad++;
+        console.log(`Ahora tengo ${this.edad} años`);
+    }
+}
+
+// Crear objetos (instancias) de la clase
+let persona1 = new Persona("Ana", 25);
+let persona2 = new Persona("Luis", 30);
+
+persona1.saludar();      // "Hola, soy Ana y tengo 25 años"
+persona2.cumplirAnios(); // "Ahora tengo 31 años"
+    </div>
+
+    <div class="importante">
+        <strong>Conceptos clave:</strong>
+        <ul>
+            <li><strong>Clase:</strong> Plantilla o molde para crear objetos</li>
+            <li><strong>Constructor:</strong> Método especial que se ejecuta al crear un objeto con <span class="sintaxis">new</span></li>
+            <li><strong>this:</strong> Hace referencia al objeto actual</li>
+            <li><strong>Instancia:</strong> Objeto concreto creado a partir de una clase</li>
+        </ul>
+    </div>
+
+    <h3>Herencia (extends y super)</h3>
+    <div class="codigo">// Clase base (padre)
+class Animal {
+    constructor(nombre) {
+        this.nombre = nombre;
+    }
+    
+    hacerSonido() {
+        console.log(`${this.nombre} hace un sonido`);
+    }
+}
+
+// Clase derivada (hija) que hereda de Animal
+class Perro extends Animal {
+    constructor(nombre, raza) {
+        super(nombre);  // ⚠️ Llama al constructor del padre
+        this.raza = raza;
+    }
+    
+    // Método propio de Perro
+    ladrar() {
+        console.log(`${this.nombre} dice: ¡Guau guau!`);
+    }
+    
+    // Sobrescribir método del padre
+    hacerSonido() {
+        console.log(`${this.nombre} ladra fuerte`);
+    }
+}
+
+let miPerro = new Perro("Rex", "Pastor Alemán");
+miPerro.hacerSonido();  // "Rex ladra fuerte" (método sobrescrito)
+miPerro.ladrar();        // "Rex dice: ¡Guau guau!"</div>
+
+    <div class="importante">
+        <strong>Reglas de la herencia:</strong>
+        <ul>
+            <li><span class="sintaxis">extends</span> → Indica que una clase hereda de otra</li>
+            <li><span class="sintaxis">super()</span> → DEBE llamarse PRIMERO en el constructor hijo antes de usar <span class="sintaxis">this</span></li>
+            <li>La clase hija hereda todos los métodos y propiedades del padre</li>
+            <li>Puedes sobrescribir métodos del padre escribiendo uno con el mismo nombre</li>
+        </ul>
+    </div>
+
+    <h3>Getters y Setters</h3>
+    <div class="codigo">class Producto {
+    constructor(nombre, precio) {
+        this.nombre = nombre;
+        this._precio = precio;  // Convención: _ indica "privado"
+    }
+    
+    // Getter: obtener valor (se usa como propiedad)
+    get precio() {
+        return `${this._precio}€`;
+    }
+    
+    // Setter: establecer valor con validación
+    set precio(nuevoPrecio) {
+        if (nuevoPrecio < 0) {
+            console.log("Error: El precio no puede ser negativo");
+            return;
+        }
+        this._precio = nuevoPrecio;
+    }
+    
+    // Getter calculado
+    get precioConIVA() {
+        return this._precio * 1.21;
+    }
+}
+
+let producto = new Producto("Laptop", 800);
+console.log(producto.precio);        // "800€" (llama al getter)
+producto.precio = 900;               // Llama al setter
+producto.precio = -50;               // Error: El precio no puede ser negativo
+console.log(producto.precioConIVA);  // 1089 (900 * 1.21)</div>
+
+    <div class="nota">
+        <strong>Diferencias Getter vs Método normal:</strong>
+        <ul>
+            <li><strong>Getter:</strong> Se usa como propiedad → <span class="sintaxis">producto.precio</span> (sin paréntesis)</li>
+            <li><strong>Método:</strong> Se llama con paréntesis → <span class="sintaxis">producto.getPrecio()</span></li>
+            <li><strong>Setter:</strong> Se usa con asignación → <span class="sintaxis">producto.precio = 900</span></li>
+        </ul>
+    </div>
+
+    <h3>Métodos estáticos</h3>
+    <div class="codigo">class Matematicas {
+    // Método estático: se llama desde la clase, NO desde instancias
+    static sumar(a, b) {
+        return a + b;
+    }
+    
+    static restar(a, b) {
+        return a - b;
+    }
+    
+    static PI = 3.14159;  // Propiedad estática
+}
+
+// Uso CORRECTO: llamar desde la clase
+console.log(Matematicas.sumar(5, 3));    // 8
+console.log(Matematicas.PI);             // 3.14159
+
+// ❌ INCORRECTO: No se puede llamar desde una instancia
+let obj = new Matematicas();
+// obj.sumar(5, 3);  // ❌ Error: sumar no existe en la instancia</div>
+
+    <div class="codigo">// Ejemplo práctico: Utilidades de validación
+class Validador {
+    static validarEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
+    
+    static validarDNI(dni) {
+        const regex = /^\d{8}[A-Z]$/;
+        return regex.test(dni);
+    }
+}
+
+// Uso directo sin crear objetos
+console.log(Validador.validarEmail("ana@example.com"));  // true
+console.log(Validador.validarDNI("12345678Z"));          // true</div>
+
+    <div class="importante">
+        <strong>Métodos estáticos:</strong>
+        <ul>
+            <li>Se llaman directamente desde la clase: <span class="sintaxis">NombreClase.metodo()</span></li>
+            <li>NO tienen acceso a <span class="sintaxis">this</span> (no pertenecen a ninguna instancia)</li>
+            <li>Útiles para funciones de utilidad que no necesitan datos de instancia</li>
+            <li>Ejemplo real: <span class="sintaxis">Math.max()</span>, <span class="sintaxis">Array.isArray()</span></li>
+        </ul>
+    </div>
+
+    <h3>Ejemplo completo con todos los conceptos</h3>
+    <div class="codigo">class Empleado {
+    static numeroEmpleados = 0;  // Propiedad estática
+    
+    constructor(nombre, salario) {
+        this.nombre = nombre;
+        this._salario = salario;
+        Empleado.numeroEmpleados++;  // Incrementar contador estático
+    }
+    
+    // Getter
+    get salario() {
+        return `${this._salario}€`;
+    }
+    
+    // Setter con validación
+    set salario(nuevoSalario) {
+        if (nuevoSalario < 1000) {
+            throw new Error("El salario mínimo es 1000€");
+        }
+        this._salario = nuevoSalario;
+    }
+    
+    // Método de instancia
+    trabajar() {
+        console.log(`${this.nombre} está trabajando`);
+    }
+    
+    // Método estático
+    static mostrarTotal() {
+        console.log(`Total empleados: ${Empleado.numeroEmpleados}`);
+    }
+}
+
+class Programador extends Empleado {
+    constructor(nombre, salario, lenguaje) {
+        super(nombre, salario);
+        this.lenguaje = lenguaje;
+    }
+    
+    programar() {
+        console.log(`${this.nombre} programa en ${this.lenguaje}`);
+    }
+}
+
+let emp1 = new Empleado("Ana", 2000);
+let prog1 = new Programador("Luis", 3000, "JavaScript");
+
+emp1.trabajar();           // "Ana está trabajando"
+prog1.programar();         // "Luis programa en JavaScript"
+console.log(prog1.salario); // "3000€"
+prog1.salario = 3500;      // Usa el setter
+Empleado.mostrarTotal();   // "Total empleados: 2"</div>
+</div>
+
+<!-- ===================================================================== -->
+<!-- SECCIÓN 2: FORMULARIOS Y VALIDACIÓN (UD7)                            -->
+<!-- ===================================================================== -->
+
+<div class="seccion">
+    <h2>2. FORMULARIOS Y VALIDACIÓN</h2>
+    
+    <h3>Eventos de formularios</h3>
+    <div class="codigo">let formulario = document.querySelector("#miFormulario");
+let input = document.querySelector("#email");
+
+// submit - Se dispara al enviar el formulario
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault();  // ⚠️ Evita que la página se recargue
+    console.log("Formulario enviado");
+});
+
+// input - Se dispara en cada cambio (cada tecla pulsada)
+input.addEventListener("input", (e) => {
+    console.log("Valor actual:", e.target.value);
+});
+
+// change - Se dispara al perder el foco SI el valor cambió
+input.addEventListener("change", (e) => {
+    console.log("Valor final:", e.target.value);
+});
+
+// blur - Se dispara al perder el foco (siempre)
+input.addEventListener("blur", (e) => {
+    console.log("El input perdió el foco");
+});
+
+// focus - Se dispara al obtener el foco
+input.addEventListener("focus", (e) => {
+    console.log("El input tiene el foco");
+});</div>
+
+    <div class="importante">
+        <strong>Diferencias entre eventos:</strong>
+        <table>
+            <tr>
+                <th>Evento</th>
+                <th>Cuándo se dispara</th>
+                <th>Uso típico</th>
+            </tr>
+            <tr>
+                <td><strong>input</strong></td>
+                <td>Cada cambio de valor (cada tecla)</td>
+                <td>Validación en tiempo real</td>
+            </tr>
+            <tr>
+                <td><strong>change</strong></td>
+                <td>Al perder foco SI cambió el valor</td>
+                <td>Validación al terminar de escribir</td>
+            </tr>
+            <tr>
+                <td><strong>blur</strong></td>
+                <td>Al perder el foco (siempre)</td>
+                <td>Validación al salir del campo</td>
+            </tr>
+            <tr>
+                <td><strong>submit</strong></td>
+                <td>Al enviar el formulario</td>
+                <td>Validación final antes de enviar</td>
+            </tr>
+        </table>
+    </div>
+
+    <h3>preventDefault()</h3>
+    <div class="codigo">// Evitar comportamiento por defecto del navegador
+
+// En formularios: evitar recarga de página
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault();  // ⚠️ Evita que se envíe y recargue la página
+    // Aquí puedes validar y procesar los datos
+});
+
+// En enlaces: evitar navegación
+let enlace = document.querySelector("#enlace");
+enlace.addEventListener("click", (e) => {
+    e.preventDefault();  // ⚠️ Evita que el enlace navegue
+    console.log("Enlace clickeado pero no navegó");
+});</div>
+
+    <div class="importante">
+        <strong>¿Cuándo usar preventDefault()?</strong>
+        <ul>
+            <li>En el evento <span class="sintaxis">submit</span> para evitar recarga de página</li>
+            <li>En enlaces cuando quieres procesar el click sin navegar</li>
+            <li>En eventos de teclado/ratón cuando quieres anular el comportamiento por defecto</li>
+        </ul>
+    </div>
+
+    <h3>Expresiones Regulares (RegEx) para validación</h3>
+    <div class="codigo">// Sintaxis básica
+let regex = /patron/;
+let resultado = regex.test(cadena);  // Devuelve true/false
+
+// Patrones comunes vistos en clase
+
+// Email básico
+let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+emailRegex.test("ana@example.com");  // true
+
+// Teléfono (9 dígitos)
+let telefonoRegex = /^\d{9}$/;
+telefonoRegex.test("612345678");  // true
+
+// DNI (8 dígitos + letra)
+let dniRegex = /^\d{8}[A-Z]$/;
+dniRegex.test("12345678Z");  // true
+
+// Contraseña (mínimo 8 caracteres, 1 mayúscula, 1 minúscula, 1 número)
+let passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+passRegex.test("MiPass123");  // true
+
+// Código postal español (5 dígitos)
+let cpRegex = /^\d{5}$/;
+cpRegex.test("50001");  // true</div>
+
+    <div class="nota">
+        <strong>Símbolos de RegEx importantes:</strong>
+        <ul>
+            <li><span class="sintaxis">^</span> → Inicio de cadena</li>
+            <li><span class="sintaxis">$</span> → Final de cadena</li>
+            <li><span class="sintaxis">\d</span> → Dígito (0-9)</li>
+            <li><span class="sintaxis">\s</span> → Espacio en blanco</li>
+            <li><span class="sintaxis">[A-Z]</span> → Cualquier letra mayúscula</li>
+            <li><span class="sintaxis">[a-z]</span> → Cualquier letra minúscula</li>
+            <li><span class="sintaxis">{9}</span> → Exactamente 9 repeticiones</li>
+            <li><span class="sintaxis">{8,}</span> → Mínimo 8 repeticiones</li>
+            <li><span class="sintaxis">+</span> → Una o más veces</li>
+            <li><span class="sintaxis">*</span> → Cero o más veces</li>
+            <li><span class="sintaxis">.</span> → Cualquier carácter</li>
+            <li><span class="sintaxis">(?=.*[A-Z])</span> → Lookahead: debe contener al menos una mayúscula</li>
+        </ul>
+    </div>
+
+    <h3>try-catch-finally-throw</h3>
+    <div class="codigo">// Estructura básica
+try {
+    // Código que puede lanzar errores
+    let resultado = operacionPeligrosa();
+    console.log(resultado);
+} catch (error) {
+    // Capturar y manejar el error
+    console.log("Error capturado:", error.message);
+} finally {
+    // SIEMPRE se ejecuta (opcional)
+    console.log("Esto se ejecuta siempre");
+}</div>
+
+    <div class="codigo">// Ejemplo: Validación con throw
+function validarEdad(edad) {
+    if (typeof edad !== "number") {
+        throw new Error("La edad debe ser un número");
+    }
+    if (edad < 0) {
+        throw new Error("La edad no puede ser negativa");
+    }
+    if (edad < 18) {
+        throw new Error("Debes ser mayor de edad");
+    }
+    return true;
+}
+
+try {
+    validarEdad(15);
+} catch (error) {
+    console.log(error.message);  // "Debes ser mayor de edad"
+}</div>
+
+    <div class="codigo">// Ejemplo: Parsear JSON con try-catch
+function cargarDatos() {
+    let datosJSON = localStorage.getItem("usuarios");
+    
+    try {
+        let usuarios = JSON.parse(datosJSON);
+        return usuarios || [];
+    } catch (error) {
+        console.log("Error al parsear JSON:", error.message);
+        return [];  // Devolver array vacío si hay error
+    }
+}</div>
+
+    <div class="importante">
+        <strong>Conceptos clave de try-catch:</strong>
+        <ul>
+            <li><span class="sintaxis">try</span> → Bloque de código que puede fallar</li>
+            <li><span class="sintaxis">catch(error)</span> → Captura el error y lo maneja</li>
+            <li><span class="sintaxis">finally</span> → Se ejecuta SIEMPRE (con error o sin error)</li>
+            <li><span class="sintaxis">throw</span> → Lanza un error manualmente</li>
+            <li><span class="sintaxis">error.message</span> → Mensaje del error</li>
+        </ul>
+    </div>
+
+    <h3>Feedback visual de errores</h3>
+    <div class="codigo">// HTML
+&lt;input type="email" id="email"&gt;
+&lt;span id="email-error" class="error"&gt;&lt;/span&gt;
+
+// CSS
+.input-error {
+    border: 2px solid red;
+    background-color: #ffe6e6;
+}
+
+.input-valido {
+    border: 2px solid green;
+    background-color: #e6ffe6;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
+.error.mostrar {
+    display: block;
+}
+
+// JavaScript
+let emailInput = document.querySelector("#email");
+let emailError = document.querySelector("#email-error");
+
+function validarEmail() {
+    let email = emailInput.value;
+    let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (!regex.test(email)) {
+        // Mostrar error
+        emailInput.classList.add("input-error");
+        emailInput.classList.remove("input-valido");
+        emailError.textContent = "Email inválido";
+        emailError.classList.add("mostrar");
+        return false;
+    } else {
+        // Mostrar válido
+        emailInput.classList.remove("input-error");
+        emailInput.classList.add("input-valido");
+        emailError.classList.remove("mostrar");
+        return true;
+    }
+}
+
+// Validar en tiempo real
+emailInput.addEventListener("input", validarEmail);</div>
+
+    <h3>Ejemplo completo de validación de formulario</h3>
+    <div class="codigo">// HTML
+&lt;form id="formulario"&gt;
+    &lt;input type="text" id="nombre" placeholder="Nombre"&gt;
+    &lt;span class="error" id="nombre-error"&gt;&lt;/span&gt;
+    
+    &lt;input type="email" id="email" placeholder="Email"&gt;
+    &lt;span class="error" id="email-error"&gt;&lt;/span&gt;
+    
+    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;
+
+// JavaScript
+let formulario = document.querySelector("#formulario");
+let nombreInput = document.querySelector("#nombre");
+let emailInput = document.querySelector("#email");
+
+function mostrarError(input, mensaje) {
+    let errorSpan = document.querySelector(`#${input.id}-error`);
+    input.classList.add("input-error");
+    input.classList.remove("input-valido");
+    errorSpan.textContent = mensaje;
+    errorSpan.style.display = "block";
+}
+
+function mostrarValido(input) {
+    let errorSpan = document.querySelector(`#${input.id}-error`);
+    input.classList.remove("input-error");
+    input.classList.add("input-valido");
+    errorSpan.style.display = "none";
+}
+
+function validarNombre() {
+    let nombre = nombreInput.value.trim();
+    
+    if (nombre === "") {
+        mostrarError(nombreInput, "El nombre es obligatorio");
+        return false;
+    }
+    
+    if (nombre.length < 3) {
+        mostrarError(nombreInput, "El nombre debe tener al menos 3 caracteres");
+        return false;
+    }
+    
+    mostrarValido(nombreInput);
+    return true;
+}
+
+function validarEmail() {
+    let email = emailInput.value.trim();
+    let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (email === "") {
+        mostrarError(emailInput, "El email es obligatorio");
+        return false;
+    }
+    
+    if (!regex.test(email)) {
+        mostrarError(emailInput, "Email inválido");
+        return false;
+    }
+    
+    mostrarValido(emailInput);
+    return true;
+}
+
+// Validar en tiempo real
+nombreInput.addEventListener("input", validarNombre);
+emailInput.addEventListener("blur", validarEmail);
+
+// Validar al enviar
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault();
+    
+    let nombreValido = validarNombre();
+    let emailValido = validarEmail();
+    
+    if (nombreValido && emailValido) {
+        console.log("Formulario válido - enviando datos...");
+        // Aquí enviarías los datos
+    } else {
+        console.log("Formulario tiene errores");
+    }
+});</div>
+</div>
+
+<!-- ===================================================================== -->
+<!-- SECCIÓN 3: COMUNICACIÓN ASÍNCRONA (UD8)                              -->
+<!-- ===================================================================== -->
+
+<div class="seccion">
+    <h2>3. COMUNICACIÓN ASÍNCRONA</h2>
+    
+    <h3>JSON - JavaScript Object Notation</h3>
+    <div class="codigo">// Convertir objeto JavaScript a JSON (string)
+let persona = {
+    nombre: "Ana",
+    edad: 25,
+    ciudad: "Madrid"
+};
+
+let personaJSON = JSON.stringify(persona);
+console.log(personaJSON);
+// '{"nombre":"Ana","edad":25,"ciudad":"Madrid"}'
+
+// Convertir JSON (string) a objeto JavaScript
+let jsonString = '{"nombre":"Luis","edad":30}';
+let objeto = JSON.parse(jsonString);
+console.log(objeto.nombre);  // "Luis"</div>
+
+    <div class="codigo">// Uso con localStorage
+// Guardar
+let usuarios = [{nombre: "Ana"}, {nombre: "Luis"}];
+localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+// Recuperar
+let usuariosJSON = localStorage.getItem("usuarios");
+let usuariosArray = JSON.parse(usuariosJSON);
+console.log(usuariosArray);  // [{nombre: "Ana"}, {nombre: "Luis"}]</div>
+
+    <div class="importante">
+        <strong>JSON: Conceptos clave</strong>
+        <ul>
+            <li><span class="sintaxis">JSON.stringify(objeto)</span> → Convierte objeto JS a string JSON</li>
+            <li><span class="sintaxis">JSON.parse(string)</span> → Convierte string JSON a objeto JS</li>
+            <li>Usado para: localStorage, enviar datos a APIs, recibir datos de APIs</li>
+            <li>⚠️ Siempre usa <span class="sintaxis">try-catch</span> con <span class="sintaxis">JSON.parse()</span> por si el JSON es inválido</li>
+        </ul>
+    </div>
+
+    <h3>Callbacks</h3>
+    <div class="codigo">// Un callback es una función que se pasa como argumento
+function procesarUsuario(usuario, callback) {
+    console.log(`Procesando usuario: ${usuario}`);
+    callback();  // Ejecutar el callback
+}
+
+procesarUsuario("Ana", function() {
+    console.log("Usuario procesado");
+});
+
+// Con arrow function
+procesarUsuario("Luis", () => {
+    console.log("Usuario procesado");
+});</div>
+
+    <div class="codigo">// Callbacks en operaciones asíncronas
+setTimeout(() => {
+    console.log("Han pasado 2 segundos");
+}, 2000);
+
+// Simulación de operación asíncrona
+function obtenerDatos(callback) {
+    setTimeout(() => {
+        let datos = {nombre: "Ana", edad: 25};
+        callback(datos);
+    }, 1000);
+}
+
+obtenerDatos((resultado) => {
+    console.log("Datos recibidos:", resultado);
+});</div>
+
+    <h3>Callback Hell (problema de callbacks anidados)</h3>
+    <div class="codigo">// ❌ Callback Hell - Código difícil de leer
+obtenerUsuario(1, (usuario) => {
+    obtenerPosts(usuario.id, (posts) => {
+        obtenerComentarios(posts[0].id, (comentarios) => {
+            console.log(comentarios);
+        });
+    });
+});
+
+// Este problema se resuelve con Promesas y async/await</div>
+
+    <h3>Promesas (Promises)</h3>
+    <div class="codigo">// Una promesa tiene 3 estados:
+// - Pending (pendiente): estado inicial
+// - Fulfilled (cumplida): operación completada con éxito
+// - Rejected (rechazada): operación falló
+
+// Crear una promesa
+let miPromesa = new Promise((resolve, reject) => {
+    let exito = true;
+    
+    if (exito) {
+        resolve("Operación exitosa");  // Cumplir la promesa
+    } else {
+        reject("Operación fallida");   // Rechazar la promesa
+    }
+});
+
+// Consumir una promesa
+miPromesa
+    .then((resultado) => {
+        console.log(resultado);  // Se ejecuta si resolve()
+    })
+    .catch((error) => {
+        console.log(error);      // Se ejecuta si reject()
+    })
+    .finally(() => {
+        console.log("Promesa finalizada");  // Siempre se ejecuta
+    });</div>
+
+    <div class="codigo">// Ejemplo práctico: Simulación de petición
+function obtenerDatos() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let exito = true;
+            
+            if (exito) {
+                resolve({nombre: "Ana", edad: 25});
+            } else {
+                reject("Error al obtener datos");
+            }
+        }, 2000);
+    });
+}
+
+obtenerDatos()
+    .then((datos) => {
+        console.log("Datos recibidos:", datos);
+    })
+    .catch((error) => {
+        console.log("Error:", error);
+    });</div>
+
+    <div class="codigo">// Encadenar promesas
+function paso1() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log("Paso 1 completado");
+            resolve(1);
+        }, 1000);
+    });
+}
+
+function paso2(resultado) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log("Paso 2 completado");
+            resolve(resultado + 1);
+        }, 1000);
+    });
+}
+
+function paso3(resultado) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log("Paso 3 completado");
+            resolve(resultado + 1);
+        }, 1000);
+    });
+}
+
+// Encadenar
+paso1()
+    .then((resultado1) => paso2(resultado1))
+    .then((resultado2) => paso3(resultado2))
+    .then((resultadoFinal) => {
+        console.log("Resultado final:", resultadoFinal);  // 3
+    })
+    .catch((error) => {
+        console.log("Error en algún paso:", error);
+    });</div>
+
+    <div class="importante">
+        <strong>Promesas: Conceptos clave</strong>
+        <ul>
+            <li><span class="sintaxis">.then()</span> → Se ejecuta cuando la promesa se cumple (resolve)</li>
+            <li><span class="sintaxis">.catch()</span> → Se ejecuta cuando la promesa se rechaza (reject)</li>
+            <li><span class="sintaxis">.finally()</span> → Se ejecuta SIEMPRE al finalizar</li>
+            <li>Las promesas se pueden encadenar para operaciones secuenciales</li>
+            <li>Ventaja sobre callbacks: código más legible y fácil de mantener</li>
+        </ul>
+    </div>
+
+    <h3>Async / Await</h3>
+    <div class="codigo">// async/await es una forma más limpia de trabajar con promesas
+
+// Función asíncrona (devuelve una promesa automáticamente)
+async function obtenerDatos() {
+    return "Datos obtenidos";
+}
+
+// Es equivalente a:
+function obtenerDatos() {
+    return Promise.resolve("Datos obtenidos");
+}
+
+// Consumir con .then()
+obtenerDatos().then((datos) => console.log(datos));</div>
+
+    <div class="codigo">// await: espera a que una promesa se resuelva
+
+function esperarDosSegundos() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Han pasado 2 segundos");
+        }, 2000);
+    });
+}
+
+// ❌ Sin await (promesa pendiente)
+function obtenerMensaje() {
+    let mensaje = esperarDosSegundos();
+    console.log(mensaje);  // Promise {<pending>}
+}
+
+// ✅ Con await (espera el resultado)
+async function obtenerMensaje() {
+    let mensaje = await esperarDosSegundos();
+    console.log(mensaje);  // "Han pasado 2 segundos"
+}
+
+obtenerMensaje();</div>
+
+    <div class="codigo">// Ejemplo completo con try-catch
+async function cargarDatosUsuario(id) {
+    try {
+        console.log("Cargando usuario...");
+        let usuario = await obtenerUsuario(id);
+        
+        console.log("Cargando posts...");
+        let posts = await obtenerPosts(usuario.id);
+        
+        console.log("Cargando comentarios...");
+        let comentarios = await obtenerComentarios(posts[0].id);
+        
+        return {usuario, posts, comentarios};
+        
+    } catch (error) {
+        console.log("Error al cargar datos:", error);
+        throw error;  // Re-lanzar el error
+    }
+}
+
+cargarDatosUsuario(1)
+    .then((datos) => console.log(datos))
+    .catch((error) => console.log("Error:", error));</div>
+
+    <div class="importante">
+        <strong>async / await: Reglas importantes</strong>
+        <ul>
+            <li><span class="sintaxis">async</span> antes de la función → La convierte en asíncrona</li>
+            <li><span class="sintaxis">await</span> solo funciona dentro de funciones <span class="sintaxis">async</span></li>
+            <li><span class="sintaxis">await</span> pausa la ejecución hasta que la promesa se resuelva</li>
+            <li>SIEMPRE usa <span class="sintaxis">try-catch</span> para manejar errores</li>
+            <li>Ventaja: código asíncrono que parece síncrono (más legible)</li>
+        </ul>
+    </div>
+
+    <h3>Fetch API</h3>
+    <div class="codigo">// GET básico
+fetch("https://api.example.com/usuarios")
+    .then((response) => response.json())  // Convertir a JSON
+    .then((datos) => {
+        console.log(datos);
+    })
+    .catch((error) => {
+        console.log("Error:", error);
+    });</div>
+
+    <div class="codigo">// GET con async/await (forma recomendada)
+async function obtenerUsuarios() {
+    try {
+        let response = await fetch("https://api.example.com/usuarios");
+        let datos = await response.json();
+        console.log(datos);
+    } catch (error) {
+        console.log("Error:", error);
+    }
+}
+
+obtenerUsuarios();</div>
+
+    <div class="codigo">// POST - Crear un recurso
+async function crearUsuario(usuario) {
+    try {
+        let response = await fetch("https://api.example.com/usuarios", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(usuario)
+        });
+        
+        let nuevoUsuario = await response.json();
+        console.log("Usuario creado:", nuevoUsuario);
+        
+    } catch (error) {
+        console.log("Error:", error);
+    }
+}
+
+crearUsuario({nombre: "Ana", edad: 25});</div>
+
+    <div class="codigo">// PUT - Actualizar un recurso completo
+async function actualizarUsuario(id, usuarioActualizado) {
+    try {
+        let response = await fetch(`https://api.example.com/usuarios/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(usuarioActualizado)
+        });
+        
+        let usuario = await response.json();
+        console.log("Usuario actualizado:", usuario);
+        
+    } catch (error) {
+        console.log("Error:", error);
+    }
+}
+
+actualizarUsuario(1, {nombre: "Ana García", edad: 26});</div>
+
+    <div class="codigo">// DELETE - Eliminar un recurso
+async function eliminarUsuario(id) {
+    try {
+        let response = await fetch(`https://api.example.com/usuarios/${id}`, {
+            method: "DELETE"
+        });
+        
+        if (response.ok) {
+            console.log("Usuario eliminado");
+        }
+        
+    } catch (error) {
+        console.log("Error:", error);
+    }
+}
+
+eliminarUsuario(1);</div>
+
+    <div class="importante">
+        <strong>Métodos HTTP (CRUD):</strong>
+        <table>
+            <tr>
+                <th>Método</th>
+                <th>Operación</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td><strong>GET</strong></td>
+                <td>Read (Leer)</td>
+                <td>Obtener datos del servidor</td>
+            </tr>
+            <tr>
+                <td><strong>POST</strong></td>
+                <td>Create (Crear)</td>
+                <td>Enviar datos para crear un recurso</td>
+            </tr>
+            <tr>
+                <td><strong>PUT</strong></td>
+                <td>Update (Actualizar)</td>
+                <td>Actualizar un recurso completo</td>
+            </tr>
+            <tr>
+                <td><strong>DELETE</strong></td>
+                <td>Delete (Eliminar)</td>
+                <td>Eliminar un recurso</td>
+            </tr>
+        </table>
+    </div>
+
+    <h3>Headers y Content-Type</h3>
+    <div class="codigo">// Content-Type: indica el tipo de datos que se envían
+
+// JSON (más común)
+fetch("https://api.example.com/usuarios", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({nombre: "Ana"})
+});
+
+// Texto plano
+fetch("https://api.example.com/mensaje", {
+    method: "POST",
+    headers: {
+        "Content-Type": "text/plain"
+    },
+    body: "Hola mundo"
+});
+
+// Formulario
+fetch("https://api.example.com/login", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: "username=ana&password=1234"
+});</div>
+
+    <h3>Autenticación con Bearer Token</h3>
+    <div class="codigo">// Muchas APIs requieren un token de autenticación
+
+let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...";
+
+async function obtenerDatosProtegidos() {
+    try {
+        let response = await fetch("https://api.example.com/datos-privados", {
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        });
+        
+        let datos = await response.json();
+        console.log(datos);
+        
+    } catch (error) {
+        console.log("Error:", error);
+    }
+}</div>
+
+    <div class="codigo">// Ejemplo completo con autenticación y POST
+let token = localStorage.getItem("token");
+
+async function crearPost(post) {
+    try {
+        let response = await fetch("https://api.example.com/posts", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify(post)
+        });
+        
+        let nuevoPost = await response.json();
+        console.log("Post creado:", nuevoPost);
+        
+    } catch (error) {
+        console.log("Error:", error);
+    }
+}
+
+crearPost({
+    titulo: "Mi primer post",
+    contenido: "Contenido del post"
+});</div>
+
+    <div class="importante">
+        <strong>Headers comunes:</strong>
+        <ul>
+            <li><span class="sintaxis">Content-Type</span> → Tipo de datos que envías (application/json, text/plain, etc.)</li>
+            <li><span class="sintaxis">Authorization</span> → Token de autenticación (Bearer token)</li>
+            <li><span class="sintaxis">Accept</span> → Tipo de datos que aceptas recibir</li>
+        </ul>
+    </div>
+
+    <h3>Manejo de errores y Status Codes</h3>
+    <div class="codigo">async function obtenerUsuario(id) {
+    try {
+        let response = await fetch(`https://api.example.com/usuarios/${id}`);
+        
+        // Verificar si la respuesta fue exitosa
+        if (!response.ok) {
+            throw new Error(`Error HTTP: ${response.status}`);
+        }
+        
+        let usuario = await response.json();
+        console.log(usuario);
+        
+    } catch (error) {
+        console.log("Error:", error.message);
+    }
+}</div>
+
+    <div class="codigo">// Manejo detallado según status code
+async function obtenerUsuario(id) {
+    try {
+        let response = await fetch(`https://api.example.com/usuarios/${id}`);
+        
+        if (response.status === 404) {
+            console.log("Usuario no encontrado");
+            return null;
+        }
+        
+        if (response.status === 401) {
+            console.log("No autorizado - necesitas iniciar sesión");
+            return null;
+        }
+        
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status}`);
+        }
+        
+        let usuario = await response.json();
+        return usuario;
+        
+    } catch (error) {
+        console.log("Error de red:", error.message);
+        return null;
+    }
+}</div>
+
+    <div class="importante">
+        <strong>Status Codes importantes:</strong>
+        <table>
+            <tr>
+                <th>Código</th>
+                <th>Significado</th>
+            </tr>
+            <tr>
+                <td><strong>200</strong></td>
+                <td>OK - Petición exitosa</td>
+            </tr>
+            <tr>
+                <td><strong>201</strong></td>
+                <td>Created - Recurso creado exitosamente</td>
+            </tr>
+            <tr>
+                <td><strong>400</strong></td>
+                <td>Bad Request - Datos inválidos</td>
+            </tr>
+            <tr>
+                <td><strong>401</strong></td>
+                <td>Unauthorized - No autorizado (falta token/login)</td>
+            </tr>
+            <tr>
+                <td><strong>404</strong></td>
+                <td>Not Found - Recurso no encontrado</td>
+            </tr>
+            <tr>
+                <td><strong>500</strong></td>
+                <td>Internal Server Error - Error del servidor</td>
+            </tr>
+        </table>
+    </div>
+
+    <h3>Ejemplo completo: CRUD con Fetch</h3>
+    <div class="codigo">const API_URL = "https://jsonplaceholder.typicode.com/users";
+
+// CREATE - Crear usuario
+async function crearUsuario(usuario) {
+    try {
+        let response = await fetch(API_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(usuario)
+        });
+        
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status}`);
+        }
+        
+        let nuevoUsuario = await response.json();
+        console.log("Usuario creado:", nuevoUsuario);
+        return nuevoUsuario;
+        
+    } catch (error) {
+        console.log("Error al crear usuario:", error.message);
+        return null;
+    }
+}
+
+// READ - Obtener todos los usuarios
+async function obtenerUsuarios() {
+    try {
+        let response = await fetch(API_URL);
+        
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status}`);
+        }
+        
+        let usuarios = await response.json();
+        console.log("Usuarios:", usuarios);
+        return usuarios;
+        
+    } catch (error) {
+        console.log("Error al obtener usuarios:", error.message);
+        return [];
+    }
+}
+
+// READ - Obtener un usuario por ID
+async function obtenerUsuario(id) {
+    try {
+        let response = await fetch(`${API_URL}/${id}`);
+        
+        if (response.status === 404) {
+            console.log("Usuario no encontrado");
+            return null;
+        }
+        
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status}`);
+        }
+        
+        let usuario = await response.json();
+        console.log("Usuario:", usuario);
+        return usuario;
+        
+    } catch (error) {
+        console.log("Error al obtener usuario:", error.message);
+        return null;
+    }
+}
+
+// UPDATE - Actualizar usuario
+async function actualizarUsuario(id, datosActualizados) {
+    try {
+        let response = await fetch(`${API_URL}/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(datosActualizados)
+        });
+        
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status}`);
+        }
+        
+        let usuarioActualizado = await response.json();
+        console.log("Usuario actualizado:", usuarioActualizado);
+        return usuarioActualizado;
+        
+    } catch (error) {
+        console.log("Error al actualizar usuario:", error.message);
+        return null;
+    }
+}
+
+// DELETE - Eliminar usuario
+async function eliminarUsuario(id) {
+    try {
+        let response = await fetch(`${API_URL}/${id}`, {
+            method: "DELETE"
+        });
+        
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status}`);
+        }
+        
+        console.log(`Usuario ${id} eliminado`);
+        return true;
+        
+    } catch (error) {
+        console.log("Error al eliminar usuario:", error.message);
+        return false;
+    }
+}
+
+// Uso
+crearUsuario({name: "Ana García", email: "ana@example.com"});
+obtenerUsuarios();
+obtenerUsuario(1);
+actualizarUsuario(1, {name: "Ana López"});
+eliminarUsuario(1);</div>
+
+    <h3>APIs públicas para practicar</h3>
+    <div class="ejemplo">
+        <strong>APIs sin autenticación (para practicar):</strong>
+        <ul>
+            <li><strong>JSONPlaceholder:</strong> https://jsonplaceholder.typicode.com/users</li>
+            <li><strong>ReqRes:</strong> https://reqres.in/api/users</li>
+            <li><strong>Rick and Morty:</strong> https://rickandmortyapi.com/api/character</li>
+            <li><strong>PokéAPI:</strong> https://pokeapi.co/api/v2/pokemon</li>
+        </ul>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div style="margin-top: 50px; padding-top: 20px; border-top: 3px solid #2c3e50; text-align: center;">
+    <p style="font-size: 12pt; color: #666;">
+        <strong>María Paradela | I.E.S. Río Arba 2025/2026</strong><br>
+        Practica todos estos conceptos antes del examen de la 2ª evaluación.<br>
+        Fecha del examen: 26/02/2026
+    </p>
+</div>
+
+</div>
+
+</body>
+</html>
