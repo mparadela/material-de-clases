@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+/* FORMULARIO */
+.formulario-seccion {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #fa709a;
+}
+
+input.input-error, select.input-error {
+    border-color: #e74c3c;
+    background-color: #ffe6e6;
+}
+
+input.input-valido, select.input-valido {
+    border-color: #2ecc71;
+    background-color: #e6ffe6;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 12px;
+    display: none;
+    margin-top: 5px;
+}
+
+.error.mostrar {
+    display: block;
+}
+
+.campos-especificos {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff3cd;
+    border-radius: 5px;
+    border: 2px solid #ffc107;
+}
+
+.oculto {
+    display: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-eliminar {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.btn-eliminar:hover {
+    background-color: #c0392b;
+}
+
+/* ESTADÍSTICAS */
+.estadisticas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.stat-card h3 {
+    color: #fa709a;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.stat-numero {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* LISTA DE PRODUCTOS */
+.lista-seccion {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+#lista-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.producto-card {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.producto-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.producto-card.electronica {
+    border-left: 5px solid #3498db;
+}
+
+.producto-card.ropa {
+    border-left: 5px solid #e74c3c;
+}
+
+.producto-card.alimentacion {
+    border-left: 5px solid #2ecc71;
+}
+
+.producto-info {
+    flex: 1;
+}
+
+.producto-info h3 {
+    color: #fa709a;
+    margin-bottom: 8px;
+}
+
+.producto-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.categoria-badge {
+    background-color: #fa709a;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.categoria-badge.electronica {
+    background-color: #3498db;
+}
+
+.categoria-badge.ropa {
+    background-color: #e74c3c;
+}
+
+.categoria-badge.alimentacion {
+    background-color: #2ecc71;
+}
+
+.mensaje-vacio {
+    text-align: center;
+    color: #999;
+    padding: 40px;
+    font-style: italic;
+}

@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+/* BUSCADOR */
+.buscador-seccion {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+.buscador-container {
+    display: flex;
+    gap: 10px;
+}
+
+#input-busqueda {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#input-busqueda:focus {
+    outline: none;
+    border-color: #3a7bd5;
+}
+
+#input-busqueda.input-error {
+    border-color: #e74c3c;
+    background-color: #ffe6e6;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 14px;
+    display: none;
+    margin-top: 10px;
+}
+
+.error.mostrar {
+    display: block;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+/* NAVEGACIÓN */
+.navegacion {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.btn-nav {
+    background-color: white;
+    color: #3a7bd5;
+    border: 2px solid #3a7bd5;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-nav:hover:not(:disabled) {
+    background-color: #3a7bd5;
+    color: white;
+}
+
+.btn-nav:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* INFORMACIÓN DEL PERSONAJE */
+#info-personaje {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    min-height: 400px;
+}
+
+.mensaje-inicial {
+    text-align: center;
+    padding: 80px 20px;
+    color: #999;
+}
+
+.mensaje-inicial p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.personaje-card {
+    text-align: center;
+}
+
+.personaje-card h2 {
+    color: #3a7bd5;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.personaje-id {
+    color: #999;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.personaje-imagen {
+    width: 250px;
+    height: 250px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.personaje-detalles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.detalle-item {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.detalle-item strong {
+    display: block;
+    color: #3a7bd5;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.detalle-item span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.estado-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 15px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.estado-badge.alive {
+    background-color: #2ecc71;
+}
+
+.estado-badge.dead {
+    background-color: #e74c3c;
+}
+
+.estado-badge.unknown {
+    background-color: #95a5a6;
+}
+
+/* MENSAJE DE ERROR */
+.mensaje-error {
+    text-align: center;
+    padding: 60px 20px;
+    color: #e74c3c;
+}
+
+.mensaje-error h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.mensaje-error p {
+    font-size: 16px;
+}
+
+/* LOADING */
+.loading {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.loading.oculto {
+    display: none;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3a7bd5;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading p {
+    color: #666;
+    font-size: 16px;
+}
+
+.oculto {
+    display: none;
+}

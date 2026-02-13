@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Películas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 Buscador de Películas</h1>
+        
+        <!-- BUSCADOR -->
+        <div class="buscador-seccion">
+            <h2>Buscar Película</h2>
+            <div class="buscador-container">
+                <input type="text" id="input-busqueda" placeholder="Ej: The Matrix, Inception...">
+                <button id="btn-buscar" class="btn-primary">Buscar</button>
+            </div>
+            <span class="error" id="busqueda-error"></span>
+        </div>
+
+        <!-- RESULTADO DE BÚSQUEDA -->
+        <div id="resultado-busqueda" class="resultado-seccion oculto">
+            <!-- Aquí se mostrará la película encontrada -->
+        </div>
+
+        <!-- LOADING -->
+        <div id="loading" class="loading oculto">
+            <div class="spinner"></div>
+            <p>Buscando película...</p>
+        </div>
+
+        <!-- FAVORITAS -->
+        <div class="favoritas-seccion">
+            <div class="favoritas-header">
+                <h2>⭐ Mis Favoritas</h2>
+                <span id="contador-favoritas" class="contador">0 películas</span>
+            </div>
+            <div id="lista-favoritas">
+                <p class="mensaje-vacio">No tienes películas favoritas todavía</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

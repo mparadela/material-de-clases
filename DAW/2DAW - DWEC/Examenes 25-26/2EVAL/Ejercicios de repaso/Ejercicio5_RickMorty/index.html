@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorador Rick and Morty</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🛸 Explorador de Rick and Morty</h1>
+        
+        <!-- BUSCADOR -->
+        <div class="buscador-seccion">
+            <div class="buscador-container">
+                <input type="text" id="input-busqueda" placeholder="Busca un personaje por nombre...">
+                <button id="btn-buscar" class="btn-primary">Buscar</button>
+            </div>
+            <span class="error" id="busqueda-error"></span>
+        </div>
+
+        <!-- NAVEGACIÓN -->
+        <div class="navegacion">
+            <button id="btn-anterior" class="btn-nav">⬅️ Anterior</button>
+            <button id="btn-siguiente" class="btn-nav">Siguiente ➡️</button>
+        </div>
+
+        <!-- INFORMACIÓN DEL PERSONAJE -->
+        <div id="info-personaje">
+            <div class="mensaje-inicial">
+                <p>🎯 Busca un personaje de Rick and Morty</p>
+                <p>Ejemplo: "Rick" o "Morty"</p>
+            </div>
+        </div>
+
+        <!-- LOADING -->
+        <div id="loading" class="loading oculto">
+            <div class="spinner"></div>
+            <p>Cargando personaje...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

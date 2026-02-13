@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>✍️ Registro de Usuario</h1>
+        
+        <div class="formulario-seccion">
+            <h2>Completa tu registro</h2>
+            <form id="formulario-registro">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" placeholder="Ej: Ana García López">
+                    <span class="error" id="nombre-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" placeholder="Ej: ana@example.com">
+                    <span class="error" id="email-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="dni">DNI:</label>
+                    <input type="text" id="dni" placeholder="Ej: 12345678A">
+                    <span class="error" id="dni-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" id="telefono" placeholder="Ej: 612345678">
+                    <span class="error" id="telefono-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" placeholder="Mínimo 8 caracteres">
+                    <span class="error" id="contrasena-error"></span>
+                    <small class="ayuda">Debe contener: 1 mayúscula, 1 minúscula, 1 número</small>
+                </div>
+
+                <button type="submit" class="btn-primary">Registrarse</button>
+            </form>
+        </div>
+
+        <!-- Mensaje de éxito (oculto por defecto) -->
+        <div id="mensaje-exito" class="mensaje-exito oculto">
+            <h3>✅ ¡Registro exitoso!</h3>
+            <p>Tu cuenta ha sido creada correctamente.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

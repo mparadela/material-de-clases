@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #434343 0%, #000000 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #ffd700;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+/* BUSCADOR */
+.buscador-seccion {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    margin-bottom: 30px;
+}
+
+.buscador-container {
+    display: flex;
+    gap: 10px;
+}
+
+#input-busqueda {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#input-busqueda:focus {
+    outline: none;
+    border-color: #ffd700;
+}
+
+#input-busqueda.input-error {
+    border-color: #e74c3c;
+    background-color: #ffe6e6;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 14px;
+    display: none;
+    margin-top: 10px;
+}
+
+.error.mostrar {
+    display: block;
+}
+
+.btn-primary {
+    background: #ffd700;
+    color: #000;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: #ffed4e;
+    transform: translateY(-2px);
+}
+
+/* RESULTADO DE BÚSQUEDA */
+.resultado-seccion {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    margin-bottom: 30px;
+}
+
+.oculto {
+    display: none;
+}
+
+.pelicula-card {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 30px;
+}
+
+.pelicula-poster {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.pelicula-info h2 {
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+.pelicula-info p {
+    margin: 10px 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+.pelicula-info strong {
+    color: #333;
+}
+
+.rating {
+    display: inline-block;
+    background: #ffd700;
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.btn-favorita {
+    background: #ffd700;
+    color: #000;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: all 0.3s;
+}
+
+.btn-favorita:hover {
+    background: #ffed4e;
+    transform: translateY(-2px);
+}
+
+.btn-favorita:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* LOADING */
+.loading {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    margin-bottom: 30px;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #ffd700;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading p {
+    color: #666;
+    font-size: 16px;
+}
+
+/* FAVORITAS */
+.favoritas-seccion {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.favoritas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.favoritas-header h2 {
+    margin-bottom: 0;
+}
+
+.contador {
+    background: #ffd700;
+    color: #000;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+#lista-favoritas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.favorita-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.favorita-card:hover {
+    transform: translateY(-5px);
+}
+
+.favorita-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.favorita-info {
+    padding: 15px;
+}
+
+.favorita-info h4 {
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+.favorita-info p {
+    color: #666;
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.btn-eliminar {
+    width: 100%;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btn-eliminar:hover {
+    background-color: #c0392b;
+}
+
+.mensaje-vacio {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #999;
+    padding: 40px;
+    font-style: italic;
+}
+
+/* MENSAJE DE ERROR */
+.mensaje-error {
+    text-align: center;
+    padding: 40px;
+    color: #e74c3c;
+}
+
+.mensaje-error h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}

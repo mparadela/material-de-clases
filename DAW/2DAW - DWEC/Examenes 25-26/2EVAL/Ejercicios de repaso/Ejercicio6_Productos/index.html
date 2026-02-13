@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Productos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🏪 Sistema de Productos</h1>
+        
+        <!-- FORMULARIO -->
+        <div class="formulario-seccion">
+            <h2>Añadir Nuevo Producto</h2>
+            <form id="formulario-producto">
+                <div class="form-group">
+                    <label for="nombre">Nombre del producto:</label>
+                    <input type="text" id="nombre" placeholder="Ej: iPhone 15 Pro">
+                    <span class="error" id="nombre-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="precio">Precio (€):</label>
+                    <input type="number" id="precio" step="0.01" placeholder="Ej: 1099.99">
+                    <span class="error" id="precio-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="stock">Stock (unidades):</label>
+                    <input type="number" id="stock" placeholder="Ej: 50">
+                    <span class="error" id="stock-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="categoria">Categoría:</label>
+                    <select id="categoria">
+                        <option value="">-- Selecciona --</option>
+                        <option value="Electronica">Electrónica</option>
+                        <option value="Ropa">Ropa</option>
+                        <option value="Alimentacion">Alimentación</option>
+                    </select>
+                    <span class="error" id="categoria-error"></span>
+                </div>
+
+                <!-- Campos específicos por categoría -->
+                <div id="campos-electronica" class="campos-especificos oculto">
+                    <div class="form-group">
+                        <label for="garantia">Garantía (meses):</label>
+                        <input type="number" id="garantia" placeholder="Ej: 24">
+                    </div>
+                </div>
+
+                <div id="campos-ropa" class="campos-especificos oculto">
+                    <div class="form-group">
+                        <label for="talla">Talla:</label>
+                        <select id="talla">
+                            <option value="">-- Selecciona --</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="campos-alimentacion" class="campos-especificos oculto">
+                    <div class="form-group">
+                        <label for="caducidad">Fecha de caducidad:</label>
+                        <input type="date" id="caducidad">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">Añadir Producto</button>
+            </form>
+        </div>
+
+        <!-- ESTADÍSTICAS -->
+        <div class="estadisticas">
+            <div class="stat-card">
+                <h3>Total de Productos</h3>
+                <p id="total-productos" class="stat-numero">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Valor del Inventario</h3>
+                <p id="valor-inventario" class="stat-numero">0.00 €</p>
+            </div>
+        </div>
+
+        <!-- LISTA DE PRODUCTOS -->
+        <div class="lista-seccion">
+            <h2>Inventario de Productos</h2>
+            <div id="lista-productos">
+                <!-- Aquí se mostrarán los productos -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
