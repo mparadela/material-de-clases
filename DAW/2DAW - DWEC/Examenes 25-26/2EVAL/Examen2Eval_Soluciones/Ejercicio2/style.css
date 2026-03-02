@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+/* BUSCADOR */
+.buscador-seccion {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+.buscador-container {
+    display: flex;
+    gap: 10px;
+}
+
+#input-busqueda {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#input-busqueda:focus {
+    outline: none;
+    border-color: #f5576c;
+}
+
+#input-busqueda.input-error {
+    border-color: #e74c3c;
+    background-color: #ffe6e6;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 14px;
+    display: none;
+    margin-top: 10px;
+}
+
+.error.mostrar {
+    display: block;
+}
+
+/* BOTONES */
+.btn-primary {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* NAVEGACIÓN */
+.navegacion {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.btn-nav {
+    background-color: white;
+    color: #f5576c;
+    border: 2px solid #f5576c;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-nav:hover:not(:disabled) {
+    background-color: #f5576c;
+    color: white;
+}
+
+.btn-nav:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* INFORMACIÓN DEL POKÉMON */
+#info-pokemon {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    min-height: 400px;
+}
+
+.mensaje-inicial {
+    text-align: center;
+    padding: 80px 20px;
+    color: #999;
+}
+
+.mensaje-inicial p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.pokemon-card {
+    text-align: center;
+}
+
+.pokemon-card h2 {
+    color: #f5576c;
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.pokemon-id {
+    color: #999;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.pokemon-imagen {
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    display: block;
+}
+
+.pokemon-tipos {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.tipo-badge {
+    padding: 8px 20px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+/* Colores de tipos de Pokémon */
+.tipo-normal { background-color: #A8A878; }
+.tipo-fire { background-color: #F08030; }
+.tipo-water { background-color: #6890F0; }
+.tipo-electric { background-color: #F8D030; }
+.tipo-grass { background-color: #78C850; }
+.tipo-ice { background-color: #98D8D8; }
+.tipo-fighting { background-color: #C03028; }
+.tipo-poison { background-color: #A040A0; }
+.tipo-ground { background-color: #E0C068; }
+.tipo-flying { background-color: #A890F0; }
+.tipo-psychic { background-color: #F85888; }
+.tipo-bug { background-color: #A8B820; }
+.tipo-rock { background-color: #B8A038; }
+.tipo-ghost { background-color: #705898; }
+.tipo-dragon { background-color: #7038F8; }
+.tipo-dark { background-color: #705848; }
+.tipo-steel { background-color: #B8B8D0; }
+.tipo-fairy { background-color: #EE99AC; }
+
+.pokemon-detalles {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.detalle-item {
+    text-align: center;
+}
+
+.detalle-item strong {
+    display: block;
+    color: #f5576c;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.detalle-item span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* MENSAJE DE ERROR */
+.mensaje-error {
+    text-align: center;
+    padding: 60px 20px;
+    color: #e74c3c;
+}
+
+.mensaje-error h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.mensaje-error p {
+    font-size: 16px;
+}
+
+/* LOADING */
+.loading {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.loading.oculto {
+    display: none;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #f5576c;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading p {
+    color: #666;
+    font-size: 16px;
+}
+
+/* OCULTAR */
+.oculto {
+    display: none;
+}

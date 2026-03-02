@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorador de Pokémon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Explorador de Pokémon</h1>
+        
+        <!-- BUSCADOR -->
+        <div class="buscador-seccion">
+            <div class="buscador-container">
+                <input type="text" id="input-busqueda" placeholder="Busca por nombre o número (ej: pikachu o 25)">
+                <button id="btn-buscar" class="btn-primary">Buscar</button>
+            </div>
+            <span class="error" id="busqueda-error"></span>
+        </div>
+
+        <!-- NAVEGACIÓN -->
+        <div class="navegacion">
+            <button id="btn-anterior" class="btn-nav">⬅️ Anterior</button>
+            <button id="btn-siguiente" class="btn-nav">Siguiente ➡️</button>
+        </div>
+
+        <!-- INFORMACIÓN DEL POKÉMON -->
+        <div id="info-pokemon">
+            <!-- Aquí se mostrará la información del pokémon -->
+            <div class="mensaje-inicial">
+                <p>🎯 Busca un Pokémon por nombre o número</p>
+                <p>Ejemplo: "pikachu" o "25"</p>
+            </div>
+        </div>
+
+        <!-- LOADING (oculto por defecto) -->
+        <div id="loading" class="loading oculto">
+            <div class="spinner"></div>
+            <p>Cargando pokémon...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

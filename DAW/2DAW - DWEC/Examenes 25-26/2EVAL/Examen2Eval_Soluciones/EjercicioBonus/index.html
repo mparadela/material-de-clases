@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Gestor de Tareas con Drag & Drop</h1>
+        
+        <div class="info-box">
+            <p>🎯 <strong>Ejercicio BONUS:</strong> Arrastra las tareas para reordenarlas</p>
+            <p>✅ Haz clic en una tarea para marcarla como completada</p>
+        </div>
+
+        <!-- LISTA DE TAREAS -->
+        <div class="tareas-seccion">
+            <h2>Mis Tareas</h2>
+            <div id="lista-tareas">
+                <!-- Aquí se cargarán las tareas de la API -->
+            </div>
+        </div>
+
+        <!-- LOADING -->
+        <div id="loading" class="loading oculto">
+            <div class="spinner"></div>
+            <p>Cargando tareas...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
